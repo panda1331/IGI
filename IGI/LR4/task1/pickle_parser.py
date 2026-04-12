@@ -1,3 +1,6 @@
+"""
+Task 1. Module for PickleParser.
+"""
 import pickle
 
 from task1.parser_base import ParserBase

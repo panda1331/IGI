@@ -1,5 +1,7 @@
+"""
+Task 1. Module for ParserBase.
+"""
 import abc
-
 
 class ParserBase(abc.ABC):
     @abc.abstractmethod
