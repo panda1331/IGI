@@ -1,6 +1,8 @@
 """
 Task 1. Module for ElectionsService.
 """
+import re
+
 from task1.candidate import Candidate
 from task1.csv_parser import CsvParser
 from task1.pickle_parser import PickleParser
@@ -43,7 +45,7 @@ class ElectionsService:
         csv_parser = CsvParser("task1/candidates.csv")
         pickle_parser = PickleParser("task1/candidates.pickle")
 
-        candidate_object_list = self._get_candidates()
+        candidate_object_list = self.__candidates
 
         csv_parser.serialize(candidate_object_list)
         pickle_parser.serialize(candidate_object_list)
@@ -53,7 +55,6 @@ class ElectionsService:
         print_all_candidates_info(candidates_from_pickle)
 
         passed_candidates = []
-
         for c in candidates_from_pickle:
             if c.get_number_of_votes() > ElectionsService.AMOUNT_OF_VOTERS * ElectionsService.PASS_QUOTE:
                 passed_candidates.append(c)
@@ -74,7 +75,7 @@ class ElectionsService:
         Prints candidate info if found, otherwise "No such candidate".
         """
         for candidate in self.__candidates:
-            if candidate.get_name().lower() == name.lower():
+            if re.fullmatch(candidate.get_name(), name, re.IGNORECASE):
                 print(candidate)
                 break
         else:

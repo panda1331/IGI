@@ -13,6 +13,7 @@ from utils.input import input_str
 from utils.output import task1_info
 
 def run() -> None:
+    """Execute task1. """
     task1_info()
     try:
         elections = ElectionsService()
@@ -28,7 +29,9 @@ def run() -> None:
     except PermissionError as err:
         print(f"Permission error: {err}")
     except pickle.PicklingError as err:
-        print(f"Serialization error: {err}")
+        print(f"Serialization pickle error: {err}")
     except pickle.UnpicklingError as err:
-        print(f"Deserialization error: {err}")
+        print(f"Deserialization pickle error: {err}")
+    except Exception as e:
+        print(f"Exception: {e}")
 

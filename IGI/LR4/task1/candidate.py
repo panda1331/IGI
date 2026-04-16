@@ -23,6 +23,12 @@ class Candidate:
     def get_name(self) -> str:
         """Return candidate name."""
         return self.__name
+
     def get_number_of_votes(self) -> int:
         """Return vote count."""
         return self.__number_of_votes
+
+    def set_number_of_votes(self, number_of_votes: int) -> None:
+        """Set vote count."""
+        if 0 <= number_of_votes <= 2000:
+            self.__number_of_votes = number_of_votes

@@ -30,8 +30,8 @@ class FileService:
                    f"1) Phone numbers 9 digits, started with 29 (29*******): {self.find_phone_numbers()}\n"
                    f"2) Amount of words where second letter is consonant, third - vowel: {self.get_specified_words()}\n"
                    f"3) Amount of words that are bounded with spaces: {self.count_words_bounded_by_spaces()}\n"
-                   f"4) Determine how many times each letter appears: \n\t{self.format_letters_occurrences()}\n"
-                   f"5) Get all phrases separated by commas in alphabet order: \n\t{", ".join(self.get_alphabetizes_phrases_separated_by_commas())}")
+                   f"4) Determine how many times each letter appears: \n  {self._format_letters_occurrences()}\n"
+                   f"5) Get all phrases separated by commas in alphabet order: \n  {", ".join(self.get_alphabetizes_phrases_separated_by_commas())}")
 
     def _read_file(self):
         """Read input file and return content."""
@@ -41,7 +41,7 @@ class FileService:
     def save_info_to_file(self):
         """Save report to output file."""
         with open(self.__output_filename, 'w') as file:
-            file.write(self.__str__())
+            file.write(str(self))
 
     def archive_file(self):
         """Archive output file into ZIP."""
@@ -81,7 +81,7 @@ class FileService:
     def calculate_average_words_length(self):
         """Average letters per word."""
         letters = len(re.findall(r"[a-zA-Z]", self.__text))
-        words = len(re.findall(r"\b[^0-9_ ][a-zA-Z']*\b", self.__text))
+        words = len(re.findall(r"\b[a-zA-Z']+", self.__text))
         return letters / words
 
     def count_smileys(self):
@@ -91,19 +91,19 @@ class FileService:
 
     def find_phone_numbers(self):
         """Count 9-digit numbers starting with 29."""
-        counter = len(re.findall(r"\b29\d{7}\b", self.__text))
+        counter = len(re.findall(r"\b29\d{7}", self.__text))
         return counter
 
     def get_specified_words(self):
         """Count words where 2nd letter consonant, 3rd vowel."""
         consonants = "QWRTPSDFGHJKLZXCVBNMqwrtpsdfghjklzxcvbnm"
         vowels = "EYUIOAeyuioa"
-        counter = len(re.findall(rf"\b[a-zA-Z][{consonants}][{vowels}]\w*\b", self.__text))
+        counter = len(re.findall(rf"\b[a-zA-Z][{consonants}][{vowels}]\w*", self.__text))
         return counter
 
     def count_words_bounded_by_spaces(self):
         """Count words separated by spaces (word boundaries)."""
-        counter = len(re.findall(r"\b[\w']+\b", self.__text))
+        counter = len(re.findall(r"(?<= )[\w']+(?= )", self.__text))
         return counter
 
     def calculate_letters_occurrences(self):
@@ -113,11 +113,13 @@ class FileService:
 
     def get_alphabetizes_phrases_separated_by_commas(self):
         """Extract phrases after 'Phrases:', split by comma, sort alphabetically."""
-        line = re.findall(r"(?<=Phrases: ).+(?=.)", self.__text)
-        phrases = re.split(r", ", line[0])
-        return sorted(phrases)
+        match = re.search(r"(?<=Phrases: ).+(?=.)", self.__text)
+        if match:
+            phrases = re.split(r", ", match.group(0))
+            return sorted(phrases)
+        return []
 
-    def format_letters_occurrences(self):
+    def _format_letters_occurrences(self):
         """Format letter frequencies as readable string."""
         result = ""
         for key, value in sorted(self.calculate_letters_occurrences().items()):

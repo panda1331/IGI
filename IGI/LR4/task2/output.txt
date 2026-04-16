@@ -10,8 +10,8 @@ General tasks:
 Individual tasks:
 1) Phone numbers 9 digits, started with 29 (29*******): 3
 2) Amount of words where second letter is consonant, third - vowel: 27
-3) Amount of words that are bounded with spaces: 76
+3) Amount of words that are bounded with spaces: 43
 4) Determine how many times each letter appears: 
-	A: 1, D: 1, F: 1, G: 1, H: 4, I: 1, L: 1, M: 1, P: 1, S: 1, T: 1, W: 2, a: 26, b: 5, c: 3, d: 11, e: 42, f: 5, g: 6, h: 11, i: 12, k: 4, l: 20, m: 5, n: 17, o: 19, p: 2, r: 24, s: 19, t: 20, u: 6, v: 1, w: 7, y: 8, z: 1, 
+  A: 1, D: 1, F: 1, G: 1, H: 4, I: 1, L: 1, M: 1, P: 1, S: 1, T: 1, W: 2, a: 26, b: 5, c: 3, d: 11, e: 42, f: 5, g: 6, h: 11, i: 12, k: 4, l: 20, m: 5, n: 17, o: 19, p: 2, r: 24, s: 19, t: 20, u: 6, v: 1, w: 7, y: 8, z: 1, 
 5) Get all phrases separated by commas in alphabet order: 
-	blue sky, bright sun, fresh air, green grass, tall tree, warm breeze
+  blue sky, bright sun, fresh air, green grass, tall tree, warm breeze
