@@ -1,0 +1,47 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Statistics</title>{% endblock %}
+{% block content %}
+    <h2>Statistics</h2>
+    <h4>All services:</h4>
+    <ul>
+        {% for service in services %}
+            <li>{{ service.name }} ({{service.price}} BYN) - {{service.category.name}}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <h4>All clients:</h4>
+    <ul>
+        {% for client in clients %}
+            <li>{{ client.get_full_name }}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <h4>All employees:</h4>
+    <ul>
+        {% for employee in employees %}
+            <li>{{ employee.user.get_full_name }}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <h4>Total income: {{ total_income }} BYN</h4>
+    <hr>
+    <h4>Statistics info for payment checks:</h4>
+    <ul>
+        <li>Mean: {{ payments_mean }} BYN</li>
+        <li>Mode: {{ payments_mode }} BYN</li>
+        <li>Median: {{ payments_median }} BYN</li>
+    </ul>
+    <hr>
+    <h4>Statistics info for user:</h4>
+    <ul>
+        <li>Mean age: {{ age_mean }} years</li>
+        <li>Median for age: {{ age_median }} years</li>
+    </ul>
+    <hr>
+    <h4>Most popular service: {{ popular_service }}</h4>
+    <hr>
+    <h4>Most profitable service: {{profitable_service.name}}</h4>
+    <hr>
+    <img src="/media/{{ chart_path }}" alt="Services distribution">
+{% endblock %}

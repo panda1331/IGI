@@ -1,0 +1,55 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Catalog</title>{% endblock %}
+{% block content %}
+    <div class="header">
+        <form method="get">
+            <div class="filters">
+                <p>Filters:</p>
+                {% for category in all_categories %}
+                    <input id="{{category.name}}" type="checkbox" name="category" value="{{category.id}}" {% if category.id in selected_categories %}checked{% endif %}>
+                    <label for="{{category.name}}">{{category.name}}</label>
+                {% endfor %}
+            </div>
+            <div class="price">
+                <label for="min_price">Min price:</label>
+                <input type="number" id="min_price" name="min_price" min="0" max="1000" value="{{ request.GET.min_price }}">
+                <label for="max_price">Max price:</label>
+                <input type="number" id="max_price" name="max_price" min="0" max="1000" value="{{ request.GET.max_price }}">
+            </div>
+            <hr>
+            <input type="text" name="search_service" id="search" value="{{request.GET.search_service}}">
+            <hr>
+            <select name="sort">
+                <option value="">Default</option>
+                <option value="price_asc">Price (low first)</option>
+                <option value="price_desc">Price (high first)</option>
+                <option value="name_asc">A-Z</option>
+                <option value="name_desc">Z-A</option>
+            </select>
+            <button type="submit">Apply</button>
+            <button type="button"><a href="{% url 'catalog' %}">Clear filters</a> </button>
+        </form>
+    </div>
+    <hr>
+    {% for category in categories %}
+        <h4>{{category.name}}</h4>
+        {% if user.is_superuser %}
+            <button><a href="{% url 'edit_category' category.id %}">Edit category</a></button>
+            <button><a href="{% url 'delete_category' category.id %}">Delete category</a></button>
+        {% endif %}
+        {% for service in category.filtered_services %}
+            <p><a href="{% url 'service_detail' service.id %}">{{service.name}}</a>   -  {{service.price}} BYN</p>
+            {% if user.is_superuser %}
+                <button><a href="{% url 'edit_service' service.id %}">Edit service</a></button>
+                <button><a href="{% url 'delete_service' service.id %}">Delete service</a></button>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+<br>
+    {% if user.is_superuser %}
+        <hr>
+        <button><a href="{% url 'create_category' %}">Create category</a></button>
+        <button><a href="{% url 'create_service' %}">Create service</a></button>
+    {% endif %}
+{% endblock %}

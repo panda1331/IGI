@@ -1,0 +1,31 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Profile</title>{% endblock %}
+{% block content %}
+    <h2>Personal account</h2>
+    {% if user.is_superuser %}
+        <a href="{% url 'order_list' %}">All orders</a>
+    {% else %}
+        <a href="{% url 'order_list' %}">My orders</a>
+    {% endif %}
+    <p>First name: {{user.first_name}}</p>
+    <p>Last name: {{user.last_name}}</p>
+    <p>Middle name: {{user.middle_name}}</p>
+    <p>Date of birth: {{user.date_of_birth}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Phone number: {{user.phone_number}}</p>
+    <p>User type: {{user.get_user_type_display}}</p>
+
+    {% if user.user_type == 'employee' %}
+        <p>Specializations: {{user.employee_profile.display_specializations}}</p>
+
+    {% else %}
+        <p>Client type: {{user.get_client_type_display}}</p>
+        {% if user.client_type == 'legal' %}
+            <p>Company: {{user.company_name}}</p>
+        {% endif %}
+        <a href="{% url 'create_order' %}">Order service</a>
+
+    {% endif %}
+    <a href="{% url 'profile_edit' %}">Edit profile</a>
+{% endblock %}

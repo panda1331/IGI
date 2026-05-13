@@ -1,0 +1,14 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Article</title>{% endblock %}
+
+{% block content %}
+    <h2>{{article.title}}</h2>
+    <p>{{article.content}}</p>
+    {% if article.image %}
+        <img src="{{ article.image.url }}">
+    {% endif %}
+    <p>{{article.created_at}}</p>
+    <a href="{% url 'article_list' %}">Back to all news</a>
+
+{% endblock %}

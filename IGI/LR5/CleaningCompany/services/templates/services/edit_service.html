@@ -1,0 +1,24 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Edit Service</title>{% endblock %}
+{% block content %}
+    <h2>Edit Service</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Change name: </label>
+        <input value="{{service.name}}" id="name" name="name" type="text"><br><br>
+        <label for="price">Change price: </label>
+        <input value="{{service.price}}" id="price" name="price" type="number" min="1" max="1000"><br><br>
+        <label for="category">Change category: </label>
+        <select id="category" name="category">
+            {% for category in categories %}
+                <option value="{{ category.id }}" {% if category.id == service.category.id %}selected{% endif %}>{{ category.name }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="description">Change description: </label>
+        <textarea name="description" id="description">{{ service.description }}</textarea><br><br>
+        <button type="submit">Save</button>
+        <button type="button"><a href="{% url 'catalog' %}">Cancel</a></button>
+
+    </form>
+{% endblock %}

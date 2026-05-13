@@ -1,0 +1,14 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Edit Category</title>{% endblock %}
+{% block content %}
+    <h2>Edit Category</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Change name: </label>
+        <input value="{{category.name}}" id="name" name="name" type="text"><br><br>
+        <button type="submit">Save</button>
+        <button type="button"><a href="{% url 'catalog' %}">Cancel</a></button>
+
+    </form>
+{% endblock %}

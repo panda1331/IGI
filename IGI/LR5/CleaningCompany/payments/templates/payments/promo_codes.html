@@ -1,0 +1,18 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Promo codes</title>{% endblock %}
+{% block content %}
+    <h2>Promo codes</h2>
+    {% for promo_code in promo_codes %}
+        <h4>Code: {{promo_code.code}}</h4>
+        <p>Discount: {{promo_code.discount_percentage}}%</p>
+        <p>Status: {% if promo_code.is_active %}Active{% else %}Archived{% endif %}</p>
+        <p>For services:</p>
+        <ul>
+            {% for service in promo_code.services.all %}
+                <li><p>{{ service.name }}</p></li>
+            {% endfor %}
+        </ul>
+
+    {% endfor %}
+{% endblock %}
