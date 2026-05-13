@@ -1,0 +1,24 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Contacts</title>{% endblock %}
+{% block content %}
+    {% for employee in employees %}
+        {% if employee.photo %}
+            <img src="{{employee.photo.url}}" width="300" height="200">
+        {% endif %}
+        <p>Name: {{employee.user.get_full_name}}</p>
+        <p>Phone number: {{employee.user.phone_number}}</p>
+        <p>Email: {{employee.user.email}}</p>
+        <p>Hire date: {{employee.hire_date}}</p>
+        <p>Specialisations:</p>
+        {% if employee.specializations.all %}
+            <ul>
+                {% for specialization in employee.specializations.all %}
+                <li>{{specialization.name}}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No specializations</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

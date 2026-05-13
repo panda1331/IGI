@@ -1,0 +1,11 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Vacancies</title>{% endblock %}
+{% block content %}
+    <h2>Available vacancies:</h2>
+    {% for vacancy in vacancies %}
+        <h4>{{vacancy.name}}</h4>
+        <p>Description: {{vacancy.description}}</p>
+        <p>Created: {{vacancy.created_at}}</p>
+    {% endfor %}
+{% endblock %}

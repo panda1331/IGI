@@ -1,0 +1,24 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Create Service</title>{% endblock %}
+{% block content %}
+    <h2>Create Service</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Enter name: </label>
+        <input id="name" name="name" type="text"><br><br>
+        <label for="price">Enter price: </label>
+        <input id="price" name="price" type="number" min="1" max="1000"><br><br>
+        <label for="category">Select category: </label>
+        <select id="category" name="category">
+            {% for category in categories %}
+                <option value="{{category.id}}">{{ category.name }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="description">Description: </label>
+        <textarea name="description" id="description"></textarea><br><br>
+        <button type="submit">Save</button>
+        <button type="button"><a href="{% url 'catalog' %}">Cancel</a></button>
+
+    </form>
+{% endblock %}
