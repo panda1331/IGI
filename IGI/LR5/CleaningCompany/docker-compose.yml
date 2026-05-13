@@ -8,7 +8,17 @@ services:
     volumes:
       - .:/app
     environment:
-      - DJANGO_SETTINGS_MODULE=CleaningCompany.settings
+      - DEBUD=TRUE
+    depends_on:
+      - db
+    command: >
+       sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
 
 volumes:
-  sqlite_data:
+  postgres_data:
