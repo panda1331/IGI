@@ -1,0 +1,20 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Client cost</title>{% endblock %}
+{% block content %}
+    <h2>Client cost</h2>
+    <form method="get">
+        <select name="client_id">
+            {% for client in clients %}
+                    <option value="{{ client.id }}" {% if request.GET.client_id == client.id|stringformat:"s" %}selected{% endif %}>{{ client.get_full_name }}</option>
+            {% endfor %}
+        </select>
+        <input type="date" name="start">
+        <input type="date" name="end">
+        <button type="submit">Show</button>
+    </form>
+    {% if total is not None %}
+        <p>Total: {{total}} BYN</p>
+    {% endif %}
+<hr>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Edit User</title>{% endblock %}
+{% block content %}
+    <h2>Edit User</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        {% if user.user_type == 'client' %}
+            <label>Client type:</label>
+            <select name="client_type">
+                <option value="individual" {% if user.client_type == 'individual' %}selected{% endif %}>Individual</option>
+                <option value="legal" {% if user.client_type == 'legal' %}selected{% endif %}>Legal</option>
+            </select><br><br>
+            <label>Company name:</label>
+            <input type="text" name="company_name" value="{{ user.company_name }}"><br><br>
+        {% elif user.user_type == 'employee' %}
+            <label>Hire date:</label>
+            <input type="date" name="hire_date" value="{{ user.employee_profile.hire_date|date:'Y-m-d' }}"><br><br>
+            <label>Description:</label>
+            <textarea name="description">{{ user.employee_profile.description }}</textarea><br><br>
+            <label>Specializations:</label>
+            <select name="specializations" multiple>
+                {% for spec in specializations %}
+                    <option value="{{ spec.id }}" {% if spec in user.employee_profile.specializations.all %}selected{% endif %}>{{ spec.name }}</option>
+                {% endfor %}
+            </select><br><br>
+        {% endif %}
+
+        <button type="submit">Save</button>
+        <button><a href="{% url 'manage_users' %}">Cancel</a></button>
+    </form>
+
+{% endblock %}

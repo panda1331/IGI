@@ -1,0 +1,17 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>About company</title>{% endblock%}
+{% block content %}
+    <h3>About Company {{company_info.name}}</h3>
+    {% if company_info.logo %}<img src="{{company_info.logo.url}}">{% endif %}
+    <p>{{company_info.description}}</p>
+    <p>Our history:{{company_info.history|linebreaks}}</p>
+    {% if company_info.video %}
+        <video src="{{company_info.video}}"/>
+    {% endif %}
+
+    <p>Requisites: {{company_info.requisites|linebreaks}}</p>
+    <p>Email: {{company_info.email}}</p>
+    <p>Phone: {{company_info.phone}}</p>
+
+{% endblock %}

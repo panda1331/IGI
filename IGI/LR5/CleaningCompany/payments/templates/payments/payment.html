@@ -1,0 +1,27 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Payment</title>{% endblock %}
+{% block content %}
+    <h2>Payment</h2>
+    <p>Code: {{ payment.order.code }}</p>
+    <p>Total (with discount): {{ payment.amount }}</p>
+    <p>Status: {{ payment.status }}</p>
+    <p>Services:</p>
+    <ul>
+        {% for item in payment.order.items.all %}
+            <li>{{ item.service.name }} x {{item.quantity}} - {{ item.price }} BYN</li>
+        {% endfor %}
+    </ul>
+    {% if payment.status == 'waiting' %}
+        <form method="post" action="{% url 'pay_order' payment.order.id %}">
+            {% csrf_token %}
+            <label>Payment method:</label>
+            <select name="payment_method">
+                <option value="cash">Cash</option>
+                <option value="card">Card</option>
+                <option value="Online">Online</option>
+            </select>
+            <button type="submit">Pay</button>
+        </form>
+    {% endif %}
+{% endblock %}

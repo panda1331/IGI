@@ -1,0 +1,26 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Employee Clients</title>{% endblock %}
+{% block content %}
+    <h2>Employee Clients</h2>
+    <form method="get">
+        <select name="employee_id">
+            {% for emp in employees %}
+                <option value="{{ emp.id }}" {% if request.GET.employee_id == emp.id|stringformat:"s" %}selected{% endif %}>
+                    {{ emp.get_full_name }}
+                </option>
+            {% endfor %}
+        </select>
+        <button type="submit">Show</button>
+    </form>
+    {% if clients is not None %}
+        <ul>
+            {% for client in clients %}
+                <li>{{ client.get_full_name }}</li>
+            {% empty %}
+                <li>No clients found.</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+<hr>
+{% endblock %}

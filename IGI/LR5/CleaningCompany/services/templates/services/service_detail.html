@@ -1,0 +1,10 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Service Info</title>{% endblock %}
+{% block content %}
+    <h2>Service Info</h2>
+    <p>Name: {{ service.name }}</p>
+    <p>Category: {{ service.category.name }}</p>
+    <p>Description: {{ service.description }}</p>
+    <p>Price: {{ service.price }} BYN</p>
+{% endblock %}

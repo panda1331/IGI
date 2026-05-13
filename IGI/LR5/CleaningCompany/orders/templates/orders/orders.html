@@ -1,0 +1,48 @@
+{% extends 'base_generic.html' %}
+{% load tz %}
+
+{% block title %}<title>Orders</title>{% endblock%}
+{% block content %}
+    <h2>Orders</h2>
+    {% if user.is_superuser %}
+        <p>All orders:</p>
+        <button type="button"><a href="{% url 'create_order' %}">Create order</a> </button>
+
+    {% else %}
+        <p>My orders:</p>
+    {% endif %}
+    <hr>
+    {% for order in orders %}
+        <p>Code: {{ order.code }}</p>
+        <p>Address: {{ order.address }}</p>
+        <p>Work date: {{order.work_date}}</p>
+        <p>Status: {{order.get_status_display}}</p>
+        <p>Total price: {{order.total_price}} BYN</p>
+        <p>Created: {{ order.created_at|date:"d/m/Y H:i" }} (Moscow)</p>
+        <p>Updated: {{ order.updated_at|date:"d/m/Y H:i" }} (Moscow)</p>
+        {% timezone "UTC" %}
+            <p>Created UTC: {{ order.created_at|date:"d/m/Y H:i" }}</p>
+            <p>Updated UTC: {{ order.updated_at|date:"d/m/Y H:i" }}</p>
+        {% endtimezone %}
+
+        {% if user.user_type == 'employee' %}
+            <p>Client: {{order.client.get_full_name}}</p>
+            <p></p>
+        {% elif user.user_type == 'client' %}
+            <p>Employee: {{order.employee.get_full_name}}</p>
+        {% else %}
+            <p>Client: {{order.client.get_full_name}}</p>
+            <p>Employee: {{order.employee.get_full_name}}</p>
+        {% endif %}
+        {% if user.is_superuser %}
+            <button type="button"><a href="{% url 'edit_order' order.id %}">Edit order</a> </button>
+            <form method="post" action="{% url 'delete_order' order.id %}" style="display:inline">
+                {% csrf_token %}
+                <button type="submit">Delete order</button>
+            </form>
+        {% endif %}
+    <hr>
+    {% empty %}
+        <p>No orders yet.</p>
+    {% endfor %}
+{% endblock %}
