@@ -1,0 +1,1925 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-05-05T10:50:29.446Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Window cleaner",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-05-05T10:51:30.613Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Dry cleaning of furniture and carpets",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-05-05T10:58:21.984Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "ivanov",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-05-05T11:00:54.877Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "Ivan Ivanov",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-05-05T11:19:52.378Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Window cleaning",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-05-05T11:22:16.883Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Washing of 1 window(standard)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-05-05T11:24:01.705Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Washing the balcony unit",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-05-05T11:25:02.429Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Washing the mosquito net",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-05-05T11:28:12.186Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Cleaning of premises",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-05-05T11:29:30.414Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Cleaning of a 1-room apartment",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-05-05T11:31:10.082Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "Cleaning of a 2-room apartment",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-05-05T11:39:06.018Z",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "1",
+    "object_repr": "We Have Updated Our Cleaning Products",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-05-05T11:39:59.521Z",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "2",
+    "object_repr": "15% Discount on Post-Renovation Cleaning",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-05-05T11:40:26.515Z",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "3",
+    "object_repr": "We Now Work on Weekends",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-05-05T11:41:56.132Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "1",
+    "object_repr": "What cleaning products do you use?",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-05-05T11:44:14.094Z",
+    "user": 1,
+    "content_type": 16,
+    "object_id": "2",
+    "object_repr": "Do I need to be present during the cleaning?",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-05-05T11:47:36.999Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "simple_user",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-05-05T12:50:34.987Z",
+    "user": 1,
+    "content_type": 19,
+    "object_id": "1",
+    "object_repr": "Room Shining",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-05-09T13:49:57.037Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "Ivan Ivanov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-05-09T13:52:31.818Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "Ivan Ivanov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-05-09T13:52:42.504Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "Ivan Ivanov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Photo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-05-09T15:28:08.076Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "popova_olga",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-05-09T15:31:11.965Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "2",
+    "object_repr": "Olga Popova",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-05-09T16:03:37.951Z",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "1",
+    "object_repr": "Cleaner",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-05-09T16:04:24.833Z",
+    "user": 1,
+    "content_type": 17,
+    "object_id": "2",
+    "object_repr": "Window Cleaning Specialist",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-05-09T16:31:06.136Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "1",
+    "object_repr": "Ordered apartment cleaning. The team arrived on time, everything was done perfectly. The apartment literally shines! Special thanks for the eco-friendly products — no chemical smell at all. Will defin",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-05-09T16:34:15.643Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "CLEAN10 (10%)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-05-09T16:38:35.043Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "WINDOW15 (15%)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-05-09T17:43:12.470Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "bebe",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-05-09T17:43:23.422Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "bebe",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-05-09T21:38:45.369Z",
+    "user": 1,
+    "content_type": 19,
+    "object_id": "1",
+    "object_repr": "Room Shining",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Logo\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-05-10T10:17:44.335Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "boss33",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2026-05-10T10:29:58.589Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "simple_user",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2026-05-10T10:30:03.664Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "simple_user",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2026-05-10T10:30:19.734Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "boss33",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2026-05-10T10:30:22.982Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "boss33",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2026-05-10T11:18:05.949Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "popova_olga",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2026-05-10T11:18:08.040Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "popova_olga",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2026-05-10T14:41:30.706Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "8",
+    "object_repr": "qwerty",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2026-05-10T14:44:03.074Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "9",
+    "object_repr": "qwerty",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2026-05-10T14:54:38.615Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "10",
+    "object_repr": "qwerty",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2026-05-10T15:48:33.132Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "popova_olga",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Phone number\", \"Client type\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2026-05-10T17:58:53.606Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "Order: 5c49d34b-f78f-4050-8196-381a68aed160 - evelina morozova",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Employee\", \"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2026-05-10T18:13:42.907Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "Order: 5c49d34b-f78f-4050-8196-381a68aed160 - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2026-05-10T18:18:02.946Z",
+    "user": 1,
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "Ivan Ivanov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Specializations\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2026-05-10T18:19:29.963Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "ivanov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2026-05-10T18:19:32.619Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "ivanov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Client type\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2026-05-10T20:20:22.131Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "5",
+    "object_repr": "awesome service! the best company in the whole world!!!",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2026-05-10T20:20:22.131Z",
+    "user": 1,
+    "content_type": 18,
+    "object_id": "3",
+    "object_repr": "bebe",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2026-05-10T21:16:42.905Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "11",
+    "object_repr": "evelinapop",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Company name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2026-05-10T21:22:09.717Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "3",
+    "object_repr": "Order: 3815e0d3-73b7-490f-b008-89bccbb92dbd - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2026-05-11T08:20:29.576Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Window cleaning",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2026-05-11T08:20:44.190Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Cleaning of premises",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2026-05-11T09:29:33.158Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "8",
+    "object_repr": "Order: 9b4433f1-dd6c-4890-b29f-d3a78850f5df - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2026-05-11T09:29:33.158Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "7",
+    "object_repr": "Order: 310cae1d-74c4-4561-a19e-682b5e012d65 - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2026-05-11T09:29:33.158Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "6",
+    "object_repr": "Order: 7a1be2c4-cfce-4e1b-8cb4-171ec6e40c36 - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2026-05-11T09:29:33.158Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "5",
+    "object_repr": "Order: 56cf9008-5ae1-4df2-9595-d9e370055872 - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2026-05-11T09:29:33.158Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "4",
+    "object_repr": "Order: 3bf33e48-17b4-4d8f-940a-6fc054f871af - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2026-05-11T09:29:33.158Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "Order: af0bd7e3-e6ab-4e8c-bf2c-d279ed0b1158 - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2026-05-11T09:41:49.889Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "10",
+    "object_repr": "Order: de845975-dda7-4597-b50a-661be549c4cc - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2026-05-11T09:41:49.889Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "9",
+    "object_repr": "Order: dead8553-62a9-4d29-9041-5ed79b325f09 - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2026-05-11T09:49:10.425Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "11",
+    "object_repr": "Order: 6e173d37-862a-4fec-9301-d4c24e60f96e - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2026-05-11T13:55:11.039Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "20",
+    "object_repr": "Order: e6d1412a-61d1-43d7-8a0c-a50e126ace2f - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2026-05-11T13:55:11.039Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "19",
+    "object_repr": "Order: 8f968099-a9af-4c74-85e9-0a8982cca531 - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2026-05-11T13:55:11.039Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "18",
+    "object_repr": "Order: 5e93eef5-214a-4214-a180-625a0d56a283 - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2026-05-11T13:55:11.039Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "17",
+    "object_repr": "Order: 89e19780-cc30-45b8-ba8f-9c4793b16a32 - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2026-05-11T13:55:11.039Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "16",
+    "object_repr": "Order: 3afcc4f7-64b7-4a11-8aa5-73ce07a0d1bb - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2026-05-11T13:55:11.039Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "15",
+    "object_repr": "Order: 23043bd8-ecee-420d-8a19-5d7c1b23182c - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2026-05-11T13:55:11.039Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "14",
+    "object_repr": "Order: da59c15e-053b-4f62-9cb5-9dd8a3b29e75 - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2026-05-11T13:55:11.039Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "13",
+    "object_repr": "Order: f4ca8518-a833-474c-a1d7-f080f62f89ad - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2026-05-11T14:04:31.738Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "ivanov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Phone number\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2026-05-11T16:03:43.068Z",
+    "user": 1,
+    "content_type": 15,
+    "object_id": "1",
+    "object_repr": "We Have Updated Our Cleaning Products",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2026-05-11T17:37:03.094Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "26",
+    "object_repr": "Order: 584b3cf1-2129-4d64-8eb8-f4a8e3981828 - evelina morozova",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2026-05-12T07:43:07.405Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User type\", \"Client type\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2026-05-12T07:43:13.520Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2026-05-12T09:25:02.284Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "14",
+    "object_repr": "Payment order: 78cac252-10ed-41cd-a563-deef1d86191d - 175.00 rub.",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2026-05-12T09:25:02.284Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "13",
+    "object_repr": "Payment order: adf88fb0-0288-40f6-b41f-9d1d293068c0 - 175.00 rub.",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 78,
+  "fields": {
+    "action_time": "2026-05-12T09:25:02.284Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "12",
+    "object_repr": "Payment order: 0506f0b7-a1c9-48ce-af2e-ef25cc374f42 - 25.00 rub.",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 79,
+  "fields": {
+    "action_time": "2026-05-12T09:25:02.284Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "10",
+    "object_repr": "Payment order: d2d93b9b-45af-4c05-8521-0dbcfa28a7f5 - 90.00 rub.",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 80,
+  "fields": {
+    "action_time": "2026-05-12T09:25:02.284Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "9",
+    "object_repr": "Payment order: 6ad11bfc-5d40-44fb-aa07-03631b974008 - 100.00 rub.",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 81,
+  "fields": {
+    "action_time": "2026-05-12T09:25:11.900Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "7",
+    "object_repr": "Payment order: 5556ac86-b5e5-45f6-91f9-1c7f18a4044b - 105.00 rub.",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 82,
+  "fields": {
+    "action_time": "2026-05-12T21:24:48.537Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "19",
+    "object_repr": "Payment order: cb6024e8-23f4-402a-bafc-8d59b94d2804 - 105.00 rub.",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 83,
+  "fields": {
+    "action_time": "2026-05-12T21:24:48.538Z",
+    "user": 1,
+    "content_type": 13,
+    "object_id": "18",
+    "object_repr": "Payment order: c05296c6-276f-455a-bfe0-e2135ce34a3c - 105.00 rub.",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "roh4ml0dfcxyhq4n1mj1p9bzwe6h2i51",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAUBf-FtSFQ2l5w6d5vIPcBUjU0Ke3K-O_apAvdnpk5LxVxW0vcWlriJOqsrFWn35GQH6nuRO5Yb7Pmua7LRHpX9EGbvs6SnpfD_Tso2Mq39o6yQ-6T63wC249sgvjOWxipDz6YzDIOZCAPDGyIgFAShDCItw6den8AAc84Fw:1wNGBu:pbGDR3q3LnCAJ0jJO5UDjwOgp9I9UwBsbVvZ2LNxBZM",
+    "expire_date": "2026-05-27T20:28:26.915Z"
+  }
+},
+{
+  "model": "main.aboutcompany",
+  "pk": 1,
+  "fields": {
+    "name": "Room Shining",
+    "logo": "about/logo.jpeg",
+    "video": "",
+    "description": "Room Shining is a professional cleaning company based in Minsk, providing top-quality cleaning services for residential and commercial properties. We specialize in apartment and house cleaning, window washing, dry cleaning of furniture and carpets, post-renovation cleaning, and disinfection. Our team of trained specialists uses modern eco-friendly products and professional equipment to make every room shine. Over 5,000 completed orders and hundreds of satisfied clients trust us with their cleanliness.",
+    "history": "2018 — Company founded, first 3 employees\r\n2019 — Expanded to window washing and dry cleaning\r\n2020 — Second office opened, 15 specialists\r\n2021 — Post-renovation cleaning launched\r\n2022 — Switched to eco-friendly products\r\n2023 — 5,000 completed orders\r\n2024 — Disinfection services added\r\n2025 — 30+ employees, citywide coverage",
+    "requisites": "Company name: Room Shining LLC\r\nRegistration Number: 123456789\r\nTax ID: 9876543210\r\nLegal address: 15 Lenina Street, Office 302, Minsk, Belarus\r\nBank account: BY00 ABCD 1234 5678 9000 0000 0000",
+    "email": "info@roomshining.by",
+    "phone": "+375 (29) 111-22-33"
+  }
+},
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$WT8md4bES5ry9oWLV4s25S$sebraLLK1hsjUBggXSVJKUwTwVRyUJgW4dN0ic7w2+I=",
+    "last_login": "2026-05-13T16:51:35.909Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-02T17:05:51Z",
+    "middle_name": "",
+    "phone_number": "",
+    "date_of_birth": null,
+    "user_type": "admin",
+    "client_type": "individual",
+    "company_name": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$u8Md5jL86SDREEzuYmUrfX$XPcNi8aZMbYt2ytpIeBgKucqAP0mKTWUGnWdiVIUSUw=",
+    "last_login": "2026-05-11T13:59:54Z",
+    "is_superuser": false,
+    "username": "ivanov",
+    "first_name": "Ivan",
+    "last_name": "Ivanov",
+    "email": "ivanov@cleaning.by",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-05T10:51:46Z",
+    "middle_name": "Ivanovich",
+    "phone_number": "+375 (29) 123-45-67",
+    "date_of_birth": "1990-11-20",
+    "user_type": "employee",
+    "client_type": "individual",
+    "company_name": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$WxGwMOoKzQdld0wX0zBW5W$Duiu3Q7v7jN83reDrzcj6RPWvx5CSsWQiP289d7pEJM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "simple_user",
+    "first_name": "Oleg",
+    "last_name": "Grigoryev",
+    "email": "grigoryev@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-05T11:45:22Z",
+    "middle_name": "Alexandrovich",
+    "phone_number": "+375299003412",
+    "date_of_birth": "1999-08-13",
+    "user_type": "client",
+    "client_type": "individual",
+    "company_name": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$NuNJNtzqVgpwjzt34KH8j8$9s0EPlTdP6tSZsHJAYhX1nnDspZqoJA5WiF9HJohEKU=",
+    "last_login": "2026-05-11T07:32:37.989Z",
+    "is_superuser": false,
+    "username": "popova_olga",
+    "first_name": "Olga",
+    "last_name": "Popova",
+    "email": "popovaolga@cleaning.by",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-09T15:26:11Z",
+    "middle_name": "Victorovna",
+    "phone_number": "+375 (29) 432-89-07",
+    "date_of_birth": "1986-09-11",
+    "user_type": "employee",
+    "client_type": "individual",
+    "company_name": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$5pUomzJ1nOSyg6A0hCaimN$abk7dzIFD5twx6eloVgvESQzmFttusvVUOQdDHUspPA=",
+    "last_login": "2026-05-13T13:22:24.311Z",
+    "is_superuser": false,
+    "username": "boss33",
+    "first_name": "Vitaliy",
+    "last_name": "Fedorov",
+    "email": "fed@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-10T10:13:42Z",
+    "middle_name": "Sergeevich",
+    "phone_number": "+375 (29) 888-87-09",
+    "date_of_birth": "2000-12-07",
+    "user_type": "client",
+    "client_type": "individual",
+    "company_name": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$xDcndmGIsIEIlYrvjbUcWV$cxXi70/H2OuTFBICs05lxVS77zwflhtvoLy0wm0TnbI=",
+    "last_login": "2026-05-10T14:31:03.569Z",
+    "is_superuser": false,
+    "username": "happy13",
+    "first_name": "Maria",
+    "last_name": "Lemon",
+    "email": "maria@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-10T14:30:37.129Z",
+    "middle_name": "Pepper",
+    "phone_number": "+375 (29) 432-34-23",
+    "date_of_birth": "1999-03-14",
+    "user_type": "client",
+    "client_type": "",
+    "company_name": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$hCItdXhGEZIoilTdiJE0IM$zMpwRpUufeCRi7Tr+BVDWAsBvrnx9BTrXFoB9RQY0Po=",
+    "last_login": "2026-05-13T20:28:26.909Z",
+    "is_superuser": false,
+    "username": "evelinapop",
+    "first_name": "evelina",
+    "last_name": "morozova",
+    "email": "evelina@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-10T15:09:10Z",
+    "middle_name": "sergeevna",
+    "phone_number": "+375 (29) 888-00-99",
+    "date_of_birth": "2006-09-27",
+    "user_type": "client",
+    "client_type": "individual",
+    "company_name": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 14,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$8QPNole3X6Flryg6mW2X2h$WoxTW7WQRKhJd7zb9uptkgdDVA078lZA8o7/cKrdWO4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ko",
+    "first_name": "Ko",
+    "last_name": "ko",
+    "email": "koko@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-12T23:01:26.909Z",
+    "middle_name": "koko",
+    "phone_number": "+375 (29) 123-45-67",
+    "date_of_birth": "1987-02-23",
+    "user_type": "employee",
+    "client_type": "individual",
+    "company_name": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.specialization",
+  "pk": 1,
+  "fields": {
+    "name": "Window cleaning"
+  }
+},
+{
+  "model": "users.specialization",
+  "pk": 2,
+  "fields": {
+    "name": "Cleaning of premises"
+  }
+},
+{
+  "model": "users.employeeprofile",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "hire_date": "2026-05-05",
+    "description": "Apartment and office cleaning specialist",
+    "photo": "employee_photos/ivanov.jpeg",
+    "specializations": [
+      1,
+      2
+    ]
+  }
+},
+{
+  "model": "users.employeeprofile",
+  "pk": 2,
+  "fields": {
+    "user": 4,
+    "hire_date": "2026-05-09",
+    "description": "Professional window cleaning specialist with 3 years of experience. Expert in cleaning windows of any size and height, including balcony blocks, showcases, and large panoramic windows. Works with professional tools and eco-friendly solutions. Guarantees streak-free shine and spotless results. Detail-oriented, punctual, and trusted by over 300 clients.",
+    "photo": "employee_photos/popova.jpg",
+    "specializations": [
+      1
+    ]
+  }
+},
+{
+  "model": "users.employeeprofile",
+  "pk": 3,
+  "fields": {
+    "user": 14,
+    "hire_date": "2026-05-13",
+    "description": "good cleaner",
+    "photo": "",
+    "specializations": [
+      2
+    ]
+  }
+},
+{
+  "model": "services.category",
+  "pk": 1,
+  "fields": {
+    "name": "Window cleaning"
+  }
+},
+{
+  "model": "services.category",
+  "pk": 2,
+  "fields": {
+    "name": "Cleaning of premises"
+  }
+},
+{
+  "model": "services.category",
+  "pk": 4,
+  "fields": {
+    "name": "Eco-Friendly Cleaning"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "Washing of 1 window(standard)",
+    "description": "on both sides",
+    "price": "15.00"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "Washing the balcony unit",
+    "description": "window + balcony door",
+    "price": "25.00"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "name": "Washing the mosquito net",
+    "description": "per piece",
+    "price": "5.00"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 4,
+  "fields": {
+    "category": 2,
+    "name": "Cleaning of a 1-room apartment",
+    "description": "Complete cleaning of a 1-room apartment: dust removal, wet cleaning, bathroom and toilet. All products included. Time: 2-3 hours.",
+    "price": "50.00"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 5,
+  "fields": {
+    "category": 2,
+    "name": "Cleaning of a 2-room apartment",
+    "description": "Complete cleaning of a 2-room apartment: dust removal, wet cleaning, bathroom and toilet, mirror polishing, garbage removal. All products included. Time: 3–4 hours.",
+    "price": "80.00"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 10,
+  "fields": {
+    "category": 4,
+    "name": "Eco-Friendly Apartment Cleaning",
+    "description": "Complete cleaning using only eco-friendly, non-toxic products safe for children and pets.",
+    "price": "55.00"
+  }
+},
+{
+  "model": "services.service",
+  "pk": 11,
+  "fields": {
+    "category": 4,
+    "name": "Green Office Sanitization",
+    "description": "Sanitization of office spaces with eco-friendly disinfectants, leaving no harmful residues.",
+    "price": "45.00"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 12,
+  "fields": {
+    "code": "2cb2f087-b23b-4401-9b29-b77a9d1cc243",
+    "client": 11,
+    "employee": 2,
+    "address": "Titova, 12",
+    "work_date": "2026-05-14",
+    "created_at": "2026-05-11T09:50:00.035Z",
+    "updated_at": "2026-05-12T21:33:26.080Z",
+    "status": "completed"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 21,
+  "fields": {
+    "code": "e2a39034-7fbf-4769-b73f-4780998a9afb",
+    "client": 11,
+    "employee": 2,
+    "address": "kiki",
+    "work_date": "2026-05-28",
+    "created_at": "2026-05-11T13:55:58.393Z",
+    "updated_at": "2026-05-12T19:53:16.244Z",
+    "status": "processing"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 22,
+  "fields": {
+    "code": "5556ac86-b5e5-45f6-91f9-1c7f18a4044b",
+    "client": 6,
+    "employee": 4,
+    "address": "dorm 24",
+    "work_date": "2026-05-30",
+    "created_at": "2026-05-11T14:01:55.083Z",
+    "updated_at": "2026-05-12T19:53:16.244Z",
+    "status": "processing"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 23,
+  "fields": {
+    "code": "fc42bc3b-bcac-4295-83ba-ad308ba2493f",
+    "client": 11,
+    "employee": 4,
+    "address": "qweqwe",
+    "work_date": "2026-05-21",
+    "created_at": "2026-05-11T17:12:14.291Z",
+    "updated_at": "2026-05-12T19:53:16.244Z",
+    "status": "processing"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 30,
+  "fields": {
+    "code": "06d4344c-d981-4870-a2f9-a50b544ee518",
+    "client": 6,
+    "employee": 2,
+    "address": "dfg",
+    "work_date": "2026-05-26",
+    "created_at": "2026-05-12T06:50:44.885Z",
+    "updated_at": "2026-05-12T19:53:16.244Z",
+    "status": "processing"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 31,
+  "fields": {
+    "code": "84287f23-dadc-4841-b68c-4e1224a494ae",
+    "client": 6,
+    "employee": 4,
+    "address": "good place",
+    "work_date": "2026-05-21",
+    "created_at": "2026-05-12T09:51:38.076Z",
+    "updated_at": "2026-05-12T19:53:16.244Z",
+    "status": "processing"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 36,
+  "fields": {
+    "code": "f1e090d9-56ca-4856-abff-d6d787490fed",
+    "client": 11,
+    "employee": 2,
+    "address": "dom",
+    "work_date": "2026-05-15",
+    "created_at": "2026-05-12T21:31:02.429Z",
+    "updated_at": "2026-05-12T21:32:20.259Z",
+    "status": "processing"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 37,
+  "fields": {
+    "code": "bdc2050b-4584-4b21-9add-b0195aac50c6",
+    "client": 11,
+    "employee": 14,
+    "address": "nini",
+    "work_date": "2026-05-27",
+    "created_at": "2026-05-13T16:51:12.223Z",
+    "updated_at": "2026-05-13T19:57:48.068Z",
+    "status": "processing"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 23,
+  "fields": {
+    "order": 12,
+    "service": 1,
+    "quantity": 1,
+    "price": "15.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 24,
+  "fields": {
+    "order": 12,
+    "service": 2,
+    "quantity": 1,
+    "price": "25.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 25,
+  "fields": {
+    "order": 12,
+    "service": 3,
+    "quantity": 2,
+    "price": "5.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 26,
+  "fields": {
+    "order": 12,
+    "service": 5,
+    "quantity": 1,
+    "price": "80.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 35,
+  "fields": {
+    "order": 21,
+    "service": 1,
+    "quantity": 2,
+    "price": "15.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 36,
+  "fields": {
+    "order": 22,
+    "service": 1,
+    "quantity": 3,
+    "price": "15.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 37,
+  "fields": {
+    "order": 22,
+    "service": 2,
+    "quantity": 2,
+    "price": "25.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 38,
+  "fields": {
+    "order": 22,
+    "service": 3,
+    "quantity": 2,
+    "price": "5.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 39,
+  "fields": {
+    "order": 23,
+    "service": 3,
+    "quantity": 2,
+    "price": "5.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 48,
+  "fields": {
+    "order": 30,
+    "service": 2,
+    "quantity": 2,
+    "price": "25.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 49,
+  "fields": {
+    "order": 31,
+    "service": 3,
+    "quantity": 2,
+    "price": "5.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 60,
+  "fields": {
+    "order": 36,
+    "service": 1,
+    "quantity": 3,
+    "price": "15.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 61,
+  "fields": {
+    "order": 36,
+    "service": 4,
+    "quantity": 1,
+    "price": "50.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 62,
+  "fields": {
+    "order": 37,
+    "service": 4,
+    "quantity": 2,
+    "price": "50.00"
+  }
+},
+{
+  "model": "payments.payment",
+  "pk": 4,
+  "fields": {
+    "order": 12,
+    "amount": "130.00",
+    "status": "paid",
+    "payment_method": "cash",
+    "paid_at": "2026-05-11"
+  }
+},
+{
+  "model": "payments.payment",
+  "pk": 6,
+  "fields": {
+    "order": 21,
+    "amount": "27.00",
+    "status": "paid",
+    "payment_method": "card",
+    "paid_at": "2026-05-11"
+  }
+},
+{
+  "model": "payments.payment",
+  "pk": 8,
+  "fields": {
+    "order": 23,
+    "amount": "10.00",
+    "status": "paid",
+    "payment_method": "cash",
+    "paid_at": "2026-05-11"
+  }
+},
+{
+  "model": "payments.payment",
+  "pk": 15,
+  "fields": {
+    "order": 30,
+    "amount": "50.00",
+    "status": "paid",
+    "payment_method": "cash",
+    "paid_at": "2026-05-12"
+  }
+},
+{
+  "model": "payments.payment",
+  "pk": 16,
+  "fields": {
+    "order": 31,
+    "amount": "10.00",
+    "status": "paid",
+    "payment_method": "card",
+    "paid_at": "2026-05-12"
+  }
+},
+{
+  "model": "payments.payment",
+  "pk": 21,
+  "fields": {
+    "order": 36,
+    "amount": "95.00",
+    "status": "paid",
+    "payment_method": "cash",
+    "paid_at": "2026-05-12"
+  }
+},
+{
+  "model": "payments.payment",
+  "pk": 22,
+  "fields": {
+    "order": 37,
+    "amount": "100.00",
+    "status": "paid",
+    "payment_method": "cash",
+    "paid_at": "2026-05-13"
+  }
+},
+{
+  "model": "payments.promocode",
+  "pk": 1,
+  "fields": {
+    "code": "CLEAN10",
+    "discount_percentage": 10,
+    "valid_from": "2026-05-09",
+    "valid_until": "2026-12-31",
+    "services": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+},
+{
+  "model": "payments.promocode",
+  "pk": 2,
+  "fields": {
+    "code": "WINDOW15",
+    "discount_percentage": 15,
+    "valid_from": null,
+    "valid_until": "2026-06-30",
+    "services": [
+      1,
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "news.article",
+  "pk": 1,
+  "fields": {
+    "title": "We Have Updated Our Cleaning Products",
+    "short_description": "We now use eco-friendly and hypoallergenic cleaning products that are safe for children and pets.",
+    "content": "Our company has switched to a new line of eco-friendly cleaning products from a leading European manufacturer. All products are biodegradable, fragrance-free, and safe for families with small children and pets. This upgrade allows us to provide even higher quality cleaning services without harming the environment. Book a cleaning and experience the difference!",
+    "created_at": "2026-05-05T11:39:06.017Z",
+    "image": "news_images/eco_friendly.jpeg",
+    "is_published": true
+  }
+},
+{
+  "model": "news.article",
+  "pk": 2,
+  "fields": {
+    "title": "15% Discount on Post-Renovation Cleaning",
+    "short_description": "Get a 15% discount on post-renovation cleaning until the end of the month.",
+    "content": "Finished your renovation? We will help you get rid of construction dust and debris quickly and professionally. Until the end of the month, all post-renovation cleaning services are available with a 15% discount. Use promo code RENOV15 when booking online or mention it when calling. Offer valid for apartments and cottages.",
+    "created_at": "2026-05-05T11:39:59.521Z",
+    "image": "",
+    "is_published": true
+  }
+},
+{
+  "model": "news.article",
+  "pk": 3,
+  "fields": {
+    "title": "We Now Work on Weekends",
+    "short_description": "We have expanded our schedule — now you can book cleaning on Saturdays and Sundays.",
+    "content": "We know that weekdays are often busy, and finding time for cleaning can be difficult. Starting this month, our teams work seven days a week, including weekends. You can now schedule cleaning at a convenient time on Saturday or Sunday. Book online or call us to choose your preferred date.",
+    "created_at": "2026-05-05T11:40:26.514Z",
+    "image": "",
+    "is_published": true
+  }
+},
+{
+  "model": "faq.faq",
+  "pk": 1,
+  "fields": {
+    "question": "What cleaning products do you use?",
+    "answer": "We use professional eco-friendly and hypoallergenic cleaning products that are safe for children and pets. All products are certified and biodegradable.",
+    "date": "2026-05-05"
+  }
+},
+{
+  "model": "faq.faq",
+  "pk": 2,
+  "fields": {
+    "question": "Do I need to be present during the cleaning?",
+    "answer": "It is not necessary. Many clients entrust us with keys. All our employees are verified, trained, and the company bears full responsibility for the safety of your property.",
+    "date": "2026-05-05"
+  }
+},
+{
+  "model": "vacancies.vacancy",
+  "pk": 1,
+  "fields": {
+    "name": "Cleaner",
+    "description": "We are looking for a responsible cleaner to join our team. Duties include wet and dry cleaning of apartments and offices, dust removal, floor washing, bathroom and toilet cleaning. Work schedule: Monday to Friday, 9:00–18:00. We provide all cleaning products and equipment. No experience required — we will train you. Competitive salary, friendly team, official employment.",
+    "is_active": true,
+    "created_at": "2026-05-09T16:03:37.950Z"
+  }
+},
+{
+  "model": "vacancies.vacancy",
+  "pk": 2,
+  "fields": {
+    "name": "Window Cleaning Specialist",
+    "description": "We need a window cleaning specialist for residential and commercial properties. Duties include window and balcony block washing, frame cleaning, glass polishing. Work at various locations around the city. Schedule: flexible, part-time or full-time. Equipment and cleaning products provided. Experience preferred but not mandatory. Salary based on completed orders.",
+    "is_active": true,
+    "created_at": "2026-05-09T16:04:24.833Z"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 1,
+  "fields": {
+    "user": 3,
+    "score": 5,
+    "text": "Ordered apartment cleaning. The team arrived on time, everything was done perfectly. The apartment literally shines! Special thanks for the eco-friendly products — no chemical smell at all. Will definitely order again.",
+    "created_at": "2026-05-09T16:31:06.135Z"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 2,
+  "fields": {
+    "user": 11,
+    "score": 5,
+    "text": "bebe",
+    "created_at": "2026-05-10T19:58:15.533Z"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 4,
+  "fields": {
+    "user": 11,
+    "score": 4,
+    "text": "awesome service! the best company in the whole world!!!",
+    "created_at": "2026-05-10T19:59:02.283Z"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 6,
+  "fields": {
+    "user": 11,
+    "score": 1,
+    "text": "bubu",
+    "created_at": "2026-05-10T20:13:15.056Z"
+  }
+},
+{
+  "model": "reviews.review",
+  "pk": 7,
+  "fields": {
+    "user": 6,
+    "score": 5,
+    "text": "amazing",
+    "created_at": "2026-05-11T18:32:55.271Z"
+  }
+}
+]
