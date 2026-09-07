@@ -2,10 +2,21 @@
 
 {% block title %}<title>Add Review</title>{% endblock %}
 {% block content %}
-    <h2>Add Review</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Add</button>
-    </form>
+    <section class="review-form-section">
+        <h1>Add Review</h1>
+
+        <form method="post" class="review-form">
+            {% csrf_token %}
+
+            <fieldset>
+                <legend>Your Feedback</legend>
+                {{ form.as_p }}
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit">Submit Review</button>
+                <a href="{% url 'index' %}" class="button-cancel">Cancel</a>
+            </div>
+        </form>
+    </section>
 {% endblock %}

@@ -1,14 +1,42 @@
 {% extends 'base_generic.html' %}
 
 {% block title %}<title>Reviews</title>{% endblock%}
-{% block content %}
-    <h2>Reviews</h2>
-    {% for review in reviews %}
-        <h4>Username: {{review.user.username}}</h4>
-        <p>Score: {{review.score}}</p>
-        <p>{{review.text}}</p>
-        <p>{{review.created_at}}</p>
-    {% endfor %}
+{% block meta_description %}Read authentic customer feedback and ratings about Room Shining cleaning services or share your own experience with our team.{% endblock %}
 
-    <button><a href="{% url 'create_review' %}">Add review</a></button>
+{% block content %}
+    <section class="reviews-section">
+        <header class="section-header">
+            <h1>Customer Reviews</h1>
+            <div class="actions">
+                <a href="{% url 'create_review' %}" class="button">Add review</a>
+            </div>
+        </header>
+
+        <div class="reviews-list">
+            {% for review in reviews %}
+                <article class="review-card">
+                    <header class="review-header">
+                        <h2>{{ review.user.get_full_name|default:review.user.username }}</h2>
+                        <p class="review-meta">
+                            Published on: 
+                            <time datetime="{{ review.created_at|date:'Y-m-d' }}">
+                                {{ review.created_at }}
+                            </time>
+                        </p>
+                    </header>
+
+                    <div class="review-rating">
+                        <p>Score: <strong>{{ review.score }}/5</strong></p>
+                    </div>
+
+                    <div class="review-body">
+                        <p>{{ review.text }}</p>
+                    </div>
+                </article>
+                <hr>
+            {% empty %}
+                <p>No reviews yet. Be the first to share your experience!</p>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}

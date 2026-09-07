@@ -1,11 +1,35 @@
 {% extends 'base_generic.html' %}
 
 {% block title %}<title>Vacancies</title>{% endblock %}
+{% block meta_description %}Join the Room Shining team! Explore current job openings for cleaning specialists, equipment operators, and administrative staff in Minsk.{% endblock %}
+
 {% block content %}
-    <h2>Available vacancies:</h2>
-    {% for vacancy in vacancies %}
-        <h4>{{vacancy.name}}</h4>
-        <p>Description: {{vacancy.description}}</p>
-        <p>Created: {{vacancy.created_at}}</p>
-    {% endfor %}
+    <h1>Available Vacancies</h1>
+
+        <div class="vacancies-list">
+            {% for vacancy in vacancies %}
+                <article class="vacancy-card">
+                    <header>
+                        <h2>{{ vacancy.name }}</h2>
+                    </header>
+
+                    <div class="vacancy-body">
+                        <p><strong>Description:</strong> {{ vacancy.description }}</p>
+                    </div>
+
+                    <footer>
+                        <p class="vacancy-meta">
+                            Posted: 
+                            <time datetime="{{ vacancy.created_at|date:'Y-m-d' }}">
+                                {{ vacancy.created_at }}
+                            </time>
+                        </p>
+                    </footer>
+                </article>
+                <hr>
+            {% empty %}
+                <p>No open vacancies at the moment. Please check back later!</p>
+            {% endfor %}
+        </div>
+    
 {% endblock %}

@@ -2,18 +2,33 @@
 
 {% block title %}<title>Create Order</title>{% endblock%}
 {% block content %}
-    <h2>Create Order</h2>
-    <form method="post">
-        {% csrf_token %}
-        {% if user.is_superuser %}
-            <select name="client">
-                {% for client in clients %}
-                    <option value="{{ client.id }}">{{ client.get_full_name }}</option>
-                {% endfor %}
-            </select>
-        {% endif %}
-        {{ form.as_p }}
-        <button type="submit">Order</button>
-        <button type="button"><a href="{% url 'profile' %}">Cancel</a></button>
-    </form>
+    <section class="order-form-section">
+        <h1>Create Order</h1>
+
+        <form method="post" class="order-form">
+            {% csrf_token %}
+
+            <fieldset>
+                <legend>Order Details</legend>
+
+                {% if user.is_superuser %}
+                    <p>
+                        <label for="client-select">Select Client:</label>
+                        <select name="client" id="client-select">
+                            {% for client in clients %}
+                                <option value="{{ client.id }}">{{ client.get_full_name|default:client.username }}</option>
+                            {% endfor %}
+                        </select>
+                    </p>
+                {% endif %}
+
+                {{ form.as_p }}
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit">Place Order</button>
+                <a href="{% url 'profile' %}" class="button-cancel">Cancel</a>
+            </div>
+        </form>
+    </section>
 {% endblock %}

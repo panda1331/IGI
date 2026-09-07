@@ -1,0 +1,57 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}<title>Shopping Cart</title>{% endblock %}
+
+{% block content %}
+<h1>Shopping Cart</h1>
+
+{% if cart_items %}
+    <table style="border: 1px solid black;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid black;">Service</th>
+                <th style="border: 1px solid black;">Price per Unit</th>
+                <th style="border: 1px solid black;">Quantity</th>
+                <th style="border: 1px solid black;">Total</th>
+                <th style="border: 1px solid black;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+                <tr>
+                    <td style="border: 1px solid black;">
+                        <a href="{% url 'service_detail' item.service.id %}">
+                            <strong>{{ item.service.name }}</strong>
+                        </a>
+                    </td>
+                    <td style="border: 1px solid black;">{{ item.service.price }} BYN</td>
+                    <td style="border: 1px solid black;">
+                        <a href="{% url 'update_cart_quantity' item.service.id 'decrease' %}">-</a>
+                        <span>{{ item.quantity }}</span>
+                        <a href="{% url 'update_cart_quantity' item.service.id 'increase' %}">+</a>
+                    </td>
+                    <td style="border: 1px solid black;">{{ item.total_price }} BYN</td>
+                    <td style="border: 1px solid black;">
+                        <a href="{% url 'remove_from_cart' item.service.id %}" onclick="return confirm('Remove from cart?');">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <h2>Total Amount: <span>{{ total_price }} BYN</span></h2>
+    <hr>
+
+    <div style="margin-top: 20px;">
+        <a href="{% url 'create_order' %}">
+            Proceed to Checkout
+        </a>
+    </div>
+
+{% else %}
+    <p>Your cart is empty.</p>
+    <a href="{% url 'catalog' %}">Return to Services Catalog</a>
+{% endif %}
+
+{% endblock %}

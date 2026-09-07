@@ -96,3 +96,6 @@ def employee_clients(request):
         client_ids = Order.objects.filter(employee_id=employee_id).values_list('client', flat=True).distinct()
         clients = User.objects.filter(id__in=client_ids)
     return render(request, 'stats/employee_clients.html', {'employees': employees, 'clients': clients})
+
+def examples_view(request):
+    return render(request, 'stats/examples.html')

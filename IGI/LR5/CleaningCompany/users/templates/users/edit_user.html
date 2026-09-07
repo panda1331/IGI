@@ -2,7 +2,7 @@
 
 {% block title %}<title>Edit User</title>{% endblock %}
 {% block content %}
-    <h2>Edit User</h2>
+    <h1>Edit User</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
@@ -29,7 +29,7 @@
         {% endif %}
 
         <button type="submit">Save</button>
-        <button><a href="{% url 'manage_users' %}">Cancel</a></button>
+        <a href="{% url 'manage_users' %}">Cancel</a>
     </form>
 
 {% endblock %}

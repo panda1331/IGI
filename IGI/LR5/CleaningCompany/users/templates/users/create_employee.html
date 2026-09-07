@@ -2,35 +2,35 @@
 
 {% block title %}<title>Create employee</title>{% endblock %}
 {% block content %}
-    <h2>Create employee</h2>
+    <h1>Create employee</h1>
     <form method="post">
         {% csrf_token %}
-        <label>Username:</label>
-        <input type="text" name="username" required><br><br>
-        <label>Password:</label>
-        <input type="password" name="password" required><br><br>
-        <label>First name:</label>
-        <input type="text" name="first_name"><br><br>
-        <label>Last name:</label>
-        <input type="text" name="last_name"><br><br>
-        <label>Middle name:</label>
-        <input type="text" name="middle_name"><br><br>
-        <label>Email:</label>
-        <input type="email" name="email"><br><br>
-        <label>Phone:</label>
-        <input type="text" name="phone_number"><br><br>
-        <label>Date of birth:</label>
-        <input type="date" name="date_of_birth"><br><br>
-        <label>Hire date:</label>
-        <input type="date" name="hire_date"><br><br>
-        <label>Description:</label>
-        <textarea name="description"></textarea><br><br>
-        <label>Specializations:</label>
-        <select name="specializations" multiple>
-            {% for spec in specializations %}
-                <option value="{{ spec.id }}">{{ spec.name }}</option>
-            {% endfor %}
-        </select><br><br>
+        <fieldset>
+            <legend>Account Credentials</legend>
+            <label>Username: <input type="text" name="username" required></label><br><br>
+            <label>Password: <input type="password" name="password" required></label>
+        </fieldset>
+        <br>
+
+        <fieldset>
+            <legend>Personal & Work Information</legend>
+            <label>First name: <input type="text" name="first_name"></label><br><br>
+            <label>Last name: <input type="text" name="last_name"></label><br><br>
+            <label>Middle name: <input type="text" name="middle_name"></label><br><br>
+            <label>Email: <input type="email" name="email"></label><br><br>
+            <label>Phone: <input type="text" name="phone_number"></label><br><br>
+            <label>Date of birth: <input type="date" name="date_of_birth"></label><br><br>
+            <label>Hire date: <input type="date" name="hire_date"></label><br><br>
+            <label>Description: <textarea name="description"></textarea></label><br><br>
+            <label>Specializations: 
+                <select name="specializations" multiple>
+                    {% for spec in specializations %}
+                        <option value="{{ spec.id }}">{{ spec.name }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+        </fieldset>
+        <br>
         <button type="submit">Create</button>
         <a href="{% url 'manage_users' %}">Cancel</a>
     </form>
