@@ -32,5 +32,13 @@ urlpatterns = [
     path('orders/', include('orders.urls')),
     path('statistics/', include('stats.urls')),
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# if settings.DEBUG:
+#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+from django.views.static import serve
+from django.urls import re_path
+
+# Всегда разрешаем отдачу media-файлов (даже при DEBUG = False)
+urlpatterns += [
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+]
