@@ -1,4 +1,4 @@
-from django.urls import re_path
+from django.urls import re_path, path
 from . import views
 
 urlpatterns = [
@@ -11,4 +11,13 @@ urlpatterns = [
     re_path(r'^create_category/$', views.create_category, name='create_category'),
     re_path(r'^edit_category/(?P<pk>\d+)/$', views.edit_category, name='edit_category'),
     re_path(r'^delete_category/(?P<pk>\d+)/$', views.delete_category, name='delete_category'),
+
+    re_path(r'^service/(?P<pk>\d+)/add_to_cart/$', views.add_to_cart, name='add_to_cart'),
+    re_path(r'^cart/$', views.cart_detail, name='cart_detail'),
+    re_path(r'^cart/remove/(?P<pk>\d+)/$', views.remove_from_cart, name='remove_from_cart'),
+    path(
+        'cart/update/<int:pk>/<str:action>/',
+        views.update_cart_quantity,
+        name='update_cart_quantity',
+    ),
 ]

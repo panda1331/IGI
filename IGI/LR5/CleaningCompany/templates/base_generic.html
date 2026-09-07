@@ -2,47 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Evelina Marozava">
+    <meta name="keywords" content="Cleaning, wash, window, room, flat, eco">
+
+    <meta name="description" content="{% block meta_description %}Professional cleaning services in Minsk by Room Shining LLC.{% endblock %}">
+
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'apple-touch-icon.png' %}" type="image/png">
+
     {% block title %}{% endblock %}
 </head>
 <body>
-    <nav>
-        <a href="{% url 'index' %}" title="Home">Home</a> |
-        <a href="{% url 'about' %}" title="About Us">About Us</a> |
-        <a href="{% url 'article_list' %}" title="News">News</a> |
-        <a href="{% url 'faq' %}" title="FAQ">FAQ</a> |
-        <a href="{% url 'contacts' %}" title="Contacts">Contacts</a> |
-        <a href="{% url 'privacy-policy' %}" title="Privacy Policy">Privacy Policy</a> |
-        <a href="{% url 'vacancies' %}" title="Vacancies">Vacancies</a> |
-        <a href="{% url 'reviews' %}" title="Reviews">Reviews</a> |
-        <a href="{% url 'promo_codes' %}" title="Promo codes">Promo Codes</a> |
-        <a href="{% url 'catalog' %}" title="Catalog">Catalog</a> |
+    <header>
+        <nav>
+            <a href="{% url 'index' %}" title="Home">Home</a> |
+            <a href="{% url 'about' %}" title="About Us">About Us</a> |
+            <a href="{% url 'article_list' %}" title="News">News</a> |
+            <a href="{% url 'faq' %}" title="FAQ">FAQ</a> |
+            <a href="{% url 'contacts' %}" title="Contacts">Contacts</a> |
+            <a href="{% url 'privacy-policy' %}" title="Privacy Policy">Privacy Policy</a> |
+            <a href="{% url 'vacancies' %}" title="Vacancies">Vacancies</a> |
+            <a href="{% url 'reviews' %}" title="Reviews">Reviews</a> |
+            <a href="{% url 'promo_codes' %}" title="Promo codes">Promo Codes</a> |
+            <a href="{% url 'catalog' %}" title="Catalog">Catalog</a> |
 
-        {% if user.is_superuser %}
-            <a href="{% url 'statistics' %}" title="Statistics">Statistics</a> |
-            <a href="{% url 'manage_users' %}">Manage users</a> |
-            <a href="{% url 'show_planned_works' %}">Planned works</a> |
-            <a href="{% url 'client_cost' %}">Client costs</a> |
-            <a href="{% url 'employee_clients' %}">Employee clients</a> |
-        {% endif %}
+            {% if user.is_superuser %}
+                <a href="{% url 'statistics' %}" title="Statistics">Statistics</a> |
+                <a href="{% url 'manage_users' %}">Manage users</a> |
+                <a href="{% url 'show_planned_works' %}">Planned works</a> |
+                <a href="{% url 'client_cost' %}">Client costs</a> |
+                <a href="{% url 'employee_clients' %}">Employee clients</a> |
+                <a href="{% url 'examples' %}">Examples</a>
+            {% endif %}
 
-        {% if user.is_authenticated %}
-            <p>Welcome, {{ user.username }}!</p>
-                <a href="{% url 'profile' %}">Profile</a> |
-                    <form method="post" action="{% url 'logout' %}" style="display:inline">
-                        {% csrf_token %}
-                        <button type="submit" style="background:none;border:none;color:blue;text-decoration:underline;cursor:pointer;padding:0;font:inherit;">Logout</button>
-                    </form>
-        {% else %}
-                <a href="{% url 'login' %}">Login</a> |
-                <a href="{% url 'register' %}">Register</a> |
-        {% endif %}
-    </nav>
+            {% if user.is_authenticated %}
+                <p>Welcome, {{ user.username }}!</p>
+                    <a href="{% url 'profile' %}">Profile</a> |
+                        <form method="post" action="{% url 'logout' %}" style="display:inline">
+                            {% csrf_token %}
+                            <button type="submit" style="background:none;border:none;color:blue;text-decoration:underline;cursor:pointer;padding:0;font:inherit;">Logout</button>
+                        </form>
+            {% else %}
+                    <a href="{% url 'login' %}">Login</a> |
+                    <a href="{% url 'register' %}">Register</a> |
+            {% endif %}
+        </nav>
+    </header>
     <hr>
-    {% block content %}{% endblock %}
-
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy;2026 Room Shining LLC. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>

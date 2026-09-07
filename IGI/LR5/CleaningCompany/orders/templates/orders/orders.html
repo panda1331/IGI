@@ -3,46 +3,82 @@
 
 {% block title %}<title>Orders</title>{% endblock%}
 {% block content %}
-    <h2>Orders</h2>
-    {% if user.is_superuser %}
-        <p>All orders:</p>
-        <button type="button"><a href="{% url 'create_order' %}">Create order</a> </button>
+    <section class="orders-section">
+        <header class="section-header">
+            <h1>Orders</h1>
+            {% if user.is_superuser %}
+                <p>All System Orders</p>
+                <a href="{% url 'create_order' %}" class="button">Create order</a>
+            {% else %}
+                <p>My Orders</p>
+            {% endif %}
+        </header>
 
-    {% else %}
-        <p>My orders:</p>
-    {% endif %}
-    <hr>
-    {% for order in orders %}
-        <p>Code: {{ order.code }}</p>
-        <p>Address: {{ order.address }}</p>
-        <p>Work date: {{order.work_date}}</p>
-        <p>Status: {{order.get_status_display}}</p>
-        <p>Total price: {{order.total_price}} BYN</p>
-        <p>Created: {{ order.created_at|date:"d/m/Y H:i" }} (Moscow)</p>
-        <p>Updated: {{ order.updated_at|date:"d/m/Y H:i" }} (Moscow)</p>
-        {% timezone "UTC" %}
-            <p>Created UTC: {{ order.created_at|date:"d/m/Y H:i" }}</p>
-            <p>Updated UTC: {{ order.updated_at|date:"d/m/Y H:i" }}</p>
-        {% endtimezone %}
+        <hr>
 
-        {% if user.user_type == 'employee' %}
-            <p>Client: {{order.client.get_full_name}}</p>
-            <p></p>
-        {% elif user.user_type == 'client' %}
-            <p>Employee: {{order.employee.get_full_name}}</p>
-        {% else %}
-            <p>Client: {{order.client.get_full_name}}</p>
-            <p>Employee: {{order.employee.get_full_name}}</p>
-        {% endif %}
-        {% if user.is_superuser %}
-            <button type="button"><a href="{% url 'edit_order' order.id %}">Edit order</a> </button>
-            <form method="post" action="{% url 'delete_order' order.id %}" style="display:inline">
-                {% csrf_token %}
-                <button type="submit">Delete order</button>
-            </form>
-        {% endif %}
-    <hr>
-    {% empty %}
-        <p>No orders yet.</p>
-    {% endfor %}
+        <div class="orders-list">
+            {% for order in orders %}
+                <article class="order-card">
+                    <header>
+                        <h2>Order Code: <strong>{{ order.code }}</strong></h2>
+                    </header>
+
+                    <dl class="order-details">
+                        <dt>Address:</dt>
+                        <dd>{{ order.address }}</dd>
+
+                        <dt>Work Date:</dt>
+                        <dd><time datetime="{{ order.work_date|date:'Y-m-d' }}">{{ order.work_date }}</time></dd>
+
+                        <dt>Status:</dt>
+                        <dd><strong>{{ order.get_status_display }}</strong></dd>
+
+                        <dt>Total Price:</dt>
+                        <dd><strong>{{ order.total_price }} BYN</strong></dd>
+
+                        <dt>Created (Moscow):</dt>
+                        <dd><time datetime="{{ order.created_at|date:'Y-m-d\TH:i:s' }}">{{ order.created_at|date:"d/m/Y H:i" }}</time></dd>
+
+                        <dt>Updated (Moscow):</dt>
+                        <dd><time datetime="{{ order.updated_at|date:'Y-m-d\TH:i:s' }}">{{ order.updated_at|date:"d/m/Y H:i" }}</time></dd>
+
+                        {% timezone "UTC" %}
+                            <dt>Created (UTC):</dt>
+                            <dd><time datetime="{{ order.created_at|date:'Y-m-d\TH:i:s' }}">{{ order.created_at|date:"d/m/Y H:i" }}</time></dd>
+
+                            <dt>Updated (UTC):</dt>
+                            <dd><time datetime="{{ order.updated_at|date:'Y-m-d\TH:i:s' }}">{{ order.updated_at|date:"d/m/Y H:i" }}</time></dd>
+                        {% endtimezone %}
+
+                        {% if user.user_type == 'employee' %}
+                            <dt>Client:</dt>
+                            <dd>{{ order.client.get_full_name|default:order.client.username }}</dd>
+                        {% elif user.user_type == 'client' %}
+                            <dt>Employee:</dt>
+                            <dd>{{ order.employee.get_full_name|default:"Not assigned" }}</dd>
+                        {% else %}
+                            <dt>Client:</dt>
+                            <dd>{{ order.client.get_full_name|default:order.client.username }}</dd>
+
+                            <dt>Employee:</dt>
+                            <dd>{{ order.employee.get_full_name|default:"Not assigned" }}</dd>
+                        {% endif %}
+                    </dl>
+
+                    {% if user.is_superuser %}
+                        <footer class="order-actions">
+                            <a href="{% url 'edit_order' order.id %}" class="button-edit">Edit order</a>
+                            <form method="post" action="{% url 'delete_order' order.id %}" class="inline-form">
+                                {% csrf_token %}
+                                <button type="submit" class="button-delete">Delete order</button>
+                            </form>
+                        </footer>
+                    {% endif %}
+                </article>
+                <hr>
+            {% empty %}
+                <p>No orders found.</p>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}

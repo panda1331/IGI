@@ -2,9 +2,28 @@
 
 {% block title %}<title>Service Info</title>{% endblock %}
 {% block content %}
-    <h2>Service Info</h2>
-    <p>Name: {{ service.name }}</p>
-    <p>Category: {{ service.category.name }}</p>
-    <p>Description: {{ service.description }}</p>
-    <p>Price: {{ service.price }} BYN</p>
+    <h1>Service Info</h1>
+    <header>
+            <h2>{{ service.name }}</h2>
+        </header>
+
+        <dl>
+            <dt>Category:</dt>
+            <dd>{{ service.category.name }}</dd>
+
+            <dt>Description:</dt>
+            <dd>{{ service.description }}</dd>
+
+            <dt>Price:</dt>
+            <dd><strong>{{ service.price }} BYN</strong></dd>
+        </dl>
+    <hr>
+
+    <form action="{% url 'add_to_cart' service.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit">
+            🛒 Add to cart
+        </button>
+    </form>
+
 {% endblock %}

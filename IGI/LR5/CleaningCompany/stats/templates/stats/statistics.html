@@ -2,46 +2,86 @@
 
 {% block title %}<title>Statistics</title>{% endblock %}
 {% block content %}
-    <h2>Statistics</h2>
-    <h4>All services:</h4>
-    <ul>
-        {% for service in services %}
-            <li>{{ service.name }} ({{service.price}} BYN) - {{service.category.name}}</li>
-        {% endfor %}
-    </ul>
+    <h1>Statistics</h1>
+    
+    <section id="table-section">
+        <h2>All services:</h2>
+        <table style="border: 1px solid black;">
+            <caption>Room Shining Dynamic Service Price List</caption>
+            <thead>
+                <tr>
+                    <th id="th-category" style="border: 1px solid black;">Category</th>
+                    <th id="th-service" style="border: 1px solid black;">Service Name</th>
+                    <th id="th-price" style="border: 1px solid black;">Base Price (BYN)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for service in services %}
+                <tr>
+                    <td headers="th-category" style="border: 1px solid black;">{{ service.category|default:"General" }}</td>
+                    <td headers="th-service" style="border: 1px solid black;">{{ service.name }}</td>
+                    <td headers="th-price" style="border: 1px solid black;">{{ service.price }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" style="text-align: center;">No services available in the database.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
     <hr>
-    <h4>All clients:</h4>
-    <ul>
-        {% for client in clients %}
-            <li>{{ client.get_full_name }}</li>
-        {% endfor %}
-    </ul>
+    <section>
+        <h2>All Clients</h2>
+        <ul>
+            {% for client in clients %}
+                <li>{{ client.get_full_name }}</li>
+            {% empty %}
+                <li>No clients registered.</li>
+            {% endfor %}
+        </ul>
+    </section>
     <hr>
-    <h4>All employees:</h4>
-    <ul>
-        {% for employee in employees %}
-            <li>{{ employee.user.get_full_name }}</li>
-        {% endfor %}
-    </ul>
+    <section>
+        <h2>All Employees</h2>
+        <ul>
+            {% for employee in employees %}
+                <li>{{ employee.user.get_full_name }}</li>
+            {% empty %}
+                <li>No employees registered.</li>
+            {% endfor %}
+        </ul>
+    </section>
     <hr>
-    <h4>Total income: {{ total_income }} BYN</h4>
+    <section>
+        <h2>Financial Summary</h2>
+        <p><strong>Total Income:</strong> {{ total_income }} BYN</p>
+
+        <h3>Statistics for Payment Checks</h3>
+        <ul>
+            <li>Mean: {{ payments_mean }} BYN</li>
+            <li>Mode: {{ payments_mode }} BYN</li>
+            <li>Median: {{ payments_median }} BYN</li>
+        </ul>
+
+        <h3>Client Age Demographics</h3>
+        <ul>
+            <li>Mean Age: {{ age_mean }} years</li>
+            <li>Median Age: {{ age_median }} years</li>
+        </ul>
+
+        <h3>Service Analytics</h3>
+        <ul>
+            <li>Most Popular Service: {{ popular_service }}</li>
+            <li>Most Profitable Service: {{ profitable_service.name }}</li>
+        </ul>
+    </section>
     <hr>
-    <h4>Statistics info for payment checks:</h4>
-    <ul>
-        <li>Mean: {{ payments_mean }} BYN</li>
-        <li>Mode: {{ payments_mode }} BYN</li>
-        <li>Median: {{ payments_median }} BYN</li>
-    </ul>
-    <hr>
-    <h4>Statistics info for user:</h4>
-    <ul>
-        <li>Mean age: {{ age_mean }} years</li>
-        <li>Median for age: {{ age_median }} years</li>
-    </ul>
-    <hr>
-    <h4>Most popular service: {{ popular_service }}</h4>
-    <hr>
-    <h4>Most profitable service: {{profitable_service.name}}</h4>
-    <hr>
-    <img src="/media/{{ chart_path }}" alt="Services distribution">
+    <section>
+        <h2>Services Distribution Chart</h2>
+        <figure>
+            <img src="/media/{{ chart_path }}" alt="Services distribution chart">
+            <figcaption>Figure: Visual representation of services distribution based on paid orders.</figcaption>
+        </figure>
+    </section>
 {% endblock %}

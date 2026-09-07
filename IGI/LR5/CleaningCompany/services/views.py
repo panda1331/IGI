@@ -2,6 +2,7 @@ from django.contrib.auth.decorators import user_passes_test
 from django.http import Http404, HttpResponseNotFound
 from django.shortcuts import render, redirect
 from services.models import Service, Category
+from decimal import Decimal
 
 def catalog(request):
     all_categories = Category.objects.all()
@@ -65,6 +66,70 @@ def service_detail(request, pk):
         return HttpResponseNotFound("Service does not exist")
 
     return render(request, 'services/service_detail.html', {'service': service})
+
+def add_to_cart(request, pk):
+    cart = request.session.get('cart', {})
+    service_id = str(pk)
+    
+    # Увеличиваем количество на 1
+    cart[service_id] = cart.get(service_id, 0) + 1
+    
+    request.session['cart'] = cart
+    request.session.modified = True
+    return redirect('cart_detail')
+
+
+def cart_detail(request):
+    cart = request.session.get('cart', {})
+    cart_items = []
+    total_price = Decimal('0.00')
+
+    for service_id, quantity in cart.items():
+        try:
+            service = Service.objects.get(pk=service_id)
+            item_total = service.price * quantity
+            total_price += item_total
+            cart_items.append({
+                'service': service,
+                'quantity': quantity,
+                'total_price': item_total,
+            })
+        except Service.DoesNotExist:
+            continue
+
+    return render(request, 'services/cart.html', {
+        'cart_items': cart_items,
+        'total_price': total_price,
+    })
+
+
+def update_cart_quantity(request, pk, action):
+    cart = request.session.get('cart', {})
+    service_id = str(pk)
+
+    if service_id in cart:
+        if action == 'increase':
+            cart[service_id] += 1
+        elif action == 'decrease':
+            cart[service_id] -= 1
+            if cart[service_id] <= 0:
+                del cart[service_id]
+        request.session['cart'] = cart
+        request.session.modified = True
+
+    return redirect('cart_detail')
+
+
+def remove_from_cart(request, pk):
+    cart = request.session.get('cart', {})
+    service_id = str(pk)
+
+    if service_id in cart:
+        del cart[service_id]
+        request.session['cart'] = cart
+        request.session.modified = True
+
+    return redirect('cart_detail')
 
 @user_passes_test(lambda u: u.is_superuser)
 def create_service(request):
@@ -145,3 +210,4 @@ def delete_category(request, pk):
         return redirect('catalog')
     except Category.DoesNotExist:
         return HttpResponseNotFound("Category does not exist")
+

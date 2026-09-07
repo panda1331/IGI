@@ -1,18 +1,51 @@
 {% extends 'base_generic.html' %}
 
 {% block title %}<title>Promo codes</title>{% endblock %}
-{% block content %}
-    <h2>Promo codes</h2>
-    {% for promo_code in promo_codes %}
-        <h4>Code: {{promo_code.code}}</h4>
-        <p>Discount: {{promo_code.discount_percentage}}%</p>
-        <p>Status: {% if promo_code.is_active %}Active{% else %}Archived{% endif %}</p>
-        <p>For services:</p>
-        <ul>
-            {% for service in promo_code.services.all %}
-                <li><p>{{ service.name }}</p></li>
-            {% endfor %}
-        </ul>
+{% block meta_description %}Get special discounts, promo codes, and limited-time offers on post-renovation cleaning, window washing, and general house cleaning.{% endblock %}
 
-    {% endfor %}
+{% block content %}
+    <section class="promo-section">
+        <header class="section-header">
+            <h1>Promo Codes & Discounts</h1>
+        </header>
+
+        <div class="promo-grid">
+            {% for promo_code in promo_codes %}
+                <article class="promo-card">
+                    <header>
+                        <h2>Code: <code>{{ promo_code.code }}</code></h2>
+                    </header>
+
+                    <dl class="promo-details">
+                        <dt>Discount:</dt>
+                        <dd><strong>{{ promo_code.discount_percentage }}%</strong></dd>
+
+                        <dt>Status:</dt>
+                        <dd>
+                            {% if promo_code.is_active %}
+                                <span class="status-active">Active</span>
+                            {% else %}
+                                <span class="status-archived">Archived</span>
+                            {% endif %}
+                        </dd>
+                    </dl>
+
+                    <section class="applicable-services">
+                        <h3>Applicable Services</h3>
+                        <ul>
+                            {% for service in promo_code.services.all %}
+                                <li>{{ service.name }}</li>
+                            {% empty %}
+                                <li>Applies to all services</li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                </article>
+                <hr>
+            {% empty %}
+                <p>No active promo codes available at the moment.</p>
+            {% endfor %}
+        </div>
+    </section>
+    
 {% endblock %}

@@ -2,26 +2,57 @@
 
 {% block title %}<title>Payment</title>{% endblock %}
 {% block content %}
-    <h2>Payment</h2>
-    <p>Code: {{ payment.order.code }}</p>
-    <p>Total (with discount): {{ payment.amount }}</p>
-    <p>Status: {{ payment.status }}</p>
-    <p>Services:</p>
-    <ul>
-        {% for item in payment.order.items.all %}
-            <li>{{ item.service.name }} x {{item.quantity}} - {{ item.price }} BYN</li>
-        {% endfor %}
-    </ul>
-    {% if payment.status == 'waiting' %}
-        <form method="post" action="{% url 'pay_order' payment.order.id %}">
-            {% csrf_token %}
-            <label>Payment method:</label>
-            <select name="payment_method">
-                <option value="cash">Cash</option>
-                <option value="card">Card</option>
-                <option value="Online">Online</option>
-            </select>
-            <button type="submit">Pay</button>
-        </form>
-    {% endif %}
+    <section class="payment-section">
+        <article>
+            <header>
+                <h1>Payment Details</h1>
+            </header>
+
+            <dl>
+                <dt>Order Code:</dt>
+                <dd><strong>{{ payment.order.code }}</strong></dd>
+
+                <dt>Total (with discount):</dt>
+                <dd><strong>{{ payment.amount }} BYN</strong></dd>
+
+                <dt>Status:</dt>
+                <dd><strong>{{ payment.status }}</strong></dd>
+            </dl>
+
+            <section class="services-list">
+                <h2>Services Included</h2>
+                <ul>
+                    {% for item in payment.order.items.all %}
+                        <li>
+                            <strong>{{ item.service.name }}</strong> 
+                            &times; {{ item.quantity }} — {{ item.price }} BYN
+                        </li>
+                    {% empty %}
+                        <li>No services listed for this order.</li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            {% if payment.status == 'waiting' %}
+                <section class="payment-form-section">
+                    <h2>Choose Payment Method</h2>
+                    
+                    <form method="post" action="{% url 'pay_order' payment.order.id %}" class="payment-form">
+                        {% csrf_token %}
+                        
+                        <p>
+                            <label for="payment-method">Payment method:</label>
+                            <select name="payment_method" id="payment-method" required>
+                                <option value="cash">Cash</option>
+                                <option value="card">Card</option>
+                                <option value="online">Online</option>
+                            </select>
+                        </p>
+
+                        <button type="submit" class="button-pay">Pay Now</button>
+                    </form>
+                </section>
+            {% endif %}
+        </article>
+    </section>
 {% endblock %}

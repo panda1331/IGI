@@ -1,17 +1,78 @@
 {% extends 'base_generic.html' %}
 
 {% block title %}<title>About company</title>{% endblock%}
-{% block content %}
-    <h3>About Company {{company_info.name}}</h3>
-    {% if company_info.logo %}<img src="{{company_info.logo.url}}">{% endif %}
-    <p>{{company_info.description}}</p>
-    <p>Our history:{{company_info.history|linebreaks}}</p>
-    {% if company_info.video %}
-        <video src="{{company_info.video}}"/>
-    {% endif %}
+{% block meta_description %}Learn about Room Shining LLC, our history, professional team of 30+ specialists, values, eco-friendly approach, and company requisites in Minsk.{% endblock %}
 
-    <p>Requisites: {{company_info.requisites|linebreaks}}</p>
-    <p>Email: {{company_info.email}}</p>
-    <p>Phone: {{company_info.phone}}</p>
+{% block content %}
+    <article class="company-overview">
+        <header>
+            <h1>About Company <a href="#requisites" style="text-decoration: none;">{{company_info.name}}</a></h1>
+            {% if company_info.logo %}<img title="Company logo" src="{{company_info.logo.url}}">{% endif %}
+        </header>
+
+        <div>
+            <p>{{company_info.description}}</p>
+        </div>
+
+        <div>
+            <p>Our history:{{company_info.history|linebreaks}}</p>
+            {% if company_info.video %}
+                <video width="560" height="349" controls tabindex="1">
+                    <source src="{{ company_info.video.url }}" type="video/mp4" >
+                </video>
+            {% endif %}
+        </div>
+
+        <div id="requisites">
+            <dl>
+                <dt>Requisites:</dt>
+                <dd>{{ company_info.requisites|linebreaks }}</dd>
+
+                <dt>Email:</dt>
+                <dd><a href="mailto:{{ company_info.email }}" accesskey="e" tabindex="2">{{ company_info.email }}</a></dd>
+
+                <dt>Phone:</dt>
+                <dd><a href="tel:{{ company_info.phone }}" accesskey="t" tabindex="3">{{ company_info.phone }}</a></dd>
+            </dl>
+        </div>
+    </article>
+    
+    <section>
+        <header>
+            <h2>Certificates & Accreditation</h2>
+            <p>СЕРТИФИКАТ О СООТВЕТСТВИИ И ЧЛЕНСТВЕ В ЕДИНОМ РЕЕСТРЕ КЛИНИНГОВЫХ КОМПАНИЙ</p>
+            <p><small>ЕДИНЫЙ РЕЕСТР ПРОФЕССИОНАЛЬНЫХ КЛИНИНГОВЫХ СЛУЖБ</small></p>
+        </header>
+
+        <article class="certificate-card">
+            <h3>СВИДЕТЕЛЬСТВО</h3>
+            <p><em>о внесении сведений</em></p>
+
+            <p>
+                Дата выдачи: <time datetime="2018-05-15">15 мая 2018</time>, 
+                <span>г. Минск</span>
+            </p>
+
+            <section>
+                <h4>Общество с ограниченной ответственностью «Room Shining» (Room Shining LLC)</h4>
+                <p>(УНП/ИНН: 9876543210, Рег. номер: 123456789)</p>
+                <p>Реестровый номер: <strong>8241</strong></p>
+            </section>
+
+            <footer>
+                <p>Генеральный директор</p>
+                <p><strong>Ассоциации Профессиональной Уборки</strong></p>
+            </footer>
+        </article>
+    </section>
+    <footer>
+        <address>
+            15 Lenina Street, Office 302, Minsk, Belarus<br>
+            Тел. <a href="tel:+375291112233">+375 (29) 111-22-33</a><br>
+            e-mail: <a href="mailto:info@roomshining.by">info@roomshining.by</a>
+        </address>
+    </footer>
+    
+   
 
 {% endblock %}

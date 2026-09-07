@@ -12,12 +12,16 @@ class OrderCreateForm(forms.Form):
     employee = forms.ModelChoiceField(queryset=User.objects.filter(user_type='employee'))
 
     def __init__(self, *args, **kwargs):
+        cart = kwargs.pop('cart', {})
         super().__init__(*args, **kwargs)
+
         services = Service.objects.all()
         for service in services:
+            initial_quantity = cart.get(str(service.id), 0)
+
             self.fields[f'quantity_{service.id}'] = forms.IntegerField(
                 min_value=0,
-                initial=0,
+                initial=initial_quantity,
                 label=f'{service.name} ({service.price}) BYN',
             )
 

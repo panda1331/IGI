@@ -1,18 +1,29 @@
 {% extends 'base_generic.html' %}
 
 {% block title %}<title>News</title>{% endblock %}
+{% block meta_description %}Stay updated with the latest news, service updates, eco-cleaning tips, and announcements from Room Shining cleaning company.{% endblock %}
 
 {% block content %}
-    <h2>Company news</h2>
-    {% for article in articles %}
-        <div class="info">
-            <p>{{article.title}}</p>
-            <p>{{article.short_description}}</p>
-            {% if article.image %}
-                <img src="{{ article.image.url }}">
-            {% endif %}
-        </div>
-        <a href="{% url 'article_info' article.id %}">Read more...</a>
-        <hr>
-    {% endfor %}
+    <section>
+        <h1>Company news</h1>
+        {% for article in articles %}
+            <article class="info">
+                <header>
+                    <h2>{{article.title}}</h2>
+                    
+                </header>
+                {% if article.image %}
+                    <img src="{{ article.image.url }}" alt="{{ article.title }}">
+                {% endif %}
+            </article>
+            <div>
+                <p>{{article.short_description}}</p>
+            </div>
+            <footer>
+                <a href="{% url 'article_info' article.id %}">Read more...</a>
+            </footer>
+            <hr>
+        {% endfor %}
+    </section>
+    
 {% endblock %}
