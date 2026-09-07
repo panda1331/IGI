@@ -2,27 +2,51 @@
 
 {% block title %}<title>Edit Order</title>{% endblock%}
 {% block content %}
-    <h2>Edit Order</h2>
-    <form method="post">
-        {% csrf_token %}
-        <label for="address">Address</label>
-        <input id="address" type="text" name="address" value="{{order.address}}"><br><br>
-        <label for="work_date">Work Date</label>
-        <input id="work_date" type="date" name="work_date" value="{{order.work_date|date:'Y-m-d'}}"><br><br>
-        <select name="employee">
-            {% for employee in employees %}
-                <option value="{{employee.id}}" {% if employee.id == order.employee.id %}selected{% endif %}>{{employee.get_full_name}}</option>
-            {% endfor %}
-        </select><br><br>
-        <label for="status">Status</label>
-        <select name="status">
-            <option value="issued" {% if order.status == 'issued' %}selected{% endif %}>Issued</option>
-            <option value="processing" {% if order.status == 'processing' %}selected{% endif %}>Processing</option>
-            <option value="completed" {% if order.status == 'completed' %}selected{% endif %}>Completed</option>
-            <option value="canceled" {% if order.status == 'canceled' %}selected{% endif %}>Canceled</option>
-        </select><br><br>
+    <section class="order-edit-section">
+        <h1>Edit Order #{{ order.id }}</h1>
 
-        <button type="submit">Save</button>
-        <button type="button"><a href="{% url 'order_list' %}">Cancel</a> </button>
-    </form>
+        <form method="post" class="order-form">
+            {% csrf_token %}
+
+            <fieldset>
+                <legend>Order Details</legend>
+
+                <p>
+                    <label for="address">Address:</label>
+                    <input id="address" type="text" name="address" value="{{ order.address }}" required>
+                </p>
+
+                <p>
+                    <label for="work_date">Work Date:</label>
+                    <input id="work_date" type="date" name="work_date" value="{{ order.work_date|date:'Y-m-d' }}" required>
+                </p>
+
+                <p>
+                    <label for="employee">Assigned Employee:</label>
+                    <select id="employee" name="employee">
+                        {% for employee in employees %}
+                            <option value="{{ employee.id }}" {% if employee.id == order.employee.id %}selected{% endif %}>
+                                {{ employee.get_full_name|default:employee.username }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </p>
+
+                <p>
+                    <label for="status">Status:</label>
+                    <select id="status" name="status">
+                        <option value="issued" {% if order.status == 'issued' %}selected{% endif %}>Issued</option>
+                        <option value="processing" {% if order.status == 'processing' %}selected{% endif %}>Processing</option>
+                        <option value="completed" {% if order.status == 'completed' %}selected{% endif %}>Completed</option>
+                        <option value="canceled" {% if order.status == 'canceled' %}selected{% endif %}>Canceled</option>
+                    </select>
+                </p>
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit">Save Changes</button>
+                <a href="{% url 'order_list' %}" class="button-cancel">Cancel</a>
+            </div>
+        </form>
+    </section>
 {% endblock %}

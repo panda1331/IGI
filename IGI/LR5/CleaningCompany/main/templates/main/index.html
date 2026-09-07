@@ -1,40 +1,136 @@
 {% extends 'base_generic.html' %}
 {% load tz %}
+{% load static %}
 
 {% block title %}<title>Cleaning company</title>{% endblock %}
-{% block content %}
-    <h2 align="center">Cleaning company</h2>
+{% block meta_description %}Professional cleaning services in Minsk by Room Shining. Apartment cleaning, window washing, dry cleaning, and eco-friendly solutions for home and office.{% endblock %}
 
-    <h2>Last news:</h2>
-    <h4>{{last_article.title}}</h4>
-    <p>{{last_article.short_description}}</p>
-    <p>{{last_article.created_at}}</p>
+{% block content %}
+    <header class="page-header" itemscope itemtype="https://schema.org/HomeAndConstructionBusiness">
+        <figure>
+            <div>
+                <img src="{% static 'banners/adv1_low_res.jpeg' %}"
+                    srcset="{% static 'banners/adv1_low_res.jpeg' %} 600w,
+                            {% static 'banners/adv1_high_res.jpeg' %} 1000w,
+                            {% static 'banners/adv1_ultra_high_res.jpeg' %} 1400w"
+                    sizes="(max-width: 900px) 100vw, 900px"
+                    alt="Room Shining promotional banner"
+                    style="width: 100%; max-width: 900px; height: auto; display: block; margin: 0 auto;" />
+            </div>
+            <div>
+                <img src="{% static 'banners/adv2_low_res.jpeg' %}"
+                    srcset="{% static 'banners/adv2_low_res.jpeg' %} 600w,
+                            {% static 'banners/adv2_high_res.jpeg' %} 1000w,
+                            {% static 'banners/adv2_ultra_high_res.jpeg' %} 1400w"
+                    sizes="(max-width: 900px) 100vw, 900px"
+                    alt="Room Shining promotional banner"
+                    style="width: 100%; max-width: 900px; height: auto; display: block; margin: 0 auto;" />
+            </div>
+            <div>
+                <img src="{% static 'banners/adv3_low_res.jpeg' %}"
+                    srcset="{% static 'banners/adv3_low_res.jpeg' %} 600w,
+                            {% static 'banners/adv3_high_res.jpeg' %} 1000w,
+                            {% static 'banners/adv3_ultra_high_res.jpeg' %} 1400w"
+                    sizes="(max-width: 900px) 100vw, 900px"
+                    alt="Room Shining promotional banner"
+                    style="width: 100%; max-width: 900px; height: auto; display: block; margin: 0 auto;" />
+            </div>
+        </figure>
+        
+        <h1 itemprop="name">Cleaning Company {{ company_info.name }}</h1>
+        {% if company_info.logo %}
+            <a href="{% url 'about' %}"><img src="{{ company_info.logo.url }}" alt="{{ company_info.name }} logo" itemprop="logo"></a>
+        {% endif %}
+    </header>
+    
+    <section itemscope itemtype="https://schema.org/Service">
+
+        <h2>Our services</h2>
+        <ul itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+            {% for service in services %}
+                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                        <a href="{% url 'service_detail' service.id %}" itemprop="url">
+                            <strong itemprop="name">{{ service.name }}</strong>
+                        </a>
+                        
+                        <span itemprop="category">{{ service.category.name }}</span>
+                    </div>
+
+                    — <span itemprop="price">{{ service.price }}</span> 
+                    <span itemprop="priceCurrency" content="BYN">BYN</span>
+                </li>
+            {% empty %}
+                <li>No services available.</li>
+            {% endfor %}
+        </ul>
+    </section>
+    
+
+    <section>
+        <h2>Last news:</h2>
+        <h3>{{last_article.title}}</h3>
+        <p>{{last_article.short_description}}</p>
+        <p>{{last_article.created_at}}</p>
+    </section>
+
+    <section>
+        <h2>Our partners</h2>
+        <ul>
+            {% for partner in partners %}
+                <li>
+                    <a href="{{ partner.website_url }}" target="_blank">
+                        {% if partner.logo %}
+                            <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" width="160" style="object-fit: contain;"/>
+                        {% endif %}
+                    </a>
+                </li>
+            {% empty %}
+                <p>No partners listed yet.</p>
+            {% endfor %}
+        </ul>
+    </section>
+    <hr>
 
     {% if user.is_authenticated %}
-<hr>
-        {% if quote %}
-            <h3>Quote of the day: </h3>
-            <p>"{{ quote.text }}" — {{ quote.author }}</p>
-<hr>
-        {% endif %}
-        {% if fact %}
-            <h3>Cat fact: </h3>
-            <p>{{ fact.fact }}</p>
-        {% endif %}
+        <aside class="user-extras">
+            {% if quote %}
+                <section class="quote-widget">
+                    <h3>Quote of the Day</h3>
+                    <blockquote cite="#">
+                        <p>"{{ quote.text }}"</p>
+                        <footer>— <cite>{{ quote.author }}</cite></footer>
+                    </blockquote>
+                </section>
+                <hr>
+            {% endif %}
+
+            {% if fact %}
+                <section class="fact-widget">
+                    <h3>Cat Fact</h3>
+                    <p>{{ fact.fact }}</p>
+                </section>
+                <hr>
+            {% endif %}
+        </aside>
     {% endif %}
 <hr>
-    <p>Current date (local): {{ now_local|date:"d/m/Y" }}</p>
-    <p>Current time (local): {{ now_local|date:"H:i" }}</p>
-    {% timezone "UTC" %}
-        <p>Current time (UTC): {{ now_local|date:"H:i" }}</p>
-    {% endtimezone %}
-    <h3>Calendar — May 2026</h3>
-    <table border="1">
-        <tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
-        <tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
-        <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-        <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
-        <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
-        <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
-    </table>
+    <section>
+        <p>Current date (local): {{ now_local|date:"d/m/Y" }}</p>
+        <p>Current time (local): {{ now_local|date:"H:i" }}</p>
+        <p>Timezone: {{user_tz}}</p>
+        {% timezone "UTC" %}
+            <p>Current time (UTC): {{ now_local|date:"H:i" }}</p>
+        {% endtimezone %}
+        <h3>Calendar — May 2026</h3>
+        <table>
+            <tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
+            <tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
+            <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+            <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+            <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+            <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+        </table>
+    </section>
+    
 {% endblock %}

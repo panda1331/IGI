@@ -1,0 +1,233 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block title %}<title>Examples</title>{% endblock %}
+{% block content %}
+    <h1>Examples</h1>
+    <header>
+        <ul title="Якоря">
+            <li><a href="#global_atributes">Global atributes</a></li>
+            <li><a href="#text_examples">Text examples</a></li>
+            <li><a href="#hrefs">Hrefs</a></li>
+            <li><a href="#container_elements">Container</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#forms_control_elements">Form</a></li>
+            <li><a href="#audio">Audio</a></li>
+
+        </ul>
+    </header>
+    <section id="global_atributes">
+        <p dir="rtl">Lorem, ipsum dolor sit amet consectetur</p>
+        <q lang="en">english quote</q>
+        <p translate="no" lang="fr">Ce paragraphe est défini en français.</p>
+
+        <h2 hidden>Hidden element</h2>
+        <em>after hidden</em>
+
+        <p contenteditable="true">edit this</p>
+
+        <label for="spellcheck_input">label: </label>
+        <input accesskey="i" spellcheck="true" type="text" id="spellcheck_input">
+
+        <button onclick="alert('you clicked')">click</button>
+
+    </section>
+    <hr>
+    
+    <div id="text_examples">
+        <code >
+            int a = 5;<br>
+            a += 7;<br>
+        </code>
+        <br>    
+        <dfn title="Django">Django</dfn> is a high-level Python web framework that enables rapid development and clean, pragmatic design. It follows the MVT (Model-View-Template) architectural pattern.
+        <br><br>
+        <q cite="https://www.brainyquote.com/quotes/thomas_j_watson_125789">
+            Nothing so conclusively proves a man's ability to lead others as what he does from day to day to lead himself
+        </q>
+        <cite>Brainy quote</cite><br>
+
+        <p>Lorem ipsum dolor, sit <mark>amet</mark> consectetur adipisicing elit.</p>
+    
+        <p class="fix_carry">
+            The leaves<wbr> are falling<br>
+            One by one.<br>
+            Summer’s<wbr> over<br>
+            School’s<wbr> begun.<br>
+        </p>
+
+        <p class="pot_carry">pneumonoul<wbr>tramicroscopic<wbr>silicovol<wbr>canoconiosis</p>
+
+        <pre>
+            er
+            ddd
+                rr
+        </pre>
+    </div>
+<hr>
+    <div id="hrefs">
+        <a href="https://schema.org/LocalBusiness">Local business scheme</a>
+        <a href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D0%B7%D0%BE%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BE%D1%88%D0%BA%D0%B0"><img src="{% static 'cat.jpeg' %}" alt="cat"></a>
+        <a href="{% static 'cat.jpeg' %}" download>Download</a>
+    </div>
+<hr>
+    <div id="container_elements">
+        <div>
+            <p><strong>in div</strong></p>
+        </div>
+
+        <p><strong>in p</strong></p>
+
+        <pre>
+in
+    <strong>pre</strong>
+        </pre>  
+
+        <blockquote cite="https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D0%B7%D0%BE%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%BE%D1%88%D0%BA%D0%B0">
+            <q>in <strong>blockquote</strong></q>
+        </blockquote>
+
+        <hr>
+
+        <p>ul list</p>
+        <ul>
+            <li>first</li>
+            <li>second</li>
+        </ul>
+
+        <p>ol list</p>
+        <ol type="A">
+            <li>step 1</li>
+            <li>step 2</li>
+        </ol>
+
+        <p>figure</p>
+        <figure >
+            <img src="{% static 'banners/adv1.jpeg' %}">
+            <figcaption>figure cartion</figcaption>
+        </figure>
+    </div>
+<hr>
+
+    <section id="navigation">
+        <h3>horizontel nav</h3>
+        <nav class="nav-horizontal">
+            <ul style="display: flex; gap: 20px;">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Catalog</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+
+        <h3>vetical nav</h3>
+        <nav class="nav-vertical">
+            <ul style="gap: 20px;">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </section>
+<hr>
+    <div id="tables">
+        <table style="border: 1px solid black;">
+            <thead>
+                <tr>
+                    <th id="th-team" style="border: 1px solid black;">Team</th>
+                    <th id="th-task" style="border: 1px solid black;">Task</th>
+                    <th id="th-score" style="border: 1px solid black;">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td headers="th-team" style="border: 1px solid black;" rowspan="2">Development</td>
+                    <td headers="th-task" style="border: 1px solid black;">Coding</td>
+                    <td headers="th-score" style="border: 1px solid black;">95</td>
+                </tr>
+                <tr>
+                    <td headers="th-task" style="border: 1px solid black;">Testing</td>
+                    <td headers="th-score" style="border: 1px solid black;">88</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: right;" style="border: 1px solid black;"><strong>Average:</strong></td>
+                    <td style="border: 1px solid black;"><strong>91.5</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<hr>
+    <div id="forms_control_elements">
+        <form method="post">
+            <fieldset>
+                <legend>Participant Information</legend>
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Inokentiy">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div>
+                    <label for="age">Age (1 to 110):</label>
+                    <input type="number" id="age" name="age" min="1" max="110" required value="20">
+                </div>
+                <div>
+                    <input type="radio" name="sex" value="Female">Female<br>
+                    <input type="radio" name="sex" value="Male">Male<br>
+                </div>
+                <textarea placeholder="Enter info about yourself..."></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Preferences</legend>
+                <div>
+                    <label for="topic">Favorite Topic:</label>
+                    <select id="topic" name="topic" required>
+                        <option value="" disabled selected>-- Choose option --</option>
+                        <option value="frontend">Frontend Development</option>
+                        <option value="backend">Backend Architecture</option>
+                        <option value="ui">UI/UX Design</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="fav_lang">Favourite language:</label>
+                    <input id="fav_lang" list="lang_list" required>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" name="newsletter" value="yes"> Receive updates via email
+                    </label>
+                </div>
+                <div>
+                    <label for="loader">Load file:</label>
+                    <input id="loader" type="file">
+                </div>
+            </fieldset>
+
+            <div>
+                <button type="submit">Submit Feedback</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+
+        <datalist id="lang_list">
+            <option value="Python"></option>
+            <option value="C#"></option>
+            <option value="JS"></option>
+
+        </datalist>
+    </section>
+    <hr>
+
+    <div id="audio">
+        <p>Happy song</p>
+        <audio controls autoplay src="{% static 'creep.mp3' %}"></audio>
+    </div>
+
+
+{% endblock %}

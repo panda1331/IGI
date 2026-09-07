@@ -1,14 +1,17 @@
 {% extends 'base_generic.html' %}
 
 {% block title %}<title>Catalog</title>{% endblock %}
+{% block meta_description %}Browse our complete list of cleaning services, including prices, detailed package descriptions, post-renovation cleaning, and dry cleaning.{% endblock %}
+
 {% block content %}
-    <div class="header">
+    <h1>Catalog</h1>
+    <header>
         <form method="get">
             <div class="filters">
                 <p>Filters:</p>
                 {% for category in all_categories %}
-                    <input id="{{category.name}}" type="checkbox" name="category" value="{{category.id}}" {% if category.id in selected_categories %}checked{% endif %}>
-                    <label for="{{category.name}}">{{category.name}}</label>
+                    <input id="{{category.name|cut:' '}}" type="checkbox" name="category" value="{{category.id}}" {% if category.id in selected_categories %}checked{% endif %}>
+                    <label for="{{category.name|cut:' '}}">{{category.name}}</label>
                 {% endfor %}
             </div>
             <div class="price">
@@ -22,34 +25,49 @@
             <hr>
             <select name="sort">
                 <option value="">Default</option>
-                <option value="price_asc">Price (low first)</option>
-                <option value="price_desc">Price (high first)</option>
-                <option value="name_asc">A-Z</option>
-                <option value="name_desc">Z-A</option>
+                <optgroup label="Price">
+                    <option value="price_asc">Price (low first)</option>
+                    <option value="price_desc">Price (high first)</option>
+                </optgroup>
+                <optgroup label="Alphabet">
+                    <option value="name_asc">A-Z</option>
+                    <option value="name_desc">Z-A</option>
+                </optgroup>
+                
             </select>
             <button type="submit">Apply</button>
-            <button type="button"><a href="{% url 'catalog' %}">Clear filters</a> </button>
+            <a href="{% url 'catalog' %}">Clear filters</a>
         </form>
-    </div>
+    </header>
     <hr>
     {% for category in categories %}
-        <h4>{{category.name}}</h4>
-        {% if user.is_superuser %}
-            <button><a href="{% url 'edit_category' category.id %}">Edit category</a></button>
-            <button><a href="{% url 'delete_category' category.id %}">Delete category</a></button>
-        {% endif %}
-        {% for service in category.filtered_services %}
-            <p><a href="{% url 'service_detail' service.id %}">{{service.name}}</a>   -  {{service.price}} BYN</p>
+        <section>
+            <h2>{{category.name}}</h2>
             {% if user.is_superuser %}
-                <button><a href="{% url 'edit_service' service.id %}">Edit service</a></button>
-                <button><a href="{% url 'delete_service' service.id %}">Delete service</a></button>
+                <a href="{% url 'edit_category' category.id %}">Edit category</a>
+                <a href="{% url 'delete_category' category.id %}">Delete category</a>
             {% endif %}
-        {% endfor %}
+            <ul>
+                {% for service in category.filtered_services %}
+                    <li>
+                        <a href="{% url 'service_detail' service.id %}">{{ service.name }}</a> - 
+                        <span style="color: darkred">{{ service.price }} BYN</span>
+                        {% if user.is_superuser %}
+                            <a href="{% url 'edit_service' service.id %}">Edit service</a>
+                            <a href="{% url 'delete_service' service.id %}">Delete service</a>
+                        {% endif %}
+                    </li>
+                {% empty %}
+                    <li>No services in this category.</li>
+                {% endfor %}
+            </ul>
+        </section>
+        
     {% endfor %}
 <br>
     {% if user.is_superuser %}
         <hr>
-        <button><a href="{% url 'create_category' %}">Create category</a></button>
-        <button><a href="{% url 'create_service' %}">Create service</a></button>
+        <a href="{% url 'create_category' %}" >Create category</a>
+        <a href="{% url 'create_service' %}" >Create service</a>
     {% endif %}
 {% endblock %}

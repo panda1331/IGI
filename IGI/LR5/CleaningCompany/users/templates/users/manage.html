@@ -2,13 +2,13 @@
 
 {% block title %}<title>Manage Clients And Employees</title>{% endblock %}
 {% block content %}
-    <h2>Manage Clients And Employees</h2>
-    <h3>Users</h3>
-    <button><a href="{% url 'register' %}">Create client</a> </button>
-    <button><a href="{% url 'create_employee' %}">Create employee</a></button>
+    <h1>Manage Clients And Employees</h1>
+    <h2>Users</h2>
+    <a href="{% url 'register' %}">Create client</a>
+    <a href="{% url 'create_employee' %}">Create employee</a>
     {% for user in users %}
         <p>{{ user.get_full_name }} - {{user.user_type}}</p>
-        <button type="button"><a href="{% url 'edit_user' user.id %}" style="display:inline">Edit user</a></button>
+        <a href="{% url 'edit_user' user.id %}" style="display:inline">Edit user</a>
         <form method="post" action="{% url 'delete_user' user.id %}" style="display:inline">
             {% csrf_token %}
             <button type="submit">Delete</button>

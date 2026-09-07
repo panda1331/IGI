@@ -2,9 +2,9 @@
 
 {% block title %}<title>Planned works</title>{% endblock %}
 {% block content %}
-    <h2>Planning works</h2>
+    <h1>Planning works</h1>
     {% for client, orders in grouped.items %}
-        <h4>{{client.get_full_name}}</h4>
+        <h2>{{client.get_full_name}}</h2>
         <ul>
             {% for order in orders %}
                 <li>{{ order.work_date|date:"d/m/Y" }} — {{ order.address }} — {{ order.get_status_display }} — {{ order.total_price }} BYN</li>

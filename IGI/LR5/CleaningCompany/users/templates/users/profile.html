@@ -2,30 +2,70 @@
 
 {% block title %}<title>Profile</title>{% endblock %}
 {% block content %}
-    <h2>Personal account</h2>
-    {% if user.is_superuser %}
-        <a href="{% url 'order_list' %}">All orders</a>
-    {% else %}
-        <a href="{% url 'order_list' %}">My orders</a>
-    {% endif %}
-    <p>First name: {{user.first_name}}</p>
-    <p>Last name: {{user.last_name}}</p>
-    <p>Middle name: {{user.middle_name}}</p>
-    <p>Date of birth: {{user.date_of_birth}}</p>
-    <p>Email: {{user.email}}</p>
-    <p>Phone number: {{user.phone_number}}</p>
-    <p>User type: {{user.get_user_type_display}}</p>
+    <h1>Personal Account</h1>
 
-    {% if user.user_type == 'employee' %}
-        <p>Specializations: {{user.employee_profile.display_specializations}}</p>
+        <nav class="profile-navigation" aria-label="Profile actions">
+            {% if user.is_superuser %}
+                <a href="{% url 'order_list' %}" class="button-link">All orders</a>
+            {% else %}
+                <a href="{% url 'order_list' %}" class="button-link">My orders</a>
+                <a href="{% url 'create_order' %}" class="button-link">Order service</a>
+            {% endif %}
+        </nav>
 
-    {% else %}
-        <p>Client type: {{user.get_client_type_display}}</p>
-        {% if user.client_type == 'legal' %}
-            <p>Company: {{user.company_name}}</p>
-        {% endif %}
-        <a href="{% url 'create_order' %}">Order service</a>
+        <article class="profile-card">
+            <h2>Account Information</h2>
 
-    {% endif %}
-    <a href="{% url 'profile_edit' %}">Edit profile</a>
+            <dl class="profile-details">
+                <dt>First name:</dt>
+                <dd>{{ user.first_name }}</dd>
+
+                <dt>Last name:</dt>
+                <dd>{{ user.last_name }}</dd>
+
+                <dt>Middle name:</dt>
+                <dd>{{ user.middle_name|default:"Not specified" }}</dd>
+
+                <dt>Date of birth:</dt>
+                <dd>
+                    {% if user.date_of_birth %}
+                        <time datetime="{{ user.date_of_birth|date:'Y-m-d' }}">{{ user.date_of_birth }}</time>
+                    {% else %}
+                        Not specified
+                    {% endif %}
+                </dd>
+
+                <dt>Email:</dt>
+                <dd><a href="mailto:{{ user.email }}">{{ user.email }}</a></dd>
+
+                <dt>Phone number:</dt>
+                <dd>
+                    {% if user.phone_number %}
+                        <a href="tel:{{ user.phone_number }}">{{ user.phone_number }}</a>
+                    {% else %}
+                        Not specified
+                    {% endif %}
+                </dd>
+
+                <dt>User type:</dt>
+                <dd><strong>{{ user.get_user_type_display }}</strong></dd>
+
+                {% if user.user_type == 'employee' %}
+                    <dt>Specializations:</dt>
+                    <dd>{{ user.employee_profile.display_specializations|default:"None" }}</dd>
+                {% else %}
+                    <dt>Client type:</dt>
+                    <dd>{{ user.get_client_type_display }}</dd>
+
+                    {% if user.client_type == 'legal' %}
+                        <dt>Company:</dt>
+                        <dd>{{ user.company_name }}</dd>
+                    {% endif %}
+                {% endif %}
+            </dl>
+        </article>
+
+        <footer class="profile-actions">
+            <a href="{% url 'profile_edit' %}" class="button-primary">Edit profile</a>
+        </footer>
 {% endblock %}
