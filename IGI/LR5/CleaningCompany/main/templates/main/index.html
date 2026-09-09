@@ -37,13 +37,21 @@
             </div>
         </figure>
         
-        <h1 itemprop="name">Cleaning Company {{ company_info.name }}</h1>
+        <h1 itemprop="name" translate="no" lang="en"><b>Cleaning Company</b> {{ company_info.name }}</h1>
         {% if company_info.logo %}
-            <a href="{% url 'about' %}"><img src="{{ company_info.logo.url }}" alt="{{ company_info.name }} logo" itemprop="logo"></a>
+            <a href="{% url 'about' %}" title="About company"><img src="{{ company_info.logo.url }}" alt="{{ company_info.name }} logo" itemprop="logo"></a>
         {% endif %}
+
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#partners">Partners</a></li>
+            </ul>
+        </nav>
     </header>
     
-    <section itemscope itemtype="https://schema.org/Service">
+    <section id="services" itemscope itemtype="https://schema.org/Service">
 
         <h2>Our services</h2>
         <ul itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
@@ -67,14 +75,14 @@
     </section>
     
 
-    <section>
+    <section id="news">
         <h2>Last news:</h2>
         <h3>{{last_article.title}}</h3>
         <p>{{last_article.short_description}}</p>
         <p>{{last_article.created_at}}</p>
     </section>
 
-    <section>
+    <section id="partners">
         <h2>Our partners</h2>
         <ul>
             {% for partner in partners %}
