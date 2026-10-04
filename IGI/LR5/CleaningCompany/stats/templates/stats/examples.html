@@ -4,26 +4,14 @@
 {% block title %}<title>Examples</title>{% endblock %}
 {% block content %}
     <h1>Examples</h1>
-    <!-- <header>
-        <ul title="Якоря">
-            <li><a href="#global_atributes">Global atributes</a></li>
-            <li><a href="#text_examples">Text examples</a></li>
-            <li><a href="#hrefs">Hrefs</a></li>
-            <li><a href="#container_elements">Container</a></li>
-            <li><a href="#tables">Tables</a></li>
-            <li><a href="#forms_control_elements">Form</a></li>
-            <li><a href="#audio">Audio</a></li>
-
-        </ul>
-    </header> -->
-    <section id="global_atributes">
+    <section id="global_atributes" class="glob" style="background-color: aqua;">
         <p dir="rtl">Lorem, ipsum dolor sit amet consectetur</p>
         <q lang="en">english quote</q>
         <p translate="no" lang="fr">Ce paragraphe est défini en français.</p>
 
         <h2 hidden>Hidden element</h2>
 
-        <p contenteditable="true">edit this</p>
+        <p title="paragraph" contenteditable="true">edit this</p>
 
         <label for="spellcheck_input">label: </label>
         <input accesskey="i" spellcheck="true" type="text" id="spellcheck_input">
@@ -76,7 +64,7 @@
             <p><strong>in div</strong></p>
         </div>
 
-        <p><strong>in p</strong></p>
+        <p>in p</p>
 
         <pre>
 in
@@ -174,7 +162,7 @@ in
                 </div>
                 <div>
                     <label for="age">Age (1 to 110):</label>
-                    <input type="number" id="age" name="age" min="1" max="110" required value="20" tabindex="-1">
+                    <input type="number"  id="age" name="age" min="1" max="110" required value="20" tabindex="-1">
                 </div>
                 <div>
                     <input type="radio" name="sex" value="Female" tabindex="3">Female<br>
@@ -188,8 +176,8 @@ in
                 <div>
                     <label for="topic">Favorite Topic:</label>
                     <select id="topic" name="topic" required tabindex="6">
-                        <option value="" disabled selected>-- Choose option --</option>
-                        <option value="frontend">Frontend Development</option>
+                        <option value="" disabled >-- Choose option --</option>
+                        <option value="frontend" selected>Frontend Development</option>
                         <option value="backend">Backend Architecture</option>
                         <option value="ui">UI/UX Design</option>
                     </select>
