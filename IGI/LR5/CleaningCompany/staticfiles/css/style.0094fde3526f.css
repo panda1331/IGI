@@ -234,7 +234,7 @@ main {
     overflow: hidden;
 }
 
-main > :not(:first-child) {
+main > * + * {
     margin-top: 40px;
 }
 
@@ -566,10 +566,10 @@ table.calendar-table td, th {
 }
 .certificate-card {
     border: 30px solid transparent;
-    border-image: url('../certificate_border.jpg') 30 round;
-    -moz-border-image: url('../certificate_border.jpg') 30 round;
-    -webkit-border-image: url('../certificate_border.jpg') 30 round;
-    -o-border-image: url('../certificate_border.jpg') 30 round;
+    border-image: url("../certificate_border.f21185cbc931.jpg") 30 round;
+    -moz-border-image: url("../certificate_border.f21185cbc931.jpg") 30 round;
+    -webkit-border-image: url("../certificate_border.f21185cbc931.jpg") 30 round;
+    -o-border-image: url("../certificate_border.f21185cbc931.jpg") 30 round;
 
     position: relative;
     z-index: 1;
@@ -596,7 +596,7 @@ table.calendar-table td, th {
     right: 0;
     left: 0;
     bottom: 0;
-    background-image: linear-gradient(rgba(255,255,255,.3), rgba(255,240,230,.4)), url('../certificate_bg.jpeg');
+    background-image: linear-gradient(rgba(255,255,255,.3), rgba(255,240,230,.4)), url("../certificate_bg.a0e90866c75a.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -924,32 +924,21 @@ table.calendar-table td, th {
 }
 
 .article-page__content{
-    margin-top: 30px;
-    padding: 10px;
-
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /* text-indent: 1.4em; */
-    line-height: 1.7;
-    font-variant: small-caps;
-    letter-spacing: 0.5px;
-    word-spacing: 2px;
-
-    word-break: break-all;
-
-    text-align: justify;
-
     columns: 3 150px;
     -webkit-columns: 3 150px;
     -moz-columns: 3 150px;
     column-gap: 40px;
     column-rule: 1px solid #222;
 
+    line-height: 1.7;
     color: #333;
+    margin-top: 30px;
+
+    word-break: break-all;
 }
 
 .article-page__content h2,
 .article-page__content h3 {
-    text-transform: uppercase;
     break-after: avoid;
 }
 
@@ -1260,8 +1249,6 @@ table.calendar-table td, th {
 
 .privacy-page ul {
     padding-left: 20px;
-    list-style-type: lower-roman;
-    list-style-position: inside;
 }
 
 .privacy-page a {
