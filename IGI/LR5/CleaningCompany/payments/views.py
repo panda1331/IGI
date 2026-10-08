@@ -6,8 +6,13 @@ from payments.models import PromoCode
 from .models import Payment
 
 def promo_codes(request):
-    all_promo_codes = PromoCode.objects.all()
-    return render(request, 'payments/promo_codes.html', {'promo_codes': all_promo_codes})
+    all_promos = PromoCode.objects.all()
+    active_promos = [p for p in all_promos if p.is_active]
+    archived_promos = [p for p in all_promos if not p.is_active]
+    return render(request, 'payments/promo_codes.html', {
+        'active_promos': active_promos,
+        'archived_promos': archived_promos,
+    })
 
 @login_required
 def payment_check(request, order_id):

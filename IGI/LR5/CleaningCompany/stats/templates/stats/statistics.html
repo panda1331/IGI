@@ -6,25 +6,25 @@
     
     <section id="table-section">
         <h2>All services:</h2>
-        <table style="border: 1px solid black;">
+        <table >
             <caption>Room Shining Dynamic Service Price List</caption>
             <thead>
                 <tr>
-                    <th id="th-category" style="border: 1px solid black;">Category</th>
-                    <th id="th-service" style="border: 1px solid black;">Service Name</th>
-                    <th id="th-price" style="border: 1px solid black;">Base Price (BYN)</th>
+                    <th id="th-category">Category</th>
+                    <th id="th-service">Service Name</th>
+                    <th id="th-price">Base Price (BYN)</th>
                 </tr>
             </thead>
             <tbody>
                 {% for service in services %}
                 <tr>
-                    <td headers="th-category" style="border: 1px solid black;">{{ service.category|default:"General" }}</td>
-                    <td headers="th-service" style="border: 1px solid black;">{{ service.name }}</td>
-                    <td headers="th-price" style="border: 1px solid black;">{{ service.price }}</td>
+                    <td headers="th-category">{{ service.category|default:"General" }}</td>
+                    <td headers="th-service">{{ service.name }}</td>
+                    <td headers="th-price">{{ service.price }}</td>
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="3" style="text-align: center;">No services available in the database.</td>
+                    <td colspan="3">No services available in the database.</td>
                 </tr>
                 {% endfor %}
             </tbody>

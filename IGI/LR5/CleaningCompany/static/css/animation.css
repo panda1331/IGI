@@ -1,0 +1,173 @@
+.cleaning-show {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    margin: 40px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+
+    animation-name: shrinkHeight;
+    animation-duration: 1s;
+    animation-delay: 10s;
+    animation-fill-mode: forwards;
+}
+
+.cleaning-show__scene {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-delay: 10s;
+    animation-fill-mode: forwards;
+}
+
+.floor {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    overflow: hidden;
+}
+
+.floor__texture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+}
+
+.floor__stains {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(60, 30, 0, 0.55);
+    z-index: 2;    
+}
+
+.floor--dirty .floor__stains {
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+.floor--clean {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+.window {
+    position: absolute;
+    top: 1px;
+    right: 40px;
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.window__texture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 3;
+}
+
+.window__stains {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(134, 85, 26, 0.7);   
+    z-index: 4; 
+}
+
+.window--dirty .window__stains {
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-delay: 8s;
+    animation-fill-mode: forwards;
+}
+
+.window--clean {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 8s;
+    animation-fill-mode: forwards;
+}
+
+.broom {
+    position: absolute;
+    bottom: 20px;
+    left: -80px;
+    font-size: 40px;
+    opacity: 0;
+    animation-name: sweep;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    z-index: 5;
+}
+
+.sponge {
+    position: absolute;
+    top: -80px;
+    right: 240px;
+    font-size: 40px;
+    opacity: 0;
+    animation-name: wipeDown;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+    z-index: 6;
+}
+
+.company-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    font-size: 2.5em;
+    color: #111;
+    animation-name: showTitle;
+    animation-duration: 1s;
+    animation-delay: 10s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut { 100% { opacity: 0; } }
+@keyframes fadeIn  { 100% { opacity: 1; } }
+
+@keyframes sweep {
+    0% { left: -80px; opacity: 0; transform: rotate(0deg); }
+    10% { left: 100px; opacity: 1; transform: rotate(15deg); }
+    25% { left: 400px; transform: rotate(-15deg); }
+    50% { left: 750px; transform: rotate(15deg); }
+    75% { left: 1100px; transform: rotate(-15deg); }
+    90% { left: 1390px; opacity: 1; transform: rotate(15deg); }
+    100% { left: 1500px; opacity: 0; transform: rotate(0deg); }
+}
+
+@keyframes wipeDown {
+    0% { top: -80px; right: 240px; opacity: 0; }
+    10% { opacity: 1; top: 10px; right: 140px; }
+    25% { top: 40px;  right: 180px; }
+    50% { top: 100px; right: 80px; }
+    75% { top: 160px; right: 140px; }
+    90% { opacity: 1; }
+    100% { top: 220px; right: 0px; opacity: 0; }
+}
+
+@keyframes showTitle {
+    0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+    100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes shrinkHeight {
+    0% { height: 320px; }
+    100% { height: 50px; } 
+}

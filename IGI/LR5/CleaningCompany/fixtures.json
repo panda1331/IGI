@@ -1,6 +1,14 @@
 [
 {
     "model": "sessions.session",
+    "pk": "3jti3zh3zppvfjhs4398rip75i7e53oh",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGllO4g9Q0nMG6613FwdQIuVTIe4OkVJA-2bmvUzGutS8zjLlns3ZNObwuxHKQ4YN8B3DbbRlHJapJ7spdqezvY4sz8vu_h1UzPVbuyKxoSaQpwiId2A6CreqiK5FgkZNfELoonQIJbkUWOHJe8eqat4fFrk5bQ:1x3wXQ:zgPwdQX13VDeZVYicWK3dExK-IVdhSBcUB5MN3260Fg",
+        "expire_date": "2026-09-22T14:11:04.313Z"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "3qaapfmtgmgl4u7eabxj731te0ayxw2a",
     "fields": {
         "session_data": ".eJxVjjsOgzAQRO_iOrJs8CehTJ8zoFmvN5BEIGGoEHcPSBRJO2_maVbVYpm7dil5antWjbLq8psR0jsPB-AXhueo0zjMU0_6qOiTFv0YOX_uZ_dP0KF0-9qkHCxZT44CkJ0B0zVzJYJgKkRIkMg3-DrkGj5FEz0LHDlnWER2acI0q2bdHzZ2276SyD2Z:1x3J3E:HTlMPWtW31cG0qrVzMqUEvpNjFgSROM4RpF6Lhi-Sx8",
@@ -9,10 +17,10 @@
 },
 {
     "model": "sessions.session",
-    "pk": "ksihxnweqqqygpiotrjknbxued3m9r5r",
+    "pk": "bjr7xnrk6tmz0k3eelh2qomzn1e5nsj6",
     "fields": {
-        "session_data": ".eJxVjDsOwjAQBe_iGllO4g9Q0nMG6613FwdQIuVTIe4OkVJA-2bmvUzGutS8zjLlns3ZNObwuxHKQ4YN8B3DbbRlHJapJ7spdqezvY4sz8vu_h1UzPVbuyKxoSaQpwiId2A6CreqiK5FgkZNfELoonQIJbkUWOHJe8eqat4fFrk5bQ:1x3BHJ:hv64N2EK9CKFTQLoy2KBnlYFOfOJcnXRbFTWFVS7W_Y",
-        "expire_date": "2026-09-20T11:43:17.396Z"
+        "session_data": ".eJxVjDsOwjAQBe_iGllO4g9Q0nMG6613FwdQIuVTIe4OkVJA-2bmvUzGutS8zjLlns3ZNObwuxHKQ4YN8B3DbbRlHJapJ7spdqezvY4sz8vu_h1UzPVbuyKxoSaQpwiId2A6CreqiK5FgkZNfELoonQIJbkUWOHJe8eqat4fFrk5bQ:1xEpS1:Euct-g67gC2KoO6etzeJha2vljMFFwqXzCoMR9NBlo0",
+        "expire_date": "2026-10-22T14:50:29.946Z"
     }
 },
 {
@@ -51,7 +59,7 @@
     "model": "users.user",
     "fields": {
         "password": "pbkdf2_sha256$1200000$WT8md4bES5ry9oWLV4s25S$sebraLLK1hsjUBggXSVJKUwTwVRyUJgW4dN0ic7w2+I=",
-        "last_login": "2026-09-06T19:56:35.960Z",
+        "last_login": "2026-10-08T14:50:29.939Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -258,7 +266,7 @@
     "model": "users.user",
     "fields": {
         "password": "pbkdf2_sha256$1200000$cfhQmg39HLo49BO1zQZsBx$ESw+JYzJkJFDrTmq9eht0xrqbeaeiAv5KVMYc+Gz25I=",
-        "last_login": "2026-09-06T19:45:23.592Z",
+        "last_login": "2026-10-07T19:17:48.148Z",
         "is_superuser": false,
         "username": "evaa",
         "first_name": "evaa",
@@ -963,8 +971,8 @@
     "pk": 1,
     "fields": {
         "title": "We Have Updated Our Cleaning Products",
-        "short_description": "We now use eco-friendly and hypoallergenic cleaning products that are safe for children and pets.",
-        "content": "Our company has switched to a new line of eco-friendly cleaning products from a leading European manufacturer. All products are biodegradable, fragrance-free, and safe for families with small children and pets. This upgrade allows us to provide even higher quality cleaning services without harming the environment. Book a cleaning and experience the difference!",
+        "short_description": "We now use eco-friendly and hypoallergenic cleaning products that are safe for children and pets. All our detergents are biodegradable and certified, so you can breathe easy after every cleaning. Your home stays fresh — without harsh chemicals or lin",
+        "content": "Our company has switched to a new line of eco-friendly cleaning products\r\n\r\nOur company has switched to a new line of eco-friendly cleaning products from a leading European manufacturer. All products are biodegradable, fragrance-free, and safe for families with small children and pets. This upgrade allows us to provide even higher quality cleaning services without harming the environment.\r\n\r\nWhy we made this change\r\n\r\nTraditional cleaning products often contain aggressive chemicals that can irritate the skin, cause allergies, and leave a strong smell. For families with small children, pets, or allergy sufferers, this is a real concern. That is why we decided to switch to a safer alternative — without compromising on the quality of our work.\r\n\r\nWhat makes our new products special\r\n\r\n    Biodegradable — they break down naturally and do not harm the environment.\r\n\r\n    Fragrance-free — no synthetic perfumes or lingering odors.\r\n\r\n    Safe for children and pets — no toxic residue on surfaces your family touches.\r\n\r\n    European quality — produced by a leading manufacturer with certified eco-standards.\r\n\r\nSame result, safer ingredients\r\n\r\nOur specialists still remove dirt, grease, and stains effectively — but now they do it without aggressive chemicals. Your home stays fresh, your family stays healthy, and the planet stays a little cleaner too. Book a cleaning and experience the difference!",
         "created_at": "2026-05-05T11:39:06.017Z",
         "image": "news_images/eco_friendly.jpeg",
         "is_published": true
@@ -975,8 +983,8 @@
     "pk": 2,
     "fields": {
         "title": "15% Discount on Post-Renovation Cleaning",
-        "short_description": "Get a 15% discount on post-renovation cleaning until the end of the month.",
-        "content": "Finished your renovation? We will help you get rid of construction dust and debris quickly and professionally. Until the end of the month, all post-renovation cleaning services are available with a 15% discount. Use promo code RENOV15 when booking online or mention it when calling. Offer valid for apartments and cottages.",
+        "short_description": "Finished your renovation? Get a 15% discount on post-renovation cleaning until the end of the month — just use promo code RENOV15 when booking online or by phone, and our team will remove construction dust, paint splatters, and debris from your apart",
+        "content": "Finished your renovation? We will help you get rid of construction dust and debris quickly and professionally. Until the end of the month, all post-renovation cleaning services are available with a 15% discount. Use promo code RENOV15 when booking online or mention it when calling. Offer valid for apartments and cottages.\r\n\r\nPost-renovation cleaning is not just a regular clean. Construction dust settles on every surface, gets into corners, ventilation grilles, and window frames. Paint splatters, plaster residue, and silicone marks require special tools and products. Our specialists know exactly how to deal with all of it — safely and without damaging your new finishes.\r\n\r\nWhat is included\r\n\r\nOur post-renovation cleaning includes:\r\n\r\n    Removal of construction dust from all surfaces.\r\n\r\n    Cleaning of windows, frames, and sills.\r\n\r\n    Washing of floors, walls, and ceilings.\r\n\r\n    Removal of paint, plaster, and adhesive residue.\r\n\r\n    Cleaning of radiators, ventilation grilles, and switches.\r\n\r\n    Final polishing of all surfaces.\r\n\r\nThe service is suitable for apartments, houses, and cottages of any size. We bring our own professional equipment and eco-friendly cleaning products. You do not need to prepare anything — just let us in and enjoy the result.\r\n\r\nHow to get the discount\r\n\r\nBooking is simple. Choose a convenient date on our website or call us at +375 (29) 111-22-33. Use promo code RENOV15 at checkout, or mention it during the call. The discount applies automatically to the total cost of the service. The offer is valid until the end of the month, so do not wait too long.\r\n\r\nMake your new space truly clean and ready to live in. We will take care of the mess — you enjoy your renovated home.",
         "created_at": "2026-05-05T11:39:59.521Z",
         "image": "news_images/discount.png",
         "is_published": true
@@ -987,10 +995,58 @@
     "pk": 3,
     "fields": {
         "title": "We Now Work on Weekends",
-        "short_description": "We have expanded our schedule — now you can book cleaning on Saturdays and Sundays.",
-        "content": "We know that weekdays are often busy, and finding time for cleaning can be difficult. Starting this month, our teams work seven days a week, including weekends. You can now schedule cleaning at a convenient time on Saturday or Sunday. Book online or call us to choose your preferred date.",
+        "short_description": "Starting this month, our cleaning teams work seven days a week — book a convenient weekend slot online or by phone and enjoy a spotless home without sacrificing your days off.",
+        "content": "We now work on weekends!\r\n\r\nWe know that weekdays are often busy, and finding time for cleaning can be difficult. Between work, family, and personal commitments, the last thing you want to do on a Saturday morning is scrub floors or wash windows. That is why, starting this month, our teams work seven days a week, including weekends.\r\n\r\nYou can now schedule cleaning at a convenient time on Saturday or Sunday. Whether you prefer an early morning visit before your plans begin, or an evening session after a family day out, we will find a slot that fits your schedule. Book online or call us to choose your preferred date.\r\n\r\nSame quality, same care\r\n\r\nOur weekend service follows the same high standards as on weekdays. The same experienced specialists, the same eco-friendly products, and the same attention to detail. Every team member is trained, insured, and equipped with professional tools. We do not compromise on quality — no matter the day of the week.\r\n\r\nWhy we decided to work on weekends\r\n\r\nOver the past year, we have received hundreds of requests from clients who simply could not find time for cleaning during the working week. Many of them asked if we could come on Saturday or Sunday. We listened, and we are happy to say: yes, we can.\r\n\r\nHow to book\r\n\r\nBooking a weekend cleaning is easy:\r\n\r\n    Choose a date and time on our website.\r\n\r\n    Or call us at +375 (29) 111-22-33.\r\n\r\n    We will confirm your appointment within a few hours.\r\n\r\n    The day before, we will send a reminder with the name of your specialist.\r\n\r\nSpecial offer for weekend bookings\r\n\r\nTo celebrate the launch of our weekend service, we are offering a 10% discount on all weekend bookings made before the end of this month. Use the promo code WEEKEND10 at checkout.\r\n\r\nEnjoy a clean home without sacrificing your weekend plans. We will take care of the mess — you take care of what matters.",
         "created_at": "2026-05-05T11:40:26.514Z",
         "image": "news_images/weekends_QGuYnlo.jpeg",
+        "is_published": true
+    }
+},
+{
+    "model": "news.article",
+    "pk": 4,
+    "fields": {
+        "title": "We opened a new office in the center of Minsk",
+        "short_description": "Our company has opened a new office in the center of Minsk to serve our clients faster and more conveniently — come visit us at 15 Lenina Street, Office 302.",
+        "content": "We are happy to announce that our company has opened a new office in the center of Minsk. This is an important step for us — it allows us to respond to client requests faster, meet with clients in person, and coordinate our teams more efficiently across the city. Our new office is located at 15 Lenina Street, Office 302, Minsk. It is easy to reach by public transport or by car, and there is parking nearby. The office is open Monday to Friday from 9:00 to 18:00, and on Saturdays from 10:00 to 15:00. At the office, you can meet with our specialists and discuss your cleaning needs, get a free consultation and cost estimate, sign a contract for regular cleaning services, or pick up eco-friendly cleaning products for home use. Over the past year, the number of our clients has grown significantly. The old office could no longer handle the flow of requests. The new space is larger, more comfortable, and better equipped for meetings. We are confident that this change will make our services even more convenient for you. Come visit us — we will be glad to see you!",
+        "created_at": "2026-10-06T08:02:30.238Z",
+        "image": "news_images/building.jpeg",
+        "is_published": true
+    }
+},
+{
+    "model": "news.article",
+    "pk": 5,
+    "fields": {
+        "title": "We have completed 5,000 orders!",
+        "short_description": "We have reached an important milestone — 5,000 completed cleaning orders since the founding of our company. Thank you to every client who trusted us with their home!",
+        "content": "We are proud to announce that our company has reached an important milestone — 5,000 completed cleaning orders since we started working in 2018. This number is not just a statistic for us — it is the result of trust that thousands of clients have placed in us over the years. We started with a small team of three specialists and a simple idea: to provide cleaning services that people can truly rely on. Over time, we expanded our services, hired new employees, and switched to eco-friendly products. Every year brought new clients, new challenges, and new achievements. What do 5,000 orders mean to us? Thousands of clean apartments, houses, and offices. Hundreds of regular clients who trust us every month. Dozens of positive reviews and recommendations. A team of 30+ specialists who love what they do. We want to say a huge thank you to every client who chose us. Your trust motivates us to keep improving, to learn, and to provide even better service. We promise to continue working hard — so that every cleaning brings you joy and comfort. Here is to the next 5,000 orders!",
+        "created_at": "2026-10-06T08:03:29.111Z",
+        "image": "news_images/5000.jpeg",
+        "is_published": true
+    }
+},
+{
+    "model": "news.article",
+    "pk": 6,
+    "fields": {
+        "title": "New service: disinfection of apartments and offices",
+        "short_description": "We have launched a new service — professional disinfection of apartments, offices, and public spaces using certified antiviral and antibacterial products.",
+        "content": "We are happy to announce the launch of a new service — professional disinfection of apartments, offices, and public spaces. This service is designed for clients who want not just a clean home, but a truly safe one. Even after a regular cleaning, bacteria and viruses can remain on surfaces that we touch every day — door handles, switches, tables, and bathroom fixtures. Regular disinfection helps reduce the risk of spreading infections and creates a healthier environment for you and your family. Our disinfection service includes treatment of all surfaces with certified antiviral and antibacterial products, special attention to high-touch areas such as handles, switches, and remote controls, disinfection of bathrooms and kitchens, and full safety for children, pets, and allergy sufferers. There are no harsh odors or toxic residue after treatment. Our disinfection service is ideal for families with small children, homes with pets, offices and coworking spaces, apartments after illness or before moving in, and anyone who wants extra protection and peace of mind. Book your disinfection today — and make your space truly safe.",
+        "created_at": "2026-10-06T08:04:39.561Z",
+        "image": "news_images/disinfection.jpeg",
+        "is_published": true
+    }
+},
+{
+    "model": "news.article",
+    "pk": 7,
+    "fields": {
+        "title": "We partnered with a leading European eco-brand",
+        "short_description": "Our company has signed a partnership agreement with a leading European manufacturer of eco-friendly cleaning products — now all our services use certified biodegradable detergents.",
+        "content": "We are excited to announce that our company has signed a partnership agreement with a leading European manufacturer of eco-friendly cleaning products. From now on, all our services will use certified biodegradable detergents — safe for your family, your pets, and the environment. For years, we have been looking for cleaning products that combine effectiveness with safety. Many traditional detergents contain aggressive chemicals that can irritate the skin, cause allergies, and harm the environment. Our new partner offers a full line of products that solve this problem — without compromising on quality. What makes these products special? They are biodegradable, meaning they break down naturally and do not pollute water. They are fragrance-free, with no synthetic perfumes or lingering odors. They are hypoallergenic and safe for sensitive skin and allergy sufferers. They are certified and approved by European eco-standards. And they are safe for children and pets, leaving no toxic residue on surfaces. When you order our cleaning services, you can be sure that only safe, eco-friendly products are used in your home. Your family stays healthy, your home stays fresh, and the planet stays a little cleaner. Try our eco-cleaning today — and feel the difference.",
+        "created_at": "2026-10-06T08:05:27.320Z",
+        "image": "news_images/cooperation.jpeg",
         "is_published": true
     }
 },
@@ -1102,6 +1158,18 @@
         "score": 5,
         "text": "ghj",
         "created_at": "2026-09-06T11:00:49.401Z"
+    }
+},
+{
+    "model": "reviews.review",
+    "pk": 9,
+    "fields": {
+        "user": [
+            "admin"
+        ],
+        "score": 5,
+        "text": "good",
+        "created_at": "2026-10-06T12:59:56.774Z"
     }
 },
 {
@@ -2884,6 +2952,132 @@
         "object_repr": "Ko ko",
         "action_flag": 2,
         "change_message": "[{\"changed\": {\"fields\": [\"Photo\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 100,
+    "fields": {
+        "action_time": "2026-10-06T07:22:51.393Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "article"
+        ],
+        "object_id": "3",
+        "object_repr": "We Now Work on Weekends",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Short description\", \"Content\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 101,
+    "fields": {
+        "action_time": "2026-10-06T07:32:51.259Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "article"
+        ],
+        "object_id": "2",
+        "object_repr": "15% Discount on Post-Renovation Cleaning",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Short description\", \"Content\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 102,
+    "fields": {
+        "action_time": "2026-10-06T07:36:23.125Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "article"
+        ],
+        "object_id": "1",
+        "object_repr": "We Have Updated Our Cleaning Products",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Short description\", \"Content\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 103,
+    "fields": {
+        "action_time": "2026-10-06T08:02:30.239Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "article"
+        ],
+        "object_id": "4",
+        "object_repr": "We opened a new office in the center of Minsk",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 104,
+    "fields": {
+        "action_time": "2026-10-06T08:03:29.112Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "article"
+        ],
+        "object_id": "5",
+        "object_repr": "We have completed 5,000 orders!",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 105,
+    "fields": {
+        "action_time": "2026-10-06T08:04:39.561Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "article"
+        ],
+        "object_id": "6",
+        "object_repr": "New service: disinfection of apartments and offices",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 106,
+    "fields": {
+        "action_time": "2026-10-06T08:05:27.321Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "news",
+            "article"
+        ],
+        "object_id": "7",
+        "object_repr": "We partnered with a leading European eco-brand",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
     }
 }
 ]
