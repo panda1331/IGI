@@ -5,7 +5,7 @@
 {% block content %}
     <section class="orders-section">
         <header class="section-header">
-            <h1>Orders</h1>
+            <h1 class="section-title">Orders</h1>
             {% if user.is_superuser %}
                 <p>All System Orders</p>
                 <a href="{% url 'create_order' %}" class="button">Create order</a>

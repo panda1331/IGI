@@ -1,5 +1,6 @@
 import calendar
 import logging
+import re
 
 import pytz
 from django.utils import timezone
@@ -46,7 +47,24 @@ def index(request):
 def about(request):
     logger.info('About page is loaded')
     company_info = AboutCompany.objects.last()
-    return render(request, 'main/about.html', context={'company_info': company_info})
+
+    history_lines = []
+    if company_info and company_info.history:
+        for line in company_info.history.splitlines():
+            line = line.strip()
+            if not line or line.lower().startswith('our history'):
+                continue
+            match = re.match(r'^(\d{4})\s*[—\-–]\s*(.+)$', line)
+            if match:
+                history_lines.append({
+                    'year': match.group(1),
+                    'text': match.group(2).strip(),
+                })
+            else:
+                history_lines.append({'year': '', 'text': line})
+
+    
+    return render(request, 'main/about.html', context={'company_info': company_info, 'history_lines': history_lines})
 
 def privacy_policy(request):
     logger.info('Privacy policy page is loaded')

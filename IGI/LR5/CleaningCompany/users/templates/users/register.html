@@ -2,11 +2,26 @@
 
 {% block title %}<title>Registration</title>{% endblock %}
 {% block content %}
-    <h1>Registration</h1>
-    <form method="post">
+<section class="auth-section">
+    <h1 class="section-title">Registration</h1>
+
+    <form method="post" class="auth-form">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Register</button>
-        <a href="{% url 'index' %}">Cancel</a> 
+
+        {% for field in form %}
+            <div class="auth-form__field">
+                <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
+                {{ field }}
+                {% if field.errors %}
+                    <p class="auth-error">{{ field.errors }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <div class="auth-form__actions">
+            <button type="submit">Register</button>
+            <a href="{% url 'index' %}" class="button-cancel">Cancel</a>
+        </div>
     </form>
+</section>
 {% endblock %}

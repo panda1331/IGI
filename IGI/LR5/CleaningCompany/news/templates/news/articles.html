@@ -4,26 +4,28 @@
 {% block meta_description %}Stay updated with the latest news, service updates, eco-cleaning tips, and announcements from Room Shining cleaning company.{% endblock %}
 
 {% block content %}
-    <section>
-        <h1>Company news</h1>
-        {% for article in articles %}
-            <article class="info">
-                <header>
-                    <h2>{{article.title}}</h2>
-                    
-                </header>
-                {% if article.image %}
-                    <img src="{{ article.image.url }}" alt="{{ article.title }}">
-                {% endif %}
-            </article>
-            <div>
-                <p>{{article.short_description}}</p>
-            </div>
-            <footer>
-                <a href="{% url 'article_info' article.id %}">Read more...</a>
-            </footer>
-            <hr>
-        {% endfor %}
+    <section class="news-section">
+        <h1 class="section-title">Company news</h1>
+
+        <div class="news-grid">
+            {% for article in articles %}
+                <article class="news-card">
+                    <header class="news-card__header">
+                        <h2 class="news-card__title">{{article.title}}</h2>
+                    </header>
+                    {% if article.image %}
+                        <img class="news-card__image" src="{{ article.image.url }}" alt="{{ article.title }}">
+                    {% endif %}
+                </article>
+                <div class="news-card__description">
+                    <p>{{article.short_description}}</p>
+                </div>
+                <footer class="news-card__footer">
+                    <a class="news-card__link" href="{% url 'article_info' article.id %}">Read more...</a>
+                </footer>
+            {% endfor %}
+        </div>
+        
     </section>
     
 {% endblock %}

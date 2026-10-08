@@ -7,42 +7,52 @@
 
 {% block content %}
     <header class="page-header" itemscope itemtype="https://schema.org/HomeAndConstructionBusiness">
+        <div class="company-header">
+            <!-- {% if company_info.logo %}
+                <a href="{% url 'about' %}" title="About company" class="company-info__logo"><img src="{{ company_info.logo.url }}" alt="{{ company_info.name }} logo" itemprop="logo"></a>
+            {% endif %} -->
+
+            <section class="cleaning-show">
+                <div class="cleaning-show__scene">
+                    <div class="floor floor--dirty">
+                        <img class="floor__texture" src="{% static 'wood.jpg' %}" alt="wood">
+                        <div class="floor__stains"></div>
+                    </div>
+
+                    <div class="floor floor--clean">
+                        <img class="floor__texture" src="{% static 'wood.jpg' %}" alt="wood">
+                    </div>
+
+
+                    <div class="window window--dirty">
+                        <img class="window__texture" src="{% static 'window.jpg' %}" alt="window">
+                        <div class="window__stains"></div>
+                    </div>
+                    <div class="window window--clean">
+                        <img class="window__texture" src="{% static 'window.jpg' %}" alt="window">
+                    </div>
+
+                    <div class="broom">🧹</div>
+                    <div class="sponge">🧽</div>
+                </div>
+
+                <h1 class="company-title company-name">Room Shining</h1>
+            </section>
+        </div>
+        
         <figure>
             <div>
-                <img src="{% static 'banners/adv1_low_res.jpeg' %}"
-                    srcset="{% static 'banners/adv1_low_res.jpeg' %} 600w,
-                            {% static 'banners/adv2_high_res.jpeg' %} 1000w,
-                            {% static 'banners/adv1_ultra_high_res.jpeg' %} 1400w"
-                    sizes="(max-width: 900px) 100vw, 900px"
-                    alt="Room Shining promotional banner"
-                    style="width: 100%; max-width: 900px; height: auto; display: block; margin: 0 auto;" />
-            </div>
-            <div>
-                <img src="{% static 'banners/adv2_low_res.jpeg' %}"
-                    srcset="{% static 'banners/adv2_low_res.jpeg' %} 600w,
-                            {% static 'banners/adv3_high_res.jpeg' %} 1000w,
-                            {% static 'banners/adv2_ultra_high_res.jpeg' %} 1400w"
-                    sizes="(max-width: 900px) 100vw, 900px"
-                    alt="Room Shining promotional banner"
-                    style="width: 100%; max-width: 900px; height: auto; display: block; margin: 0 auto;" />
-            </div>
-            <div>
                 <img src="{% static 'banners/adv3_low_res.jpeg' %}"
-                    srcset="{% static 'banners/adv3_low_res.jpeg' %} 600w,
-                            {% static 'banners/adv1_high_res.jpeg' %} 1000w,
+                    srcset="{% static 'banners/adv1_high_res.jpeg' %} 600w,
+                            {% static 'banners/adv2_high_res.jpeg' %} 1000w,
                             {% static 'banners/adv3_ultra_high_res.jpeg' %} 1400w"
                     sizes="(max-width: 900px) 100vw, 900px"
-                    alt="Room Shining promotional banner"
-                    style="width: 100%; max-width: 900px; height: auto; display: block; margin: 0 auto;" />
+                    alt="Room Shining promotional banner" />
             </div>
         </figure>
-        
-        <h1 itemprop="name" translate="no" lang="en"><b>Cleaning Company</b> {{ company_info.name }}</h1>
-        {% if company_info.logo %}
-            <a href="{% url 'about' %}" title="About company"><img src="{{ company_info.logo.url }}" alt="{{ company_info.name }} logo" itemprop="logo"></a>
-        {% endif %}
-
-        <nav>
+    
+        <nav class="quick-nav">
+            <h2 class="quick-nav__label" >Quick access:</h2>
             <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#news">News</a></li>
@@ -53,43 +63,46 @@
     
     <section id="services" itemscope itemtype="https://schema.org/Service">
 
-        <h2>Our services</h2>
-        <ul itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+        <h2 class="section-title">Our services</h2>
+        <ul class="services-grid" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
             {% for service in services %}
-                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <li class="service-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
                     <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
-                        <a href="{% url 'service_detail' service.id %}" itemprop="url">
-                            <strong itemprop="name">{{ service.name }}</strong>
+                        <a href="{% url 'service_detail' service.id %}" itemprop="url" class="service-card__link">
+                            <strong itemprop="name" class="service-card__title">{{ service.name }}</strong>
                         </a>
                         
-                        <span itemprop="category">{{ service.category.name }}</span>
+                        <span itemprop="category" class="service-card__category">{{ service.category.name }}</span>
                     </div>
 
-                    — <span itemprop="price">{{ service.price }}</span> 
-                    <span itemprop="priceCurrency" content="BYN">BYN</span>
+                    <p class="service-card__price">
+                        <span class="service-card__price__value" itemprop="price">{{ service.price }}</span> 
+                        <span itemprop="priceCurrency" content="BYN">BYN</span>
+                    </p>
+                    
                 </li>
             {% empty %}
-                <li>No services available.</li>
+                <li class="service-card service-card--empty">No services available.</li>
             {% endfor %}
         </ul>
     </section>
     
 
     <section id="news">
-        <h2>Last news:</h2>
+        <h2 class="section-title">Last news:</h2>
         <h3>{{last_article.title}}</h3>
         <p>{{last_article.short_description}}</p>
         <p>{{last_article.created_at}}</p>
     </section>
 
     <section id="partners">
-        <h2>Our partners</h2>
+        <h2 class="section-title">Our partners</h2>
         <ul>
             {% for partner in partners %}
                 <li>
                     <a href="{{ partner.website_url }}" target="_blank">
                         {% if partner.logo %}
-                            <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" width="160" style="object-fit: contain;"/>
+                            <img src="{{ partner.logo.url }}" alt="{{ partner.name }}" width="160"/>
                         {% endif %}
                     </a>
                 </li>
@@ -98,47 +111,169 @@
             {% endfor %}
         </ul>
     </section>
-    <hr>
+    
+    <section class="extra-info" >
+        <h2 class="section-title">Extra info</h2>
+        {% if user.is_authenticated %}
+            <aside class="user-extras">
+                {% if quote %}
+                    <section class="quote-widget">
+                        <h3>Quote Of The Day</h3>
+                        <blockquote cite="#">
+                            <p>"{{ quote.text }}"</p>
+                            <footer>— <cite>{{ quote.author }}</cite></footer>
+                        </blockquote>
+                    </section>
+                {% endif %}
 
-    {% if user.is_authenticated %}
-        <aside class="user-extras">
-            {% if quote %}
-                <section class="quote-widget">
-                    <h3>Quote of the Day</h3>
-                    <blockquote cite="#">
-                        <p>"{{ quote.text }}"</p>
-                        <footer>— <cite>{{ quote.author }}</cite></footer>
-                    </blockquote>
-                </section>
-                <hr>
-            {% endif %}
+                {% if fact %}
+                    <section class="fact-widget">
+                        <h3>Cat Fact</h3>
+                        <p>{{ fact.fact }}</p>
+                    </section>
+                {% endif %}
+            </aside>
+        {% endif %}
+    </section>
+    
 
-            {% if fact %}
-                <section class="fact-widget">
-                    <h3>Cat Fact</h3>
-                    <p>{{ fact.fact }}</p>
-                </section>
-                <hr>
-            {% endif %}
-        </aside>
-    {% endif %}
-<hr>
-    <section>
+    <section class="date-time">
+        
         <p>Current date (local): {{ now_local|date:"d/m/Y" }}</p>
         <p>Current time (local): {{ now_local|date:"H:i" }}</p>
         <p>Timezone: {{user_tz}}</p>
         {% timezone "UTC" %}
             <p>Current time (UTC): {{ now_local|date:"H:i" }}</p>
         {% endtimezone %}
-        <h3>Calendar — May 2026</h3>
-        <table>
-            <tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
-            <tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
-            <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-            <tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
-            <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
-            <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+        <h3>Calendar — October 2026</h3>
+        <table class="calendar-table">
+            <thead>
+                <tr><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr>
+            </thead>
+            <tbody>
+                <tr><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+                <tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+                <tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+                <tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
+                <tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td></tr>
+            </tbody>
         </table>
     </section>
-    
+
+    <p class="ligatures">
+        The official staff often find difficult offline files for efficient workflow. First floor, final ffort, ffice fflow. Fine flowers fill five ffields. Official offline efficient staff still stand strong.
+    </p>
+
+    <div class="preloader">
+        <div class="line line1">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line2">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line3">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line4">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line5">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line6">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line7">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line8">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line9">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line10">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+        <div class="line line11">
+            <span class="circle circle-top"></span>
+            <div class="dotted">
+                <span class="dot dot-top"></span>
+                <span class="dot dot-middle-top"></span>
+                <span class="dot dot-middle-bottom"></span>
+                <span class="dot dot-bottom"></span>
+            </div>
+            <span class="circle circle-bottom"></span>
+        </div>
+    </div>    
 {% endblock %}

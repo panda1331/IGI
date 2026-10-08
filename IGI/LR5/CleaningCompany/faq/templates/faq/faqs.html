@@ -3,19 +3,26 @@
 {% block title %}<title>FAQ</title>{% endblock %}
 {% block meta_description %}Find quick answers to common questions about our cleaning services, pricing, equipment, safety standards, and booking procedures.{% endblock %}
 {% block content %}
-    <header>
-        <h1><abbr title="Frequently Asked Questions">FAQ</abbr></h1>
-    </header>
-    
-    {% for faq in faqs %}
-        <div>
-            <details>
-                <summary><strong>{{faq.question}}</strong> - <time datetime="{{ faq.date|date:'Y-m-d' }}">{{ faq.date }}</time></summary>
-                <p>{{faq.answer}}</p>
-            </details><br>
+    <section class="faq-section">
+        <header class="faq-header">
+            <h1 class="section-title"><abbr title="Frequently Asked Questions">FAQ</abbr></h1>
+            <p class="faq-intro">Answers to the most common questions about our services.</p>
+        </header>
+        <div class="faq-list">
+            {% for faq in faqs %}
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        <strong class="faq-question__text">{{faq.question}}</strong> 
+                        <time class="faq-question__date" datetime="{{ faq.date|date:'Y-m-d' }}">{{ faq.date }}</time>
+                    </summary>
+                    <div class="faq-answer">{{faq.answer}}</div>
+                </details><br>
+            {% empty %}
+                <p class="faq-empty">No questions available at the moment.</p>
+            {% endfor %}
         </div>
-    {% empty %}
-        <p>No questions available at the moment.</p>
-    {% endfor %}
+        
+    </section>
+    
 
 {% endblock %}

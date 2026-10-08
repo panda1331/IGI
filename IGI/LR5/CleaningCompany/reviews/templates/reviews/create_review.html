@@ -2,18 +2,23 @@
 
 {% block title %}<title>Add Review</title>{% endblock %}
 {% block content %}
-    <section class="review-form-section">
-        <h1>Add Review</h1>
+    <section class="auth-section">
+        <h1 class="section-title">Add Review</h1>
 
         <form method="post" class="review-form">
             {% csrf_token %}
 
-            <fieldset>
-                <legend>Your Feedback</legend>
-                {{ form.as_p }}
-            </fieldset>
+            {% for field in form %}
+                <div class="auth-form__field">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <p class="auth-error">{{ field.errors }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
 
-            <div class="form-actions">
+            <div class="auth-form__actions">
                 <button type="submit">Submit Review</button>
                 <a href="{% url 'index' %}" class="button-cancel">Cancel</a>
             </div>

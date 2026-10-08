@@ -6,46 +6,37 @@
 {% block content %}
     <section class="promo-section">
         <header class="section-header">
-            <h1>Promo Codes & Discounts</h1>
+            <h1 class="section-title">Promo Codes & Discounts</h1>
         </header>
 
-        <div class="promo-grid">
-            {% for promo_code in promo_codes %}
-                <article class="promo-card">
-                    <header>
-                        <h2>Code: <code>{{ promo_code.code }}</code></h2>
-                    </header>
+            <section class="promo-block">
+                <h2 class="promo-block__title">Active promo codes</h2>
+                <ul class="promo-list promo-list--active">
+                    {% for promo in active_promos %}
+                        <li class="promo-item">
+                            <code class="promo-code">{{ promo.code }}</code>
+                            <span class="promo-discount">{{ promo.discount_percentage }}% off</span>
+                        </li>
+                    {% empty %}
+                        <li class="promo-item promo-item--empty">No active promo codes at the moment.</li>
+                    {% endfor %}
+                </ul>
+            </section>
 
-                    <dl class="promo-details">
-                        <dt>Discount:</dt>
-                        <dd><strong>{{ promo_code.discount_percentage }}%</strong></dd>
-
-                        <dt>Status:</dt>
-                        <dd>
-                            {% if promo_code.is_active %}
-                                <span class="status-active"><mark>Active</mark></span>
-                            {% else %}
-                                <span class="status-archived">Archived</span>
-                            {% endif %}
-                        </dd>
-                    </dl>
-
-                    <section class="applicable-services">
-                        <h3>Applicable Services</h3>
-                        <ul>
-                            {% for service in promo_code.services.all %}
-                                <li>{{ service.name }}</li>
-                            {% empty %}
-                                <li>Applies to all services</li>
-                            {% endfor %}
-                        </ul>
-                    </section>
-                </article>
-                <hr>
-            {% empty %}
-                <p>No active promo codes available at the moment.</p>
-            {% endfor %}
-        </div>
+            <section class="promo-block">
+                <h2 class="promo-block__title">Archive</h2>
+                <ul class="promo-list promo-list--archived">
+                    {% for promo in archived_promos %}
+                        <li class="promo-item">
+                            <code class="promo-code">{{ promo.code }}</code>
+                            <span class="promo-discount">{{ promo.discount_percentage }}% off</span>
+                            <span class="promo-status">(expired)</span>
+                        </li>
+                    {% empty %}
+                        <li class="promo-item promo-item--empty">No archived promo codes.</li>
+                    {% endfor %}
+                </ul>
+            </section>
     </section>
     
 {% endblock %}

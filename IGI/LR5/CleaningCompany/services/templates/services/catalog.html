@@ -4,70 +4,78 @@
 {% block meta_description %}Browse our complete list of cleaning services, including prices, detailed package descriptions, post-renovation cleaning, and dry cleaning.{% endblock %}
 
 {% block content %}
-    <h1>Catalog</h1>
-    <header>
-        <form method="get">
-            <div class="filters">
-                <p>Filters:</p>
-                {% for category in all_categories %}
-                    <input id="{{category.name|cut:' '}}" type="checkbox" name="category" value="{{category.id}}" {% if category.id in selected_categories %}checked{% endif %}>
-                    <label for="{{category.name|cut:' '}}">{{category.name}}</label>
-                {% endfor %}
+    <section class="catalog-section">
+        <h1 class="section-title">Catalog</h1>
+        <header>
+            <form method="get" class="catalog-filters">
+                <div class="filters">
+                    <p>Filters:</p>
+                    {% for category in all_categories %}
+                        <input id="{{category.name|cut:' '}}" type="checkbox" name="category" value="{{category.id}}" {% if category.id in selected_categories %}checked{% endif %}>
+                        <label for="{{category.name|cut:' '}}">{{category.name}}</label>
+                    {% endfor %}
+                </div>
+                <div class="price">
+                    <label for="min_price">Min price:</label>
+                    <input type="number" id="min_price" name="min_price" min="0" max="1000" value="{{ request.GET.min_price }}">
+                    <label for="max_price">Max price:</label>
+                    <input type="number" id="max_price" name="max_price" min="0" max="1000" value="{{ request.GET.max_price }}">
+                </div>
+                <input type="text" name="search_service" id="search" value="{{request.GET.search_service}}">
+                <select name="sort">
+                    <option value="">Default</option>
+                    <optgroup label="Price">
+                        <option value="price_asc">Price (low first)</option>
+                        <option value="price_desc">Price (high first)</option>
+                    </optgroup>
+                    <optgroup label="Alphabet">
+                        <option value="name_asc">A-Z</option>
+                        <option value="name_desc">Z-A</option>
+                    </optgroup>
+                    
+                </select>
+                <button type="submit">Apply</button>
+                <a href="{% url 'catalog' %}">Clear filters</a>
+            </form>
+        </header>
+        {% for category in categories %}
+            <section class="catalog-service">
+                <h2 class="section-title">{{category.name}}</h2>
+                <ul class="services-grid">
+                    {% for service in category.filtered_services %}
+                        <li class="service-card">
+                            <div class="service-card__inner">
+                                <a href="{% url 'service_detail' service.id %}" class="service-card__link">
+                                    <strong class="service-card__title">{{ service.name }}</strong>
+                                </a>
+
+                                <p class="service-card__price">
+                                    <span class="service-card__price__value">{{ service.price }}</span>
+                                    <span>BYN</span>
+                                </p>
+                            </div>
+                            {% if user.is_superuser %}
+                                <div class="service-card__admin">
+                                    <a href="{% url 'edit_service' service.id %}">Edit</a>
+                                    <a href="{% url 'delete_service' service.id %}">Delete</a>
+                                </div>
+                            {% endif %}
+
+                        </li>
+                    {% empty %}
+                        <li class="service-card service-card--empty">No services in this category.</li>
+                    {% endfor %}
+                </ul>
+            </section>
+            
+        {% endfor %}
+
+        {% if user.is_superuser %}
+            <div class="catalog-admin">
+                <a href="{% url 'create_category' %}">Create category</a>
+                <a href="{% url 'create_service' %}">Create service</a>
             </div>
-            <div class="price">
-                <label for="min_price">Min price:</label>
-                <input type="number" id="min_price" name="min_price" min="0" max="1000" value="{{ request.GET.min_price }}">
-                <label for="max_price">Max price:</label>
-                <input type="number" id="max_price" name="max_price" min="0" max="1000" value="{{ request.GET.max_price }}">
-            </div>
-            <hr>
-            <input type="text" name="search_service" id="search" value="{{request.GET.search_service}}">
-            <hr>
-            <select name="sort">
-                <option value="">Default</option>
-                <optgroup label="Price">
-                    <option value="price_asc">Price (low first)</option>
-                    <option value="price_desc">Price (high first)</option>
-                </optgroup>
-                <optgroup label="Alphabet">
-                    <option value="name_asc">A-Z</option>
-                    <option value="name_desc">Z-A</option>
-                </optgroup>
-                
-            </select>
-            <button type="submit">Apply</button>
-            <a href="{% url 'catalog' %}">Clear filters</a>
-        </form>
-    </header>
-    <hr>
-    {% for category in categories %}
-        <section>
-            <h2>{{category.name}}</h2>
-            {% if user.is_superuser %}
-                <a href="{% url 'edit_category' category.id %}">Edit category</a>
-                <a href="{% url 'delete_category' category.id %}">Delete category</a>
-            {% endif %}
-            <ul>
-                {% for service in category.filtered_services %}
-                    <li>
-                        <a href="{% url 'service_detail' service.id %}">{{ service.name }}</a> - 
-                        <span style="color: darkred">{{ service.price }} BYN</span>
-                        {% if user.is_superuser %}
-                            <a href="{% url 'edit_service' service.id %}">Edit service</a>
-                            <a href="{% url 'delete_service' service.id %}">Delete service</a>
-                        {% endif %}
-                    </li>
-                {% empty %}
-                    <li>No services in this category.</li>
-                {% endfor %}
-            </ul>
-        </section>
-        
-    {% endfor %}
-<br>
-    {% if user.is_superuser %}
-        <hr>
-        <a href="{% url 'create_category' %}" >Create category</a>
-        <a href="{% url 'create_service' %}" >Create service</a>
-    {% endif %}
+        {% endif %}
+    </section>
+    
 {% endblock %}

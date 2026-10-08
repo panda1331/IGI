@@ -14,10 +14,14 @@
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <link rel="shortcut icon" href="{% static 'apple-touch-icon.png' %}" type="image/png">
 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/preloader.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animation.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Clarity+City:ital,wght@0,100..900;1,100..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
     {% block title %}{% endblock %}
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <nav>
             <a href="{% url 'index' %}" title="Home">Home</a> |
             <a href="{% url 'about' %}" title="About Us">About Us</a> |
@@ -41,81 +45,28 @@
 
             {% if user.is_authenticated %}
                 <p>Welcome, {{ user.username }}!</p>
-                    <a href="{% url 'profile' %}">Profile</a> |
-                        <form method="post" action="{% url 'logout' %}" style="display:inline">
-                            {% csrf_token %}
-                            <button type="submit" style="background:none;border:none;color:blue;text-decoration:underline;cursor:pointer;padding:0;font:inherit;">Logout</button>
-                        </form>
+                <a href="{% url 'profile' %}">Profile</a> |
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
             {% else %}
-                    <a href="{% url 'login' %}">Login</a> |
-                    <a href="{% url 'register' %}">Register</a> |
+                <a href="{% url 'login' %}">Login</a> |
+                <a href="{% url 'register' %}">Register</a> |
             {% endif %}
         </nav>
     </header>
-    <hr>
     <main>
         {% block content %}{% endblock %}
     </main>
-    <footer>
+    <footer class="page-footer">
         <p>&copy;2026 Room Shining LLC. All rights reserved.</p>
+        <address>
+            15 Lenina Street, Office 302, Minsk, Belarus<br>
+            Тел. <a href="tel:+375291112233">+375 (29) 111-22-33</a><br>
+            e-mail: <a href="mailto:info@roomshining.by">info@roomshining.by</a>
+        </address>
     </footer>
 
 </body>
 </html>
-
-
-<!--<nav>
-        <a href="{% url 'about' %}" title="About Us">About Us</a>
-        <a href="{% url 'article_list' %}" title="News">News</a>
-        <a href="{% url 'faq' %}" title="FAQ">FAQ</a>
-        <a href="{% url 'contacts' %}" title="Contacts">Contacts</a>
-        <a href="{% url 'privacy-policy' %}" title="Privacy Policy">Privacy Policy</a>
-        <a href="{% url 'vacancies' %}" title="Vacancies">Vacancies</a>
-        <a href="{% url 'reviews' %}" title="Reviews">Reviews</a>
-        <a href="{% url 'promo_codes' %}" title="Promo codes">Promo Codes</a>
-        <a href="{% url 'catalog' %}" title="Catalog">Catalog</a>
-
-        {% if user.is_authenticated %}
-            <p>Welcome, {{ user.username }}!</p>
-                <a href="{% url 'profile' %}">Profile</a>
-                    <form method="post" action="{% url 'logout' %}" style="display:inline">
-                        {% csrf_token %}
-                        <button type="submit" style="background:none;border:none;color:blue;text-decoration:underline;cursor:pointer;padding:0;font:inherit;">Logout</button>
-                    </form>
-        {% else %}
-                <a href="{% url 'login' %}">Login</a>
-                <a href="{% url 'register' %}">Register</a>
-        {% endif %}
-    </nav>-->
-
-
-<!--    <div class="sidebar">-->
-<!--        <ul>-->
-<!--            <li><a href="{% url 'about' %}" title="About Us">About Us</a></li>-->
-<!--            <li><a href="{% url 'article_list' %}" title="News">News</a></li>-->
-<!--            <li><a href="{% url 'faq' %}" title="FAQ">FAQ</a></li>-->
-<!--            <li><a href="{% url 'contacts' %}" title="Contacts">Contacts</a></li>-->
-<!--            <li><a href="{% url 'privacy-policy' %}" title="Privacy Policy">Privacy Policy</a></li>-->
-<!--            <li><a href="{% url 'vacancies' %}" title="Vacancies">Vacancies</a></li>-->
-<!--            <li><a href="{% url 'reviews' %}" title="Reviews">Reviews</a></li>-->
-<!--            <li><a href="{% url 'promo_codes' %}" title="Promo codes">Promo Codes</a></li>-->
-<!--            <li><a href="{% url 'catalog' %}" title="Catalog">Catalog</a></li>-->
-<!--        </ul>-->
-<!--        {% if user.is_authenticated %}-->
-<!--            <p>Welcome, {{ user.username }}!</p>-->
-<!--            <ul>-->
-<!--                <li><a href="{% url 'profile' %}">Profile</a></li>-->
-<!--                <li>-->
-<!--                    <form method="post" action="{% url 'logout' %}" style="display:inline">-->
-<!--                        {% csrf_token %}-->
-<!--                        <button type="submit" style="background:none;border:none;color:blue;text-decoration:underline;cursor:pointer;padding:0;font:inherit;">Logout</button>-->
-<!--                    </form>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        {% else %}-->
-<!--            <ul>-->
-<!--                <li><a href="{% url 'login' %}">Login</a></li>-->
-<!--                <li><a href="{% url 'register' %}">Register</a></li>-->
-<!--            </ul>-->
-<!--        {% endif %}-->
-<!--    </div>-->

@@ -2,29 +2,51 @@
 
 {% block title %}<title>About company</title>{% endblock%}
 {% block meta_description %}Learn about Room Shining LLC, our history, professional team of 30+ specialists, values, eco-friendly approach, and company requisites in Minsk.{% endblock %}
-
+{% load static %}
 {% block content %}
     <article class="company-overview">
         <header>
-            <h1>About Company <a href="#requisites" style="text-decoration: none;">{{company_info.name}}</a></h1>
-            {% if company_info.logo %}<img title="Company logo" src="{{company_info.logo.url}}">{% endif %}
+            <h1 class="section-title">About Company <a href="#requisites" style="text-decoration: none;">{{company_info.name}}</a></h1>
+            {% if company_info.logo %}<img class="company-logo" title="Company logo" src="{{company_info.logo.url}}">{% endif %}
         </header>
 
-        <div>
+        <div class="company-description">
             <p>{{company_info.description}}</p>
         </div>
 
-        <div>
-            <p>Our history:{{company_info.history|linebreaks}}</p>
+        {% if history_lines %}
+            <section class="company-history">
+                <h2 class="section-title">Our history</h2>
+                <ol class="history-list">
+                    {% for item in history_lines %}
+                        <li class="history-item">
+                            <span class="history-year">{{ item.year }}</span>
+                            <p class="history-text">{{ item.text }}</p>
+                        </li>
+                    {% endfor %}
+                </ol>
+            </section>
+        {% endif %}
+        
+        <div class="company-media">
+            <h2 class="section-title">Media</h2>
             {% if company_info.video %}
-                <video width="560" height="349" controls tabindex="1">
-                    <source src="{{ company_info.video.url }}" type="video/mp4" >
-                </video>
+                <figure class="media-item">
+                    <video controls tabindex="1">
+                        <source src="{{ company_info.video.url }}" type="video/mp4" >
+                    </video>
+                    <figcaption>Company preseentation video</figcaption>
+                </figure>
+                <figure class="media-item">
+                    <audio controls src="{% static 'creep.mp3' %}"></audio>
+                    <figcaption>Our favourite song</figcaption>
+                </figure>
             {% endif %}
         </div>
 
         <div id="requisites">
-            <dl>
+            <h2 class="section-title">Requisites</h2>
+            <dl class="requisites-list">
                 <dt>Requisites:</dt>
                 <dd>{{ company_info.requisites|linebreaks }}</dd>
 
@@ -39,40 +61,32 @@
     
     <section>
         <header>
-            <h2>Certificates & Accreditation</h2>
-            <p>СЕРТИФИКАТ О СООТВЕТСТВИИ И ЧЛЕНСТВЕ В ЕДИНОМ РЕЕСТРЕ КЛИНИНГОВЫХ КОМПАНИЙ</p>
-            <p><small>ЕДИНЫЙ РЕЕСТР ПРОФЕССИОНАЛЬНЫХ КЛИНИНГОВЫХ СЛУЖБ</small></p>
+            <h2 class="section-title">Certificates & Accreditation</h2>
         </header>
-
         <article class="certificate-card">
-            <h3>СВИДЕТЕЛЬСТВО</h3>
-            <p><em>о внесении сведений</em></p>
+            <div class="certificate-card__bg"></div>
+            <div class="certificate-card__content">
+                <h3 class="cert-title">CERTIFICATE</h3>
+                <p class="cert-subtitle"><em>of inclusion of information</em></p>
 
-            <p>
-                Дата выдачи: <time datetime="2018-05-15">15 мая 2018</time>, 
-                <span>г. Минск</span>
-            </p>
+                <p class="cert-date">
+                    Date of issue: <time datetime="2018-05-15">May 15, 2018</time>,
+                    <span>Minsk</span>
+                </p>
 
-            <section>
-                <h4>Общество с ограниченной ответственностью «Room Shining» (Room Shining LLC)</h4>
-                <p>(УНП/ИНН: 9876543210, Рег. номер: 123456789)</p>
-                <p>Реестровый номер: <strong>8241</strong></p>
-            </section>
+                <section class="cert-body">
+                    <h4 class="cert-company">Limited Liability Company «Room Shining» (Room Shining LLC)</h4>
+                    <p class="cert-requisites">(UNP/TIN: 9876543210, Reg. No.: 123456789)</p>
+                    <p class="cert-registry">Registry number: <strong>8241</strong></p>
+                </section>
 
-            <footer>
-                <p>Генеральный директор</p>
-                <p><strong>Ассоциации Профессиональной Уборки</strong></p>
-            </footer>
+                <footer class="cert-footer">
+                    <p class="cert-signature">General Director</p>
+                    <p class="cert-signature-name"><strong>Association of Professional Cleaning</strong></p>
+                </footer>
+            </div>      
         </article>
-    </section>
-    <footer>
-        <address>
-            15 Lenina Street, Office 302, Minsk, Belarus<br>
-            Тел. <a href="tel:+375291112233">+375 (29) 111-22-33</a><br>
-            e-mail: <a href="mailto:info@roomshining.by">info@roomshining.by</a>
-        </address>
-    </footer>
-    
-   
+        
+    </section>  
 
 {% endblock %}

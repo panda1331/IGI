@@ -3,23 +3,23 @@
 {% block title %}<title>Article</title>{% endblock %}
 
 {% block content %}
-    <article>
-        <header>
-            <h2>{{article.title}}</h2>
-            <time datetime="{{ article.created_at|date:'Y-m-d' }}">
+    <article class="article-page">
+        <header class="article-page__header">
+            <h2 class="article-page__title">{{article.title}}</h2>
+            <time class="article-page__date" datetime="{{ article.created_at|date:'Y-m-d' }}">
                 {{ article.created_at }}
             </time>
         </header>
     </article>
     
     {% if article.image %}
-        <figure>
+        <figure class="article-page__figure">
             <img src="{{ article.image.url }}">
         </figure>
     {% endif %}
-    <p>{{article.content}}</p>
+    <div class="article-page__content">{{article.content}}</div>
     
-    <footer>
+    <footer class="article-page__footer">
         <nav>
             <a href="{% url 'article_list' %}">&larr;Back to all news</a>
         </nav>

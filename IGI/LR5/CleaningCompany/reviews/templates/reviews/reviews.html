@@ -6,7 +6,7 @@
 {% block content %}
     <section class="reviews-section">
         <header class="section-header">
-            <h1>Customer Reviews</h1>
+            <h1 class="section-title">Customer Reviews</h1>
             <div class="actions">
                 <a href="{% url 'create_review' %}" class="button">Add review</a>
             </div>
@@ -16,7 +16,7 @@
             {% for review in reviews %}
                 <article class="review-card">
                     <header class="review-header">
-                        <h2>{{ review.user.get_full_name|default:review.user.username }}</h2>
+                        <h2 class="review-author">{{ review.user.get_full_name|default:review.user.username }}</h2>
                         <p class="review-meta">
                             Published on: 
                             <time datetime="{{ review.created_at|date:'Y-m-d' }}">
@@ -28,15 +28,22 @@
                     <div class="review-rating">
                         <p>Score: <strong>{{ review.score }}/5</strong> <i>(Verified client)</i></p>
                     </div>
-
-                    <div class="review-body">
-                        <p>{{ review.text }}</p>
-                    </div>
+                    <p class="review-text">{{ review.text }}</p>
                 </article>
-                <hr>
             {% empty %}
-                <p>No reviews yet. Be the first to share your experience!</p>
+                <p class="reviews-empty">No reviews yet. Be the first to share your experience!</p>
             {% endfor %}
+        </div>
+    </section>
+
+    <section class="quotes-block">
+        <h2 class="section-title">Quotes in different languages</h2>
+
+        <div class="quotes">
+            <p lang="fr">French quote: <q>Ce que femme veut, Dieu le veut</q>.</p>
+            <p lang="de">Deutch quote: <q>Der Mensch, versuche die Gotter nicht</q>.</p>
+            <p lang="en">English quote: <q>To be or not to be</q>.</p>
+            <p lang="ru">Russian quote: <q>Век живи — век учись</q>.</p>
         </div>
     </section>
 {% endblock %}
