@@ -5,6 +5,8 @@ from django.http import HttpResponseNotFound
 from django.shortcuts import redirect, render
 from .models import EmployeeProfile, User, Specialization
 from .forms import UserRegisterForm, UserUpdateForm
+from django.http import JsonResponse
+import json
 
 logger = logging.getLogger(__name__)
 
@@ -12,6 +14,65 @@ def contacts(request):
     logger.info('Contacts page is loaded')
     employee_profiles = EmployeeProfile.objects.all()
     return render(request, 'users/contacts.html', {'employees': employee_profiles})
+
+def contacts_api(request):
+    logger.info('API contacts called')
+    employees = EmployeeProfile.objects.all()
+    data = []
+
+    for emp in employees:
+        data.append({
+            'id': emp.id,
+            'full_name': emp.user.get_full_name() or emp.user.username,
+            'description': emp.description or 'No description',
+            'phone': emp.user.phone_number or 'Not specified',
+            'email': emp.user.email or 'Not specified',
+            'website_url': emp.website_url or '',
+            'photo': emp.photo.url if emp.photo else ''
+        })
+
+    return JsonResponse({'contacts': data})
+
+def add_employee_api(request):
+    if request.method == 'POST':
+        try:
+            full_name = request.POST.get('full_name', '')
+            website_url = request.POST.get('website_url', '')
+            description = request.POST.get('description', '')
+            phone = request.POST.get('phone', '')
+            email = request.POST.get('email', '')
+            
+            photo_file = request.FILES.get('photo') 
+
+            name_parts = full_name.split(' ', 1)
+            first_name = name_parts[0]
+            last_name = name_parts[1] if len(name_parts) > 1 else ''
+            username = f"emp_{User.objects.count() + 1}_{first_name.lower()}"
+            
+            user = User.objects.create(
+                username=username,
+                first_name=first_name,
+                last_name=last_name,
+                email=email,
+                phone_number=phone,
+                user_type='employee'
+            )
+            
+            EmployeeProfile.objects.create(
+                user=user,
+                description=description,
+                website_url=website_url,
+                photo=photo_file  # Передаем сам файл
+            )
+            
+            return JsonResponse({'status': 'success'})
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)}, status=400)
+    return JsonResponse({'status': 'error'}, status=405)
+
+def contacts_table(request):
+    logger.info('Contacts Table page is loaded')
+    return render(request, 'users/contacts_table.html')
 
 @login_required
 def profile(request):

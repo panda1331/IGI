@@ -43,6 +43,7 @@ class EmployeeProfile(models.Model):
     hire_date = models.DateField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     photo = models.ImageField(null=True, blank=True, upload_to='employee_photos')
+    website_url = models.CharField(max_length=255, blank=True, null=True)
 
     def display_specializations(self):
         return ', '.join([specialization.name for specialization in self.specializations.all()])

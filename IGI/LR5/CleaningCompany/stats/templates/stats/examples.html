@@ -3,7 +3,137 @@
 
 {% block title %}<title>Examples</title>{% endblock %}
 {% block content %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <h1>Examples</h1>
+
+    <section class="generator-section">
+        <h2>Dynamic Color Picker Generator</h2>
+
+        <label class="toggle-label">
+            <input type="checkbox" id="enable-generator"> Enable Color Picker Generator
+        </label>
+
+        <div id="generator-panel" class="hidden">
+            <button id="btn-add-element" class="button">+ Add New Color Picker</button>
+        </div>
+
+        <div id="generated-container" class="generated-container"></div>
+    </section>
+
+
+    <section class="date-sort-container">
+        <h2>Date Sorter (Summer & Winter)</h2>
+        <p>Add dates to the array, then sort them into virtual files.</p>
+
+        <div class="impl-toggle">
+            <label>
+                <input type="radio" name="impl-type" value="class" checked> Classes / Extends
+            </label>
+            <label>
+                <input type="radio" name="impl-type" value="prototype"> Prototype Inheritance
+            </label>
+        </div>
+
+        <form id="date-form" class="date-form" novalidate>
+            <select id="month-input" required>
+                <option value="" disabled selected>Select Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <input type="number" id="day-input" min="1" max="31" placeholder="Day (1-31)" required>
+            <input type="number" id="year-input" min="1900" max="2100" placeholder="Year (ex. 2026)" required>
+            <button type="submit" class="button">Add Date</button>
+        </form>
+
+        <div class="action-buttons">
+            <button id="show-all-btn" class="button">Show All Dates</button>
+            <button id="sort-btn" class="button">Sort and Download Files</button>
+        </div>
+
+        <div class="output-grid">
+            <div class="output-block">
+                <h3>All Dates (Array)</h3>
+                <div id="all-dates-output" class="output-box"></div>
+            </div>
+            <div class="output-block">
+                <h3>File: "Summer"</h3>
+                <div id="summer-output" class="output-box"></div>
+            </div>
+            <div class="output-block">
+                <h3>File: "Winter"</h3>
+                <div id="winter-output" class="output-box"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="api-demo-container">
+        <h2>Additional Web APIs</h2>
+        <p>Demonstration of Speech Synthesis and Geolocation.</p>
+
+        <div class="api-grid">
+            <div class="api-block">
+                <h3>Speech-Synthesis</h3>
+                <p>Type text below and click "Speak" to hear it.</p>
+                <textarea id="speech-text" rows="3" placeholder="Hello! Welcome to our website.">Hello! Welcome to our cleaning services website.</textarea>
+                <button id="speak-btn" class="button">Speak Text</button>
+            </div>
+
+            <div class="api-block">
+                <h3>Geolocation</h3>
+                <p>Click the button to find your current coordinates.</p>
+                <button id="geo-btn" class="button">Get My Location</button>
+                <div id="geo-output" class="output-box" style="margin-top: 15px;">
+                    Location info will appear here
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="math-chart-container">
+        <h2>Function Expansion into a Series</h2>
+        <p>Comparing Taylor Series (Variant 21: ln((x+1)/(x-1))) with the Math module. <br>Note: |x| > 1</p>
+
+        <div class="chart-controls">
+            <label>Max Terms (n): <input type="number" id="terms-input" value="10" min="1" max="500"></label>
+            <label>X Start: <input type="number" id="x-start" value="1.2" step="0.1"></label>
+            <label>X End: <input type="number" id="x-end" value="3.0" step="0.1"></label>
+            <button id="draw-chart-btn" class="button">Build Chart</button>
+        </div>
+
+        <div class="chart-wrapper">
+            <canvas id="mathChart"></canvas>
+        </div>
+
+        <div class="table-wrapper">
+            <h3>Calculation Data</h3>
+            <table class="data-table" id="math-data-table">
+                <thead>
+                    <tr>
+                        <th>X</th>
+                        <th>n</th>
+                        <th>F(x)</th>
+                        <th>Math F(x)</th>
+                        <th>eps</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </section>
+
+
+
     <section id="global_atributes" class="glob" style="background-color: aqua;">
         <p dir="rtl">Lorem, ipsum dolor sit amet consectetur</p>
         <q lang="en">english quote</q>
@@ -19,6 +149,15 @@
 
     </section>
     <hr>
+
+    
+
+    <datalist id="color-palette">
+        <option value="#ff0000">Red</option>
+        <option value="#00ff00">Green</option>
+        <option value="#0000ff">Blue</option>
+        <option value="#ffff00">Yellow</option>
+    </datalist>
     
     <div id="text_examples">
         <code >
@@ -161,8 +300,8 @@ in
                     <input type="password" maxlength="20" id="password" name="password" required tabindex="2">
                 </div>
                 <div>
-                    <label for="age">Age (1 to 110):</label>
-                    <input type="number"  id="age" name="age" min="1" max="110" required value="20" tabindex="-1">
+                    <label for="birth_date">Date of birth:</label>
+                    <input type="date" id="birth_date" name="birth_date" required tabindex="-1">
                 </div>
                 <div>
                     <input type="radio" name="sex" value="Female" tabindex="3"><label >Female</label>
@@ -202,7 +341,7 @@ in
             </fieldset>
 
             <div>
-                <button type="button" tabindex="10">Submit Feedback</button>
+                <button type="button" id="check-age-btn" tabindex="10">Submit Feedback</button>
                 <button type="reset" tabindex="11">Reset</button>
             </div>
         </form>
@@ -220,6 +359,11 @@ in
         <p>Happy song</p>
         <audio controls autoplay src="{% static 'creep.mp3' %}"></audio>
     </div>
+
+    <script src="{% static 'js/color-generator.js' %}" defer></script>
+    <script src="{% static 'js/date-sort.js' %}" defer></script>
+    <script src="{% static 'js/api-demo.js' %}" defer></script>
+    <script src="{% static 'js/math-chart.js' %}" defer></script>
 
 
 {% endblock %}

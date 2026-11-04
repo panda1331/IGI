@@ -28,6 +28,7 @@
             <a href="{% url 'article_list' %}" title="News">News</a> |
             <a href="{% url 'faq' %}" title="FAQ">FAQ</a> |
             <a href="{% url 'contacts' %}" title="Contacts">Contacts</a> |
+            <a href="{% url 'contacts_table' %}">Employees (Table)</a> | 
             <a href="{% url 'privacy-policy' %}" title="Privacy Policy">Privacy Policy</a> |
             <a href="{% url 'vacancies' %}" title="Vacancies">Vacancies</a> |
             <a href="{% url 'reviews' %}" title="Reviews">Reviews</a> |
@@ -55,6 +56,12 @@
                 <a href="{% url 'register' %}">Register</a> |
             {% endif %}
         </nav>
+
+        <label class="theme-switch" for="theme-toggle">
+            <input type="checkbox" id="theme-toggle">
+            <span class="theme-switch__slider"></span>
+            <span class="theme-switch__label">Dark Mode</span>
+        </label>
     </header>
     <main>
         {% block content %}{% endblock %}
@@ -68,5 +75,7 @@
         </address>
     </footer>
 
+    <script src="{% static 'js/slider.js' %}" defer></script>
+    <script src="{% static 'js/theme.js' %}" defer></script>
 </body>
 </html>

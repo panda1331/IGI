@@ -1,4 +1,5 @@
 {% extends 'base_generic.html' %}
+{% load static %}
 
 {% block title %}<title>Catalog</title>{% endblock %}
 {% block meta_description %}Browse our complete list of cleaning services, including prices, detailed package descriptions, post-renovation cleaning, and dry cleaning.{% endblock %}
@@ -38,13 +39,25 @@
                 <a href="{% url 'catalog' %}">Clear filters</a>
             </form>
         </header>
+
+        <div class="per-page-controls">
+            <label>Items per page:
+                <select id="per-page-select">
+                    <option value="3" selected>3</option>
+                    <option value="6">6</option>
+                    <option value="9">9</option>
+                    <option value="999">All</option>
+                </select>
+            </label>
+        </div>
+
         {% for category in categories %}
-            <section class="catalog-service">
+            <section class="catalog-service catalog-category">
                 <h2 class="section-title">{{category.name}}</h2>
                 <ul class="services-grid">
                     {% for service in category.filtered_services %}
                         <li class="service-card">
-                            <div class="service-card__inner">
+                            <div class="service-card__inner card">
                                 <a href="{% url 'service_detail' service.id %}" class="service-card__link">
                                     <strong class="service-card__title">{{ service.name }}</strong>
                                 </a>
@@ -53,13 +66,15 @@
                                     <span class="service-card__price__value">{{ service.price }}</span>
                                     <span>BYN</span>
                                 </p>
-                            </div>
-                            {% if user.is_superuser %}
+                                
+                                {% if user.is_superuser %}
                                 <div class="service-card__admin">
                                     <a href="{% url 'edit_service' service.id %}">Edit</a>
                                     <a href="{% url 'delete_service' service.id %}">Delete</a>
                                 </div>
                             {% endif %}
+                            </div>
+                            
 
                         </li>
                     {% empty %}
@@ -70,6 +85,8 @@
             
         {% endfor %}
 
+        <div id="catalog-pagination" class="pagination"></div>
+
         {% if user.is_superuser %}
             <div class="catalog-admin">
                 <a href="{% url 'create_category' %}">Create category</a>
@@ -78,4 +95,5 @@
         {% endif %}
     </section>
     
+<script src="{% static 'js/catalog-pagination.js' %}" defer></script>
 {% endblock %}

@@ -1,6 +1,14 @@
 [
 {
     "model": "sessions.session",
+    "pk": "0ahvaqy6h42zk1nvq7qio1pen2k6yz81",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGllO4g9Q0nMG6613FwdQIuVTIe4OkVJA-2bmvUzGutS8zjLlns3ZNObwuxHKQ4YN8B3DbbRlHJapJ7spdqezvY4sz8vu_h1UzPVbuyKxoSaQpwiId2A6CreqiK5FgkZNfELoonQIJbkUWOHJe8eqat4fFrk5bQ:1xNw5l:lE-CBmud3TauJpPu9uyONCp9zofdFQbnvxjt1ubXd10",
+        "expire_date": "2026-11-16T17:45:09.055Z"
+    }
+},
+{
+    "model": "sessions.session",
     "pk": "3jti3zh3zppvfjhs4398rip75i7e53oh",
     "fields": {
         "session_data": ".eJxVjDsOwjAQBe_iGllO4g9Q0nMG6613FwdQIuVTIe4OkVJA-2bmvUzGutS8zjLlns3ZNObwuxHKQ4YN8B3DbbRlHJapJ7spdqezvY4sz8vu_h1UzPVbuyKxoSaQpwiId2A6CreqiK5FgkZNfELoonQIJbkUWOHJe8eqat4fFrk5bQ:1x3wXQ:zgPwdQX13VDeZVYicWK3dExK-IVdhSBcUB5MN3260Fg",
@@ -17,10 +25,18 @@
 },
 {
     "model": "sessions.session",
-    "pk": "bjr7xnrk6tmz0k3eelh2qomzn1e5nsj6",
+    "pk": "40w7jlkc57bellhfgmaw9eubgf8v8j88",
     "fields": {
-        "session_data": ".eJxVjDsOwjAQBe_iGllO4g9Q0nMG6613FwdQIuVTIe4OkVJA-2bmvUzGutS8zjLlns3ZNObwuxHKQ4YN8B3DbbRlHJapJ7spdqezvY4sz8vu_h1UzPVbuyKxoSaQpwiId2A6CreqiK5FgkZNfELoonQIJbkUWOHJe8eqat4fFrk5bQ:1xEpS1:Euct-g67gC2KoO6etzeJha2vljMFFwqXzCoMR9NBlo0",
-        "expire_date": "2026-10-22T14:50:29.946Z"
+        "session_data": ".eJxVjDsOwjAQBe_iGllO4g9Q0nMG6613FwdQIuVTIe4OkVJA-2bmvUzGutS8zjLlns3ZNObwuxHKQ4YN8B3DbbRlHJapJ7spdqezvY4sz8vu_h1UzPVbuyKxoSaQpwiId2A6CreqiK5FgkZNfELoonQIJbkUWOHJe8eqat4fFrk5bQ:1xLdF6:GhnDdv3d03-OjVVyTxI6CyQwYS1WGUyYk3vdIEh61EQ",
+        "expire_date": "2026-11-10T09:13:16.933Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "qatz4xjqunifiu38t803ahhnmorl31fm",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGllO4g9Q0nMG6613FwdQIuVTIe4OkVJA-2bmvUzGutS8zjLlns3ZNObwuxHKQ4YN8B3DbbRlHJapJ7spdqezvY4sz8vu_h1UzPVbuyKxoSaQpwiId2A6CreqiK5FgkZNfELoonQIJbkUWOHJe8eqat4fFrk5bQ:1xEuiG:TCPMR1uXiNrNjU4rHaUunck77Nnvx6suUogHy3u4NgY",
+        "expire_date": "2026-10-22T20:27:36.412Z"
     }
 },
 {
@@ -59,7 +75,7 @@
     "model": "users.user",
     "fields": {
         "password": "pbkdf2_sha256$1200000$WT8md4bES5ry9oWLV4s25S$sebraLLK1hsjUBggXSVJKUwTwVRyUJgW4dN0ic7w2+I=",
-        "last_login": "2026-10-08T14:50:29.939Z",
+        "last_login": "2026-11-02T17:45:09.049Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -286,6 +302,167 @@
     }
 },
 {
+    "model": "users.user",
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emp_11_elena",
+        "first_name": "Elena",
+        "last_name": "Smirnova",
+        "email": "elena.smirnova@roomshining.by",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-10-28T08:16:34.948Z",
+        "middle_name": "",
+        "phone_number": "+375 (29) 123-45-66",
+        "date_of_birth": null,
+        "user_type": "employee",
+        "client_type": "individual",
+        "company_name": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emp_12_dmitry",
+        "first_name": "Dmitry",
+        "last_name": "Ivanov",
+        "email": "dmitry.ivanov@roomshining.by",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-10-28T08:28:43.530Z",
+        "middle_name": "",
+        "phone_number": "+375 (44) 555-66-77",
+        "date_of_birth": null,
+        "user_type": "employee",
+        "client_type": "individual",
+        "company_name": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emp_13_anna",
+        "first_name": "Anna",
+        "last_name": "Petrova",
+        "email": "anna.petrova@roomshining.by",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-10-28T08:29:32.289Z",
+        "middle_name": "",
+        "phone_number": "8 (029) 333-44-55",
+        "date_of_birth": null,
+        "user_type": "employee",
+        "client_type": "individual",
+        "company_name": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emp_14_sergey",
+        "first_name": "Sergey",
+        "last_name": "Smirnov",
+        "email": "sergey.smirnov@roomshining.by",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-10-28T08:30:10.273Z",
+        "middle_name": "",
+        "phone_number": "+375 (33) 222-11-00",
+        "date_of_birth": null,
+        "user_type": "employee",
+        "client_type": "individual",
+        "company_name": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emp_15_olga",
+        "first_name": "Olga",
+        "last_name": "Kuznetsova",
+        "email": "olga.kuznetsova@roomshining.by",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-10-28T08:30:52.934Z",
+        "middle_name": "",
+        "phone_number": "+375 (25) 987-65-43",
+        "date_of_birth": null,
+        "user_type": "employee",
+        "client_type": "individual",
+        "company_name": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emp_16_maxim",
+        "first_name": "Maxim",
+        "last_name": "Vitaliev",
+        "email": "maxim.morozov@roomshining.by",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-10-28T08:31:27.497Z",
+        "middle_name": "",
+        "phone_number": "8 (017) 111-22-33",
+        "date_of_birth": null,
+        "user_type": "employee",
+        "client_type": "individual",
+        "company_name": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "emp_17_yulia",
+        "first_name": "Yulia",
+        "last_name": "Sokolova",
+        "email": "yulia.sokolova@roomshining.by",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-10-28T08:31:55.122Z",
+        "middle_name": "",
+        "phone_number": "+375 (29) 444-33-22",
+        "date_of_birth": null,
+        "user_type": "employee",
+        "client_type": "individual",
+        "company_name": "",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
     "model": "users.specialization",
     "pk": 1,
     "fields": {
@@ -300,6 +477,13 @@
     }
 },
 {
+    "model": "users.specialization",
+    "pk": 3,
+    "fields": {
+        "name": "Eco-Friendly Cleaning"
+    }
+},
+{
     "model": "users.employeeprofile",
     "pk": 1,
     "fields": {
@@ -309,6 +493,7 @@
         "hire_date": "2026-05-05",
         "description": "Apartment and office cleaning specialist",
         "photo": "employee_photos/ivanov.jpeg",
+        "website_url": null,
         "specializations": [
             1,
             2
@@ -325,6 +510,7 @@
         "hire_date": "2026-05-09",
         "description": "Professional window cleaning specialist with 3 years of experience. Expert in cleaning windows of any size and height, including balcony blocks, showcases, and large panoramic windows. Works with professional tools and eco-friendly solutions. Guarantees streak-free shine and spotless results. Detail-oriented, punctual, and trusted by over 300 clients.",
         "photo": "employee_photos/popova.jpg",
+        "website_url": null,
         "specializations": [
             1
         ]
@@ -340,8 +526,124 @@
         "hire_date": "2026-05-13",
         "description": "good cleaner",
         "photo": "employee_photos/koko.jpeg",
+        "website_url": null,
         "specializations": [
             2
+        ]
+    }
+},
+{
+    "model": "users.employeeprofile",
+    "pk": 4,
+    "fields": {
+        "user": [
+            "emp_11_elena"
+        ],
+        "hire_date": "2026-10-28",
+        "description": "Professional cleaner with 5 years of experience in eco-friendly cleaning. Specializes in post-renovation cleaning and deep cleaning of apartments. Detail-oriented and reliable.",
+        "photo": "employee_photos/yana.jpeg",
+        "website_url": "http://roomshining.by/elena.html",
+        "specializations": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "users.employeeprofile",
+    "pk": 5,
+    "fields": {
+        "user": [
+            "emp_12_dmitry"
+        ],
+        "hire_date": "2026-10-28",
+        "description": "Post-renovation cleaning specialist. Expert in removing construction dust, paint, and plaster residue. 4 years of experience.",
+        "photo": "employee_photos/2.jpeg",
+        "website_url": "http://roomshining.by/dmitry.html",
+        "specializations": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "users.employeeprofile",
+    "pk": 6,
+    "fields": {
+        "user": [
+            "emp_13_anna"
+        ],
+        "hire_date": "2026-10-28",
+        "description": "Office cleaning team lead. Manages a team of 5 cleaners, ensures high standards in business centers. 6 years in the industry.",
+        "photo": "employee_photos/1.jpeg",
+        "website_url": "https://roomshining.by/anna.php",
+        "specializations": [
+            2
+        ]
+    }
+},
+{
+    "model": "users.employeeprofile",
+    "pk": 7,
+    "fields": {
+        "user": [
+            "emp_14_sergey"
+        ],
+        "hire_date": "2026-10-28",
+        "description": "Window washing expert. Specializes in high-rise windows, balcony glazing, and facade cleaning. Certified for work at height.",
+        "photo": "employee_photos/4.jpeg",
+        "website_url": "http://roomshining.by/sergey.html",
+        "specializations": [
+            1
+        ]
+    }
+},
+{
+    "model": "users.employeeprofile",
+    "pk": 8,
+    "fields": {
+        "user": [
+            "emp_15_olga"
+        ],
+        "hire_date": "2026-10-28",
+        "description": "Eco-friendly cleaning specialist. Uses only biodegradable products, safe for children and pets. 3 years of experience.",
+        "photo": "employee_photos/3.jpeg",
+        "website_url": "https://roomshining.by/olga.php",
+        "specializations": [
+            3
+        ]
+    }
+},
+{
+    "model": "users.employeeprofile",
+    "pk": 9,
+    "fields": {
+        "user": [
+            "emp_16_maxim"
+        ],
+        "hire_date": "2026-10-28",
+        "description": "General cleaning specialist. Handles deep cleaning of apartments and houses, including kitchens and bathrooms. 5 years of experience.",
+        "photo": "employee_photos/6.jpeg",
+        "website_url": "http://roomshining.by/maxim.html",
+        "specializations": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "users.employeeprofile",
+    "pk": 10,
+    "fields": {
+        "user": [
+            "emp_17_yulia"
+        ],
+        "hire_date": "2026-10-28",
+        "description": "Customer service manager and cleaning coordinator. Responsible for scheduling, client communication, and quality control.",
+        "photo": "employee_photos/5.jpeg",
+        "website_url": "https://roomshining.by/yulia.php",
+        "specializations": [
+            1
         ]
     }
 },
@@ -434,6 +736,86 @@
         "name": "Green Office Sanitization",
         "description": "Sanitization of office spaces with eco-friendly disinfectants, leaving no harmful residues.",
         "price": "45.00"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 12,
+    "fields": {
+        "category": 1,
+        "name": "Washing of panoramic windows",
+        "description": "Specialized cleaning for large panoramic windows. We use professional tools and techniques to ensure a spotless, streak-free finish on vast glass surfaces.",
+        "price": "35.00"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 13,
+    "fields": {
+        "category": 1,
+        "name": "Cleaning of window sills and frames",
+        "description": "Deep cleaning of window sills and frames. We remove stubborn dirt, dust, and stains, paying attention to the smallest corners and hinges.",
+        "price": "10.00"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 14,
+    "fields": {
+        "category": 1,
+        "name": "Washing of balcony glazing",
+        "description": "Professional washing of balcony and loggia glazing. We handle high-rise units safely and efficiently, leaving your balcony bright and clean.",
+        "price": "40.00"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 15,
+    "fields": {
+        "category": 2,
+        "name": "Cleaning of a 3-room apartment",
+        "description": "Detailed cleaning of a 3-room apartment. Our team handles all surfaces, floors, and hard-to-reach areas, giving your home a complete refresh and a healthy atmosphere.",
+        "price": "110.00"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 16,
+    "fields": {
+        "category": 2,
+        "name": "Post-renovation cleaning",
+        "description": "Removal of construction dust, paint splatters, and debris. We prepare your newly renovated space for comfortable living, cleaning every surface from top to bottom.",
+        "price": "200.00"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 17,
+    "fields": {
+        "category": 2,
+        "name": "Deep cleaning of the kitchen",
+        "description": "Intensive kitchen cleaning. We degrease the stove, oven, extractor hood, cabinets, and tiles, leaving your kitchen hygienic, sparkling, and spotless.",
+        "price": "70.00"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 18,
+    "fields": {
+        "category": 4,
+        "name": "Eco-Friendly Sofa Cleaning",
+        "description": "Deep eco-cleaning of upholstered furniture. We extract dirt, stains, and allergens using safe, biodegradable shampoos that are gentle on fabrics.",
+        "price": "60.00"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 19,
+    "fields": {
+        "category": 4,
+        "name": "Eco-Friendly Carpet Cleaning",
+        "description": "Professional carpet cleaning with eco-friendly solutions. We remove deep-seated dirt and odors while protecting your family from harsh chemicals.",
+        "price": "50.00"
     }
 },
 {
@@ -3078,6 +3460,348 @@
         "object_repr": "We partnered with a leading European eco-brand",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 107,
+    "fields": {
+        "action_time": "2026-10-28T08:35:49.388Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "users",
+            "employeeprofile"
+        ],
+        "object_id": "4",
+        "object_repr": "Elena Smirnova",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Specializations\", \"Hire date\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 108,
+    "fields": {
+        "action_time": "2026-10-28T08:36:01.200Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "users",
+            "employeeprofile"
+        ],
+        "object_id": "5",
+        "object_repr": "Dmitry Ivanov",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Specializations\", \"Hire date\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 109,
+    "fields": {
+        "action_time": "2026-10-28T08:37:37.588Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "users",
+            "employeeprofile"
+        ],
+        "object_id": "6",
+        "object_repr": "Anna Petrova",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Specializations\", \"Hire date\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 110,
+    "fields": {
+        "action_time": "2026-10-28T08:37:44.744Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "users",
+            "employeeprofile"
+        ],
+        "object_id": "7",
+        "object_repr": "Sergey Smirnov",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Specializations\", \"Hire date\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 111,
+    "fields": {
+        "action_time": "2026-10-28T08:37:54.099Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "users",
+            "employeeprofile"
+        ],
+        "object_id": "8",
+        "object_repr": "Olga Kuznetsova",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Specializations\", \"Hire date\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 112,
+    "fields": {
+        "action_time": "2026-10-28T08:38:04.320Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "users",
+            "employeeprofile"
+        ],
+        "object_id": "9",
+        "object_repr": "Maxim Vitaliev",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Specializations\", \"Hire date\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 113,
+    "fields": {
+        "action_time": "2026-10-28T08:38:14.740Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "users",
+            "employeeprofile"
+        ],
+        "object_id": "10",
+        "object_repr": "Yulia Sokolova",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Specializations\", \"Hire date\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 114,
+    "fields": {
+        "action_time": "2026-10-28T10:08:02.105Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "services",
+            "service"
+        ],
+        "object_id": "12",
+        "object_repr": "Washing of panoramic windows",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 115,
+    "fields": {
+        "action_time": "2026-10-28T10:08:51.160Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "services",
+            "service"
+        ],
+        "object_id": "13",
+        "object_repr": "Cleaning of window sills and frames",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 116,
+    "fields": {
+        "action_time": "2026-10-28T10:09:08.435Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "services",
+            "service"
+        ],
+        "object_id": "14",
+        "object_repr": "Washing of balcony glazing",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 117,
+    "fields": {
+        "action_time": "2026-10-28T10:09:28.539Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "services",
+            "service"
+        ],
+        "object_id": "15",
+        "object_repr": "Cleaning of a 3-room apartment",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 118,
+    "fields": {
+        "action_time": "2026-10-28T10:09:45.182Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "services",
+            "service"
+        ],
+        "object_id": "16",
+        "object_repr": "Post-renovation cleaning",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 119,
+    "fields": {
+        "action_time": "2026-10-28T10:10:02.596Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "services",
+            "service"
+        ],
+        "object_id": "17",
+        "object_repr": "Deep cleaning of the kitchen",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 120,
+    "fields": {
+        "action_time": "2026-10-28T10:10:22.397Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "services",
+            "service"
+        ],
+        "object_id": "18",
+        "object_repr": "Eco-Friendly Sofa Cleaning",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 121,
+    "fields": {
+        "action_time": "2026-10-28T10:10:37.153Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "services",
+            "service"
+        ],
+        "object_id": "19",
+        "object_repr": "Eco-Friendly Carpet Cleaning",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 122,
+    "fields": {
+        "action_time": "2026-10-28T10:11:37.928Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "users",
+            "specialization"
+        ],
+        "object_id": "3",
+        "object_repr": "Eco-Friendly Cleaning",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 123,
+    "fields": {
+        "action_time": "2026-10-28T10:12:02.273Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "users",
+            "employeeprofile"
+        ],
+        "object_id": "8",
+        "object_repr": "Olga Kuznetsova",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Specializations\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 124,
+    "fields": {
+        "action_time": "2026-10-28T10:12:21.382Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "users",
+            "employeeprofile"
+        ],
+        "object_id": "5",
+        "object_repr": "Dmitry Ivanov",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Specializations\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 125,
+    "fields": {
+        "action_time": "2026-10-28T10:12:28.239Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "users",
+            "employeeprofile"
+        ],
+        "object_id": "4",
+        "object_repr": "Elena Smirnova",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Specializations\"]}}]"
     }
 }
 ]

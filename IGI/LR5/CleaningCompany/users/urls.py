@@ -4,6 +4,10 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     re_path(r'^contacts/$', views.contacts, name='contacts'),
+    re_path(r'^contacts-table/$', views.contacts_table, name='contacts_table'),
+    re_path(r'^api/contacts/$', views.contacts_api, name='contacts_api'),
+    re_path(r'^api/contacts/add/$', views.add_employee_api, name='add_employee_api'),
+
     re_path(r'^login/$', LoginView.as_view(template_name='users/login.html'), name='login'),
     re_path(r'^logout/$', LogoutView.as_view(), name='logout'),
     re_path(r'^profile/$', views.profile, name='profile'),
