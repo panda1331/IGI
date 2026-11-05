@@ -314,16 +314,16 @@ class ContactsTable {
         });
 
         document.getElementById('select-all').addEventListener('change', (e) => {
-                const isChecked = e.target.checked;
-                document.querySelectorAll('.row-checkbox').forEach(cb => {
-                    cb.checked = isChecked;
-                    const id = parseInt(cb.value);
-                    if (isChecked) {
-                        this.selectedIds.add(id);
-                    } else {
-                        this.selectedIds.delete(id);
-                    }
-                });
+            const isChecked = e.target.checked;
+            document.querySelectorAll('.row-checkbox').forEach(cb => {
+                cb.checked = isChecked;
+                const id = parseInt(cb.value);
+                if (isChecked) {
+                    this.selectedIds.add(id);
+                } else {
+                    this.selectedIds.delete(id);
+                }
+            });
         });
     }
 

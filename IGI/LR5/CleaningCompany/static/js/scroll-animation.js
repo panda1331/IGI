@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const screenPosition = window.innerHeight / 1.25;
 
         let offset = sectionPosition * 0.15; 
-        bgImage.style.transform = `translateY(${offset}px) scale(1.05)`; 
+        bgImage.style.transform = `translateY(${offset}px) scale(1.3)`; 
 
         if (sectionPosition < screenPosition) {
             cleaner1.classList.add("active");
@@ -28,7 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
             
             if (isWorking) {
                 isWorking = false;
-                stopWorking();
+                setTimeout(() => {
+                    stopWorking();
+                }, 800); 
             }
         }
     });

@@ -2202,6 +2202,9 @@ q:lang(ru) {
     border-radius: 8px;
 }
 
+
+
+
 .theme-switch {
     display: inline-flex;
     align-items: center;
@@ -3147,10 +3150,10 @@ input, textarea, select {
 
 .bg-image {
     position: absolute;
-    top: -10%;
+    top: -35%;
     left: 0;
     width: 100%;
-    height: 120%;
+    height: 140%;
     object-fit: cover; 
     z-index: -1;    
     

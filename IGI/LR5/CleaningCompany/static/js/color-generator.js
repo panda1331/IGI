@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const STORAGE_KEY = 'generatedColorFields_v21';
+    const STORAGE_KEY = 'generatedColorFields';
 
     const enableCheckbox = document.getElementById('enable-generator');
     const generatorPanel = document.getElementById('generator-panel');

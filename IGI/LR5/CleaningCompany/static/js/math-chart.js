@@ -91,6 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                animation: {
+                    duration: 1500,       
+                    easing: 'easeOutQuart',
+                    delay: 0              
+                },
                 plugins: {
                     legend: { position: 'top' },
                     title: {

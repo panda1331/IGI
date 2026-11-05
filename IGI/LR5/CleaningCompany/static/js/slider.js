@@ -100,7 +100,6 @@ class Slider {
             this.track.style.transition = `transform ${this.transitionDuration}ms ease-in-out`;
         } else {
             this.track.style.transition = 'none';
-            void this.track.offsetWidth;
         }
         
         this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
